@@ -24,7 +24,7 @@ export default function FounderSection() {
     };
 
     return (
-        <section className="relative w-full overflow-hidden bg-[#0a2a1a] text-white">
+        <section className="relative w-full overflow-visible bg-[#0a2a1a] text-white">
             <div className="absolute inset-0 pointer-events-none">
                 <div
                     className="absolute inset-0 opacity-50 mix-blend-overlay bg-cover bg-center bg-no-repeat"
@@ -92,7 +92,7 @@ export default function FounderSection() {
                         transition={{ duration: 1, delay: 0.4 }}
                         className="relative flex h-full items-end justify-center lg:justify-end"
                     >
-                        <div className="relative h-125 w-full max-w-137.5 md:h-150 lg:h-170">
+                        <div className="relative h-125 w-full max-w-137.5 md:h-150 lg:h-195 -mt-20 lg:-mt-32">
                             <Image
                                 src={founder.src}
                                 alt="Harshad Paneliya"
