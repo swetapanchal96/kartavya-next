@@ -3,6 +3,7 @@ import React from "react";
 import Image from "next/image";
 import bg from '@/app/assets/section-bg-1.png'
 import { FaLeaf } from "react-icons/fa";
+import AnimatedHeading from "./AnimatedHeading";
 
 const features = [
   { left: "Exceptional Seed Quality", right: "Climate Adaptability" },
@@ -22,9 +23,9 @@ export default function WhyChooseUs() {
         </span>
         
         
-          <h2 className="mt-6 max-w-3xl text-4xl font-extrabold text-primary md:text-5xl leading-tight">
+          <AnimatedHeading className="mt-6 max-w-3xl text-4xl font-extrabold text-primary md:text-5xl leading-tight">
             Pioneering Innovations in the <br /> Global Agriculture
-          </h2>
+          </AnimatedHeading>
         
       </div>
 

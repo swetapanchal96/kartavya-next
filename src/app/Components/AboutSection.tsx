@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { FaLeaf, FaPlay } from "react-icons/fa";
 import about from '@/app/assets/about-img-1.jpg'
+import AnimatedHeading from "@/app/Components/AnimatedHeading";
 
 export default function AboutVideoSection() {
     const [playVideo, setPlayVideo] = useState(false);
@@ -55,9 +56,9 @@ export default function AboutVideoSection() {
                             About Us
                         </p>
                         
-                        <h2 className="max-w-xl text-4xl font-bold text-primary md:text-[50px]">
+                        <AnimatedHeading className="max-w-xl text-4xl font-bold text-primary md:text-[50px]">
                             Protecting nature nurturing a sustainable future
-                        </h2>
+                        </AnimatedHeading>
 
                         <p className="mt-4 text-[16px] leading-6 text-[#727272]">
                             Kartavya Seeds is committed to supply genetically enhanced high
