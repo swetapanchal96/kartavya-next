@@ -4,6 +4,8 @@ import "./globals.css";
 
 import Header from "./Components/Header";
 import Footer from "./Components/FooterSection";
+import { CursorProvider } from "./context/CursorContext";
+import GlobalCursor from "./Components/GlobalCursor";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,9 +33,13 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col font-sans">
+      <CursorProvider>
+          {/* GLOBAL CURSOR */}
+          <GlobalCursor />
         <Header />
         <main className="grow">{children}</main>
         <Footer />
+        </CursorProvider>
       </body>
     </html>
   );
