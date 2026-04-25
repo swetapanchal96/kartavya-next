@@ -16,7 +16,7 @@ const navLinks = [
   {
     label: "Product",
     href: "#",
-    // dropdown: ["Field Crop", "Pulse Crop", "Forage Crop"],
+    dropdown: ["Vegetables Products", "Field Crops Products"],
   },
   { label: "Partnership", href: "#" },
   { label: "Contact Us", href: "#" },
@@ -27,10 +27,10 @@ export default function Header() {
 
   return (
     // CHANGED: 'relative' to 'fixed top-0 left-0'
-    <header className="w-full fixed top-0 left-0 z-100 shadow-lg bg-secondary" >
+    <header className="w-full fixed top-0 left-0 z-100 shadow-lg bg-primary" >
       
       {/* Top Accent Bar */}
-      <div className="h-1 w-full" style={{ backgroundColor: "#663F2E" }} />
+      <div className="h-1 w-full" style={{ backgroundColor: "#FFF212" }} />
 
       <div className="flex justify-between items-center px-6 py-1 max-w-7xl mx-auto">
 
@@ -59,13 +59,13 @@ export default function Header() {
                 href={link.href}
                 className={`
                   flex items-center gap-1.5 px-4 py-6 text-[15px] font-semibold uppercase tracking-wider transition-all duration-300
-                  ${openDropdown === link.label ? "text-white" : "text-primary hover:text-white"}
+                  ${openDropdown === link.label ? "text-white" : "text-white hover:text-yellow"}
                 `}
               >
                 {link.label}
                 {link.dropdown && (
                   <svg
-                    className={`w-4 h-4 transition-transform duration-300 ${openDropdown === link.label ? "rotate-180 text-primary" : "text-primary"}`}
+                    className={`w-4 h-4 transition-transform duration-300 ${openDropdown === link.label ? "rotate-180 text-yellow" : "text-yellow"}`}
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -84,15 +84,15 @@ export default function Header() {
                     className="overflow-hidden rounded-b-lg shadow-2xl border-t-4"
                     style={{ 
                         backgroundColor: "#ffffff", 
-                        borderTopColor: "#B4D342" 
+                        borderTopColor: "#FFF212" 
                     }}
                   >
                     {link.dropdown.map((item) => (
                       <a
                         key={item}
                         href="#"
-                        className="block px-6 py-4 text-sm font-bold text-[#292627] hover:text-white transition-all duration-200 border-b border-gray-100 last:border-0"
-                        onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#B4D342")}
+                        className="block px-6 py-4 text-sm font-bold text-primary hover:text-primary transition-all duration-200 border-b border-gray-100 last:border-0"
+                        onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#FFF212")}
                         onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "transparent")}
                       >
                         {item}
@@ -107,7 +107,7 @@ export default function Header() {
       </div>
       
       {/* Bottom thin line */}
-      <div className="h-px w-full" style={{ backgroundColor: "#B4D342", opacity: 0.3 }} />
+      <div className="h-0.5 w-full" style={{ backgroundColor: "#B4D342", opacity: 0.3 }} />
     </header>
   );
 }
