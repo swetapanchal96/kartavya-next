@@ -15,3 +15,31 @@
   --color-dark-grey:#292627;
   --color-light-grey:#848688;
 }
+
+/* Add this in globals.css */
+
+@keyframes zoomPulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.4;
+  }
+
+  50% {
+    transform: scale(1.12);
+    opacity: 0.8;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 0.4;
+  }
+}
+
+.custom-pagination .swiper-pagination-bullet {
+  background: #B4D342 !important;
+  opacity: 1 !important;
+}
+
+.custom-pagination .swiper-pagination-bullet-active {
+  background: #663F2E !important;
+}

@@ -3,21 +3,42 @@
 import Image from "next/image";
 import { useState } from "react";
 import { FaLeaf, FaPlay } from "react-icons/fa";
-import about from '@/app/assets/about-img-1.jpg'
+import { motion, Variants } from "framer-motion";
+import about from "@/app/assets/hero-bg-2.jpg";
 import AnimatedHeading from "@/app/Components/AnimatedHeading";
+import { FaArrowRightLong } from "react-icons/fa6";
 
 export default function AboutVideoSection() {
     const [playVideo, setPlayVideo] = useState(false);
 
-    return (
-        <section className="w-full bg-[#f8f8f8] py-20">
-            <div className="mx-auto max-w-7xl px-6 lg:px-10">
-                <div className="grid items-center gap-10 lg:grid-cols-[45%_55%] ">
+    const fadeUp: Variants = {
+        hidden: { opacity: 0, y: 60 },
+        visible: (delay = 0) => ({
+            opacity: 1,
+            y: 0,
+            transition: {
+                duration: 0.8,
+                delay,
+                ease: "easeOut",
+            },
+        }),
+    };
 
+    return (
+        <section className="w-full bg-[#f8f8f8] py-15">
+            <div className="mx-auto container px-6 lg:px-10">
+                <div className="grid items-center gap-10 lg:grid-cols-[50%_50%]">
 
                     {/* left SIDE - Video/Image */}
-                    <div className="relative flex justify-center">
-                        <div className="relative h-120 w-100 overflow-hidden rounded-[220px] shadow-xl">
+                    <motion.div
+                        className="relative flex justify-center"
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true, amount: 0.3 }}
+                        variants={fadeUp}
+                        custom={0.2}
+                    >
+                        <div className="relative h-120 w-full overflow-hidden rounded-xl shadow-xl">
                             {!playVideo ? (
                                 <>
                                     {/* Thumbnail Image */}
@@ -30,12 +51,14 @@ export default function AboutVideoSection() {
                                     />
 
                                     {/* Play Button */}
-                                    <button
+                                    <motion.button
                                         onClick={() => setPlayVideo(true)}
-                                        className="absolute left-1/2 top-1/2 z-10 flex h-20 w-20 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white shadow-lg transition hover:scale-105"
+                                        whileHover={{ scale: 1.08 }}
+                                        whileTap={{ scale: 0.95 }}
+                                        className="absolute left-1/2 top-1/2 z-10 flex h-20 w-20 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white shadow-lg"
                                     >
                                         <FaPlay className="ml-1 text-[28px] text-[#8bbd2d]" />
-                                    </button>
+                                    </motion.button>
                                 </>
                             ) : (
                                 <iframe
@@ -47,37 +70,85 @@ export default function AboutVideoSection() {
                                 />
                             )}
                         </div>
-                    </div>
+                    </motion.div>
 
                     {/* right SIDE - Content */}
-                    <div className="p-4">
-                        <p className="mb-2 flex items-center gap-2 text-sm font-semibold uppercase tracking-[4px] text-secondary">
-                            <span className="text-lg"><FaLeaf /></span>
-                            About Us
-                        </p>
-                        
-                        <AnimatedHeading className="max-w-xl text-4xl font-bold text-primary md:text-[50px]">
-                            Protecting nature nurturing a sustainable future
-                        </AnimatedHeading>
+                    <motion.div
+                        className="p-4"
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true, amount: 0.3 }}
+                    >
+                        <motion.p
+                            custom={0.2}
+                            variants={fadeUp}
+                            className="mb-3 flex items-center gap-2 text-sm font-semibold uppercase tracking-[4px] text-secondary"
+                        >
+                            <span className="text-lg">
+                                <FaLeaf />
+                            </span>
+                            Research & Development
+                        </motion.p>
 
-                        <p className="mt-4 text-[16px] leading-6 text-[#727272]">
-                            Kartavya Seeds is committed to supply genetically enhanced high
-                            quality seeds to farmers. We are an{" "}
-                            <strong>
-                                ISO 9001:2015 certified Company.
-                            </strong>
-                        </p>
+                        <motion.div custom={0.4} variants={fadeUp}>
+                            <AnimatedHeading className="max-w-xl text-3xl font-bold text-primary md:text-[46px]">
+                                Recognized by DSIR for Research & Development Excellence
+                            </AnimatedHeading>
+                        </motion.div>
 
-                        <p className="mt-2 text-[16px] leading-6 text-[#727272]">
-                            Our focus on Research and Development has won us recognition from
-                            Government of India’s Department of Scientific and Industrial
-                            Research (DSIR) of the Ministry of Science and Technology.
-                        </p>
+                        <motion.p
+                            custom={0.6}
+                            variants={fadeUp}
+                            className="mt-3 text-[16px] leading-7 text-[#555]"
+                        >
+                            Our Focus On Research and Development has won us
+                            recognition from Government Of India’s Department of
+                            Scientific and Industrial Research (DSIR) of the
+                            Ministry of Science and Technology.
+                        </motion.p>
 
-                        <p className="mt-2 text-[16px] leading-6 text-[#727272]">
-                            Our seeds are ingrained with qualities to rich, flavorful, nutritious crop. While the farmers harvest prosperous crops, they are able to achieve it with High resources efficiency. We produce, process and supply superior quality seeds for a wide range of crops including In Vegetables <strong> Chilli, Okra, Watermelon, Musk Melon, Tomato, Cabbage, Cucumber, Gourds and Several Vegetable Crops& In Field Crop Cotton, Maize, Bajra, Mustard, Sweet Corn, Cumin, Sesamum ,High Nutritive Fodder.</strong>
-                        </p>
-                    </div>
+                        <motion.p
+                            custom={0.8}
+                            variants={fadeUp}
+                            className="mt-3 text-[16px] leading-7 text-[#555]"
+                        >
+                            We operate a <strong>24-acre Main Research and Development Station</strong>
+                            {" "}along with <strong>Three Regional Research Facilities</strong>
+                            {" "}across India.
+                        </motion.p>
+
+                        <motion.p
+                            custom={1}
+                            variants={fadeUp}
+                            className="mt-3 text-[16px] leading-7 text-[#555]"
+                        >
+                            All dedicated to continuous innovation and genetic
+                            advancement. Our advanced R&D programs focus on
+                            developing <strong>High-performance Hybrid Vegetable Seeds</strong>
+                            {" "}offering superior yield potential, disease
+                            resistance, and adaptability across diverse
+                            agro-climatic zones.
+                        </motion.p>
+
+                        <motion.div
+                            custom={1.2}
+                            variants={fadeUp}
+                            className="mt-4"
+                        >
+                            <button className="group relative inline-flex items-center overflow-hidden rounded-full bg-linear-to-r from-primary via-blue to-secondary  p-0.5 hover:bg-none hover:bg-yellow! shadow-lg transition-all duration-300 hover:scale-105">
+
+                                {/* Inner Button */}
+                                <span className="flex items-center gap-3 rounded-full bg-white px-4 py-4 text-sm font-bold uppercase tracking-[2px] text-primary transition-all duration-300 group-hover:bg-yellow group-hover:text-primary">
+                                    Read More
+
+                                    {/* Arrow Circle */}
+                                    <span className="flex h-5 w-5 items-center justify-center rounded-full bg-primary text-white transition-all duration-300 group-hover:bg-primary group-hover:text-white">
+                                        <FaArrowRightLong />
+                                    </span>
+                                </span>
+                            </button>
+                        </motion.div>
+                    </motion.div>
                 </div>
             </div>
         </section>
