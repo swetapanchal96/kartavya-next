@@ -6,6 +6,7 @@ import Header from "./Components/Header";
 import Footer from "./Components/FooterSection";
 import { CursorProvider } from "./context/CursorContext";
 import GlobalCursor from "./Components/GlobalCursor";
+import KeepExploring from "./Components/KeepExploring";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,12 +33,13 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col font-sans">
+      <body className="min-h-full flex flex-col overflow-x-hidden font-sans">
       <CursorProvider>
           {/* GLOBAL CURSOR */}
           <GlobalCursor />
         <Header />
         <main className="grow">{children}</main>
+        <KeepExploring />
         <Footer />
         </CursorProvider>
       </body>
