@@ -19,7 +19,7 @@ export default function WhyChooseUs() {
 
       {/* 1. TOP AREA (Based on Image 2) */}
       <div className="relative z-20 flex flex-col items-center text-center px-4 mb-10">
-        <span className="flex items-center gap-2 rounded-full border border-secondary/30 px-4 py-1 text-xs font-bold uppercase tracking-widest text-secondary shadow-sm">
+        <span className="flex items-center gap-2 rounded-full border border-secondary/30 px-4 py-1 text-lg font-bold uppercase tracking-widest text-secondary shadow-sm">
           <span className="text-sm"><FaLeaf /></span> Why Choose Us
         </span>
 
@@ -62,13 +62,13 @@ export default function WhyChooseUs() {
           </div>
 
           {/* Center Image (Microscope/Lab) */}
-          <div className="relative flex justify-center py-10 lg:py-0">
-            <div className="relative h-100 w-full max-w-100">
+          <div className="relative flex justify-center py-10 lg:py-0!">
+            <div className="absolute -bottom-60 h-120 w-full max-w-100">
               <Image
                 src={whyChoose.src}
                 alt="R&D Lab"
                 fill
-                className="object-contain drop-shadow-2xl"
+                className="object-cover drop-shadow-2xl"
               />
             </div>
           </div>

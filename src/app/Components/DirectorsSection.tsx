@@ -2,8 +2,8 @@
 
 import React from "react";
 import Image from "next/image";
-import team1 from "@/app/assets/team-1.jpg";
-import team2 from "@/app/assets/team-3.jpg";
+import team1 from "@/app/assets/Bhaveshsir.webp";
+import team2 from "@/app/assets/NiteshSir.webp";
 import { FaLeaf } from "react-icons/fa";
 import AnimatedHeading from "./AnimatedHeading";
 
@@ -22,7 +22,7 @@ export default function DirectorsSection() {
                                 src={team1}
                                 alt="Bhavesh Savaliya"
                                 fill
-                                className="object-cover transition-all duration-700 ease-in-out group-hover:scale-110"
+                                className="object-cover object-top transition-all duration-700 ease-in-out group-hover:scale-110"
                             />
 
                             {/* Overlay Effect */}
@@ -33,10 +33,10 @@ export default function DirectorsSection() {
 
                         </div>
                     </div>
-
+ 
                     {/* Right Side Content - 60% */}
                     <div className="lg:col-span-3 pr-10">
-                        <p className="flex items-center gap-4 uppercase tracking-[4px] text-secondary font-semibold mb-4">
+                        <p className="flex items-center gap-4 text-lg uppercase tracking-[4px] text-secondary font-semibold mb-4">
                            <FaLeaf /> Our Director
                         </p>
 
@@ -55,7 +55,7 @@ export default function DirectorsSection() {
 
                     {/* Left Side Content - 60% */}
                     <div className="lg:col-span-3 order-2 lg:order-1 pl-10">
-                        <p className="flex items-center gap-4 uppercase tracking-[4px] text-secondary font-semibold mb-4">
+                        <p className="flex text-lg items-center gap-4 uppercase tracking-[4px] text-secondary font-semibold mb-4">
                            <FaLeaf /> Our Director
                         </p>
 
@@ -76,7 +76,7 @@ export default function DirectorsSection() {
                                 src={team2}
                                 alt="Nitesh Savaliya"
                                 fill
-                                className="object-cover transition-all duration-700 ease-in-out group-hover:scale-110"
+                                className="object-cover object-top transition-all duration-700 ease-in-out group-hover:scale-110"
                             />
 
                             {/* Overlay Effect */}

@@ -40,7 +40,7 @@ const farmerVideos = [
     {
         id: 5,
         title:
-            "55 Cabbage",
+            "Rudra-55 Cabbage",
         embed:
             "https://www.youtube.com/embed/5V6KnGiGHuw?si=r8ZcRvRm7ssmjeHK",
     },
@@ -60,7 +60,7 @@ export default function FarmerStoriesSection() {
 
                 {/* Section Heading */}
                 <div className="text-center mb-14">
-                    <p className="flex items-center justify-center gap-3 uppercase tracking-[5px] text-secondary font-semibold mb-2">
+                    <p className="flex items-center justify-center gap-3 uppercase tracking-[5px] text-secondary text-lg font-semibold mb-2">
                         <FaLeaf />
                         Farmer Stories
                     </p>
@@ -121,7 +121,7 @@ export default function FarmerStoriesSection() {
 
                                     {/* Title (max 2 lines) */}
                                     <div className="p-5">
-                                        <h3 className="text-primary font-semibold text-lg leading-7 line-clamp-2 min-h-7 group-hover:text-secondary bg-white opacity-100 transition-all duration-300">
+                                        <h3 className="text-primary font-extrabold text-xl leading-7 line-clamp-2 min-h-7 group-hover:text-secondary bg-white opacity-100 transition-all duration-300">
                                             {video.title}
                                         </h3>
                                     </div>

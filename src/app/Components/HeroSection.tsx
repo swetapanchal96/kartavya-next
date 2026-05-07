@@ -57,7 +57,7 @@ export default function HeroSection() {
   }, [mouseX, mouseY]);
 
   return (
-    <section className="relative h-[90vh] mt-28.75 w-full overflow-hidden bg-dark-grey">
+    <section className="relative h-[90vh] mt-22.5 w-full overflow-hidden bg-dark-grey">
       
       {/* 1. THE CUSTOM CURSOR ELEMENT */}
       <motion.div

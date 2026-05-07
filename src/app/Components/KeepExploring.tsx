@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { FaArrowRightLong } from "react-icons/fa6";
+import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 
 export default function KeepExploring() {
     return (
@@ -29,12 +30,12 @@ export default function KeepExploring() {
                                     <Link
                                         key={index}
                                         href={item.link}
-                                        className="group inline-flex items-center gap-4 rounded-full bg-yellow px-8 py-4 text-primary font-semibold text-lg shadow-sm transition-all duration-300 hover:bg-secondary hover:scale-105"
+                                        className="group inline-flex items-center gap-4 rounded-full bg-primary px-8 py-4 text-white font-semibold text-lg shadow-sm transition-all duration-300 hover:bg-secondary hover:scale-105"
                                     >
                                         <span>{item.title}</span>
 
                                         <span className="text-xl transition-all duration-300 group-hover:translate-x-1">
-                                            <FaArrowRightLong />
+                                            <MdOutlineKeyboardArrowRight />
                                         </span>
                                     </Link>
                                 ))}

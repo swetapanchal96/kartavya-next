@@ -23,7 +23,7 @@ import product14 from "@/app/assets/KARTAVYA-2-IN-1.png";
 
 
 const categories = [
-  "All",
+  // "All",
   "Tomato",
   "Chilli",
   "Bitter Gourd",
@@ -34,7 +34,7 @@ const categories = [
   "Muskmelon",
   "Okra",
   "Cabbage",
-  "Radish",
+  // "Radish",
   "Sweet Corn",
   "Cotton",
 ];
@@ -128,23 +128,23 @@ export default function OurProductsSection() {
 
   return (
     // <section className="py-20 bg-linear-to-br from-blue/50 via-secondary/35  to-primary/50 overflow-hidden relative">
-    <section className="py-20 bg-secondary overflow-hidden relative">
-      <div className="absolute inset-0 bg-yellow/10 pointer-events-none"></div>
+    <section className="py-20 bg-primary overflow-hidden relative">
+      {/* <div className="absolute inset-0 bg-primary/10 pointer-events-none"></div> */}
 
       {/* Background Blur */}
-      <div className="absolute top-20 left-10 w-72 h-72 bg-secondary/10 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-20 right-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl"></div>
+      {/* <div className="absolute top-20 left-10 w-72 h-72 bg-secondary/10 rounded-full blur-3xl"></div> */}
+      {/* <div className="absolute bottom-20 right-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl"></div> */}
 
       <div className="container mx-auto px-6 md:px-12 relative z-10">
 
         {/* Heading */}
         <div className="text-center mb-6">
-          <p className="flex items-center justify-center gap-3 uppercase tracking-[5px] text-primary font-semibold mb-4">
+          <p className="flex text-lg items-center justify-center gap-3 uppercase tracking-[5px] text-white font-semibold mb-4">
             <FaLeaf />
             Our Product
           </p>
 
-          <AnimatedHeading className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary">
+          <AnimatedHeading className="text-4xl md:text-5xl lg:text-6xl font-bold text-white">
             Highlights Product
           </AnimatedHeading>
         </div>
@@ -178,7 +178,7 @@ export default function OurProductsSection() {
               key={product.id}
               className="group flex justify-center"
             >
-              <div className="relative w-65 h-65 rounded-full overflow-hidden cursor-pointer shadow-xl border-4 border-white hover:border-secondary transition-all duration-500 hover:-translate-y-2">
+              <div className="relative w-65 h-65 rounded-full overflow-hidden cursor-pointer shadow-xl  transition-all duration-500 hover:-translate-y-2">
 
                 {/* Product Image */}
                 <Image
@@ -200,7 +200,7 @@ export default function OurProductsSection() {
         </div>
       </div>
 
-      <div className="absolute -bottom-1  h-[165vh] w-full opacity-50 pointer-events-none">
+      <div className="absolute -bottom-1  h-[165vh] w-full opacity-20 pointer-events-none">
         <Image
           src={bg.src}
           alt="background-texture"

@@ -11,7 +11,7 @@ import {
   FaEnvelope,
 } from "react-icons/fa";
 import { IoLocationSharp } from "react-icons/io5";
-import logo from "@/app/assets/logo.png"; // Adjust path to your logo
+import logo from "@/app/assets/Kartavya-Seeds-Logo-round.png"; // Adjust path to your logo
 import { FaArrowRightLong, FaXTwitter } from "react-icons/fa6";
 
 export default function Footer() {
