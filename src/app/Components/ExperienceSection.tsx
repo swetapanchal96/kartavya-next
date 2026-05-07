@@ -5,7 +5,8 @@ import AnimatedHeading from "./AnimatedHeading";
 
 export default function ExperienceSection() {
     return (
-        <section className="relative overflow-hidden py-6 bg-gradient-to-r from-primary via-[#7a4d38]  to-secondary">
+        <section className="relative overflow-hidden py-6 bg-primary">
+            
             <div className="mx-auto container px-6 lg:px-10">
 
                 <motion.div
@@ -13,15 +14,15 @@ export default function ExperienceSection() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6 }}
-                    className="rounded-2xl border border-white/20 bg-white/10  py-4 backdrop-blur-xl shadow-lg"
+                    className="rounded-2xl border border-white/20 bg-white/90 py-4 backdrop-blur-xl shadow-lg"
                 >
                     <div className="flex flex-col items-center justify-center text-center md:flex-row md:gap-4">
 
-                        <AnimatedHeading className="text-5xl font-black leading-none text-white md:text-7xl">
+                        <AnimatedHeading className="text-5xl font-black leading-none text-primary md:text-7xl">
                             20+
                         </AnimatedHeading>
 
-                        <h2 className="text-2xl font-semibold uppercase tracking-[6px] text-white md:text-4xl">
+                        <h2 className="text-2xl font-semibold uppercase tracking-[6px] text-primary md:text-4xl">
                             Years of Experience
                         </h2>
 

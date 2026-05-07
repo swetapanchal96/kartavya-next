@@ -6,13 +6,52 @@ import worldMap from "@/app/assets/Kartavya-Global-Presence.webp";
 import { FaLeaf } from "react-icons/fa";
 import AnimatedHeading from "./AnimatedHeading";
 
+const countries = [
+  {
+    name: "Thailand",
+    flag: "https://flagcdn.com/w40/th.png",
+  },
+  {
+    name: "Bangladesh",
+    flag: "https://flagcdn.com/w40/bd.png",
+  },
+  {
+    name: "Pakistan",
+    flag: "https://flagcdn.com/w40/pk.png",
+  },
+  {
+    name: "Iran",
+    flag: "https://flagcdn.com/w40/ir.png",
+  },
+  {
+    name: "Jordan",
+    flag: "https://flagcdn.com/w40/jo.png",
+  },
+  {
+    name: "Sri Lanka",
+    flag: "https://flagcdn.com/w40/lk.png",
+  },
+  {
+    name: "Italy",
+    flag: "https://flagcdn.com/w40/it.png",
+  },
+  {
+    name: "Turkey",
+    flag: "https://flagcdn.com/w40/tr.png",
+  },
+  {
+    name: "USA",
+    flag: "https://flagcdn.com/w40/us.png",
+  },
+];
+
 export default function GlobalPresenceSection() {
   return (
-    <section className="relative pt-20  bg-white overflow-hidden">
-      <div className="container mx-auto  relative z-10">
+    <section className="relative pt-20 bg-white overflow-hidden">
+      <div className="container mx-auto relative z-10">
         {/* Section Heading */}
-        <div className="text-center mb-0">
-          <p className="flex items-center justify-center gap-3 uppercase tracking-[5px] text-secondary font-semibold mb-4">
+        <div className="text-center mb-12">
+          <p className="flex items-center text-lg justify-center gap-3 uppercase tracking-[5px] text-secondary font-semibold mb-4">
             <FaLeaf />
             Global Presence
           </p>
@@ -28,28 +67,55 @@ export default function GlobalPresenceSection() {
           </p>
         </div>
 
-        {/* World Map Section */}
-        <div className="relative  overflow-hidden  border border-white/10! ">
+        {/* Main Content */}
+        <div className="grid px-10 lg:grid-cols-12 items-center  gap-10">
+          
+          {/* Left Countries List */}
+          <div className="lg:col-span-3">
+            {countries.map((country, index) => (
+              <div
+                key={index}
+                className="flex items-center gap-4 group"
+              >
+                {/* Flag */}
+                <div className="w-14 h-14 rounded-full  flex items-center justify-center shrink-0  group-hover:scale-110 transition-all duration-300">
+                  <img
+                    src={country.flag}
+                    alt={country.name}
+                    className="w-8 h-8 rounded-full object-cover"
+                  />
+                </div>
 
-          {/* Map Image */}
-          <div className="relative w-full h-162.5">
-            <Image
-              src={worldMap}
-              alt="Global Presence Map"
-              fill
-              className="object-contain transition-all duration-700 "
-              priority
-            />
+                {/* Country Name */}
+                <div>
+                  <h3 className="text-2xl md:text-3xl font-bold text-primary leading-none">
+                    {country.name}
+                  </h3>
+
+                  {/* <p className="text-primary/70 text-sm mt-1 tracking-wide">
+                    Country Served
+                  </p> */}
+                </div>
+              </div>
+            ))}
           </div>
 
-          {/* Overlay Gradient */}
-          {/* <div className="absolute inset-0 bg-linear-to-t from-black/30 via-transparent to-transparent"></div> */}
+          {/* Right World Map */}
+          <div className="lg:col-span-9">
+            <div className="relative overflow-hidden">
+              <div className="relative w-full h-[550px]">
+                <Image
+                  src={worldMap}
+                  alt="Global Presence Map"
+                  fill
+                  className="object-contain transition-all duration-700"
+                  priority
+                />
+              </div>
+            </div>
+          </div>
 
-          {/* Shine Sweep Effect */}
-          {/* <div className="absolute top-0 -left-[150%] w-[40%] h-full bg-white/10 skew-x-[-20deg] group-hover:left-[150%] transition-all duration-1000 ease-in-out"></div> */}
         </div>
-
-        
       </div>
     </section>
   );
