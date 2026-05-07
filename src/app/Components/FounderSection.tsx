@@ -46,7 +46,7 @@ export default function FounderSection() {
                     >
                         <motion.div variants={fadeInUp} className="flex items-center gap-3 mb-6">
                             <span className="text-secondary text-xl"><FaLeaf /></span>
-                            <span className="text-sm font-bold uppercase tracking-[4px] text-gray-400">
+                            <span className="text-lg font-bold uppercase tracking-[4px] text-gray-400">
                                 Our Founder & CEO
                             </span>
                         </motion.div>

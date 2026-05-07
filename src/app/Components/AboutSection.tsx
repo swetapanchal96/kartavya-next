@@ -82,7 +82,7 @@ export default function AboutVideoSection() {
                         <motion.p
                             custom={0.2}
                             variants={fadeUp}
-                            className="mb-3 flex items-center gap-2 text-sm font-semibold uppercase tracking-[4px] text-secondary"
+                            className="mb-3 flex items-center gap-2 text-lg font-semibold uppercase tracking-[4px] text-secondary"
                         >
                             <span className="text-lg">
                                 <FaLeaf />
@@ -135,18 +135,18 @@ export default function AboutVideoSection() {
                             variants={fadeUp}
                             className="mt-4"
                         >
-                            <button className="group relative inline-flex items-center overflow-hidden rounded-full bg-linear-to-r from-primary via-blue to-secondary  p-0.5 hover:bg-none hover:bg-yellow! shadow-lg transition-all duration-300 hover:scale-105">
+                            {/* <button className="group relative inline-flex items-center overflow-hidden rounded-full bg-linear-to-r from-primary via-blue to-secondary  p-0.5 hover:bg-none hover:bg-yellow! shadow-lg transition-all duration-300 hover:scale-105">
 
-                                {/* Inner Button */}
+                                
                                 <span className="flex items-center gap-3 rounded-full bg-white px-4 py-4 text-sm font-bold uppercase tracking-[2px] text-primary transition-all duration-300 group-hover:bg-yellow group-hover:text-primary">
                                     Read More
 
-                                    {/* Arrow Circle */}
+                                    
                                     <span className="flex h-5 w-5 items-center justify-center rounded-full bg-primary text-white transition-all duration-300 group-hover:bg-primary group-hover:text-white">
                                         <FaArrowRightLong />
                                     </span>
                                 </span>
-                            </button>
+                            </button> */}
                         </motion.div>
                     </motion.div>
                 </div>
