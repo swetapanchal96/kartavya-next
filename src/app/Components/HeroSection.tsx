@@ -4,15 +4,18 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectFade } from "swiper/modules";
 import { motion, AnimatePresence, useMotionValue, useSpring } from "framer-motion";
 import { useState, useEffect } from "react";
-
-
+import banner1 from '@/app/assets/banner-1.jpeg';
+import banner2 from '@/app/assets/banner-2.jpg';
+import banner3 from '@/app/assets/banner-3.jpg';
+import banner4 from '@/app/assets/banner-4.jpg';
+import banner5 from '@/app/assets/banner-5.jpg';
 
 const slides = [
   {
     id: 1,
     title: "Science led Innovation",
     subtitle: "Developing high-yield seeds through research.",
-    image: "https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?q=80&w=2000",
+    image: banner1.src,
     origin: "20% 20%",
     zoomType: "in"
   },
@@ -20,7 +23,7 @@ const slides = [
     id: 2,
     title: "Seed for every need",
     subtitle: "Empowering farmers with quality and reliability.",
-    image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=2000",
+    image: banner2.src,
     origin: "80% 80%",
     zoomType: "in"
   },
@@ -28,9 +31,25 @@ const slides = [
     id: 3,
     title: "Rooted in Excellence",
     subtitle: "Sustainable agriculture for a better tomorrow.",
-    image: "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?q=80&w=2000",
+    image: banner3.src,
     origin: "center center",
     zoomType: "out"
+  },
+  {
+    id: 4,
+    title: "Science led Innovation",
+    subtitle: "Developing high-yield seeds through research.",
+    image: banner4.src,
+    origin: "20% 20%",
+    zoomType: "in"
+  },
+  {
+    id: 5,
+    title: "Seed for every need",
+    subtitle: "Empowering farmers with quality and reliability.",
+    image: banner5.src,
+    origin: "80% 80%",
+    zoomType: "in"
   },
 ];
 

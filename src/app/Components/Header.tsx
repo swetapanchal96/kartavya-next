@@ -7,22 +7,51 @@ import { HiMenuAlt3 } from "react-icons/hi";
 import { IoClose } from "react-icons/io5";
 import Link from "next/link";
 
-const navLinks = [
+type DropdownItem = {
+  label: string;
+  href: string;
+};
+
+type NavLink = {
+  label: string;
+  href: string;
+  dropdown?: DropdownItem[];
+};
+
+const navLinks: NavLink[] = [
   { label: "Home", href: "/" },
-  { label: "About Us", href: "about" },
-  { label: "Research & Development", href: "#" },
+  { label: "About Us", href: "/about" },
+  { label: "Research & Development", href: "/research&development" },
   { 
     label: "Services", 
     href: "#",
-    dropdown: ["Increment of Basic Seed", "Production"] 
+    dropdown: [
+      {
+        label: "Increment of Basic Seed",
+        href: "/basic-seed",
+      },
+      {
+        label: "Production",
+        href: "/production",
+      },
+    ],
   },
   {
     label: "Product",
-    href: "#",
-    dropdown: ["Vegetables Products", "Field Crops Products"],
+    href: "product",
+    dropdown: [
+      {
+        label: "Vegetables Products",
+        href: "#",
+      },
+      {
+        label: "Field Crops Products",
+        href: "#",
+      },
+    ],
   },
-  { label: "Partnership", href: "#" },
-  { label: "Contact Us", href: "#" },
+  { label: "Partnership", href: "/partnership" },
+  { label: "Contact Us", href: "/contact" },
 ];
 
 export default function Header() {
@@ -92,16 +121,16 @@ export default function Header() {
                         borderTopColor: "#FFF212" 
                     }}
                   >
-                    {link.dropdown.map((item) => (
-                      <a
-                        key={item}
-                        href="#"
+                    {link.dropdown.map((item, index) => (
+                      <Link
+                        key={index}
+                        href={item.href}
                         className="block px-6 py-4 text-sm font-bold text-primary hover:text-primary transition-all duration-200 border-b border-gray-100 last:border-0"
                         onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#FFF212")}
                         onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "transparent")}
                       >
-                        {item}
-                      </a>
+                        {item.label}
+                      </Link>
                     ))}
                   </div>
                 </div>
@@ -172,17 +201,17 @@ export default function Header() {
                   {link.dropdown &&
                     openDropdown === link.label && (
                       <div className="ml-4 border-l border-yellow-300/40">
-                        {link.dropdown.map((item) => (
+                        {link.dropdown.map((item, index) => (
                           <a
-                            key={item}
-                            href="#"
+                            key={index}
+                            href={item.href}
                             className="
                               block py-3 pl-4 text-sm
                               text-white/90 hover:text-yellow-300
                               transition
                             "
                           >
-                            {item}
+                            {item.label}
                           </a>
                         ))}
                       </div>

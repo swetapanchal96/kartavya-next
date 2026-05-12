@@ -8,28 +8,8 @@ import AnimatedHeading from "./AnimatedHeading";
 
 const countries = [
   {
-    name: "Thailand",
-    flag: "https://flagcdn.com/w40/th.png",
-  },
-  {
-    name: "Bangladesh",
-    flag: "https://flagcdn.com/w40/bd.png",
-  },
-  {
-    name: "Pakistan",
-    flag: "https://flagcdn.com/w40/pk.png",
-  },
-  {
-    name: "Iran",
-    flag: "https://flagcdn.com/w40/ir.png",
-  },
-  {
-    name: "Jordan",
-    flag: "https://flagcdn.com/w40/jo.png",
-  },
-  {
-    name: "Sri Lanka",
-    flag: "https://flagcdn.com/w40/lk.png",
+    name: "USA",
+    flag: "https://flagcdn.com/w40/us.png",
   },
   {
     name: "Italy",
@@ -40,9 +20,32 @@ const countries = [
     flag: "https://flagcdn.com/w40/tr.png",
   },
   {
-    name: "USA",
-    flag: "https://flagcdn.com/w40/us.png",
+    name: "Jordan",
+    flag: "https://flagcdn.com/w40/jo.png",
   },
+  {
+    name: "Iran",
+    flag: "https://flagcdn.com/w40/ir.png",
+  },
+  {
+    name: "Pakistan",
+    flag: "https://flagcdn.com/w40/pk.png",
+  },
+  {
+    name: "Bangladesh",
+    flag: "https://flagcdn.com/w40/bd.png",
+  },
+  {
+    name: "Thailand",
+    flag: "https://flagcdn.com/w40/th.png",
+  },
+  {
+    name: "Sri Lanka",
+    flag: "https://flagcdn.com/w40/lk.png",
+  },
+  
+  
+  
 ];
 
 export default function GlobalPresenceSection() {
@@ -78,17 +81,17 @@ export default function GlobalPresenceSection() {
                 className="flex items-center gap-4 group"
               >
                 {/* Flag */}
-                <div className="w-14 h-14 rounded-full  flex items-center justify-center shrink-0  group-hover:scale-110 transition-all duration-300">
+                <div className="w-10 h-10 rounded-full  flex items-center justify-center shrink-0  group-hover:scale-110 transition-all duration-300">
                   <img
                     src={country.flag}
                     alt={country.name}
-                    className="w-8 h-8 rounded-full object-cover"
+                    className="w-5 h-5 rounded-full object-cover"
                   />
                 </div>
 
                 {/* Country Name */}
                 <div>
-                  <h3 className="text-2xl md:text-3xl font-bold text-primary leading-none">
+                  <h3 className="text-2xl  font-bold text-primary leading-none">
                     {country.name}
                   </h3>
 

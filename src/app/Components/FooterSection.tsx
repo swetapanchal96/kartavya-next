@@ -8,6 +8,7 @@ import {
   FaFacebookF,
   FaLinkedinIn,
   FaPhoneAlt,
+  FaInstagram,
   FaEnvelope,
 } from "react-icons/fa";
 import { IoLocationSharp } from "react-icons/io5";
@@ -17,7 +18,7 @@ import { FaArrowRightLong, FaXTwitter } from "react-icons/fa6";
 export default function Footer() {
   return (
     <>
-      
+
       <footer className="bg-primary text-white ">
         {/* TOP NAVIGATION STRIP */}
 
@@ -26,7 +27,9 @@ export default function Footer() {
           <div className="flex flex-wrap items-center justify-between gap-8 py-10 border-b border-white/20">
             {/* Logo */}
             <div className=" rounded-full p-2 w-45 h-32 flex items-center justify-center">
-              <Image src={logo} alt="Kartavya Seeds" className="object-contain" />
+              <Link href='/'>
+                <Image src={logo} alt="Kartavya Seeds" className="object-contain" />
+              </Link>
             </div>
 
             {/* Address */}
@@ -83,7 +86,7 @@ export default function Footer() {
                 protect nature, reduce our carbon footprint.
               </p>
               <div className="flex gap-3">
-                {[FaYoutube, FaXTwitter, FaFacebookF, FaLinkedinIn].map(
+                {[FaYoutube, FaInstagram, FaFacebookF, FaLinkedinIn].map(
                   (Icon, i) => (
                     <Link
                       key={i}
@@ -99,39 +102,69 @@ export default function Footer() {
 
             {/* Quick Link - 20% */}
             <div className="lg:col-span-2">
-              <h3 className="text-[22px] font-bold mb-7.5">Quick Link</h3>
+              <h3 className="mb-7.5 text-[22px] font-bold">Quick Link</h3>
+
               <ul className="space-y-3 text-white">
-                {["Home", "About Us", "Services", "Product", "Latest Blog"].map(
-                  (item) => (
-                    <li key={item}>
-                      <Link
-                        href="#"
-                        className="hover:text-yellow text-md transition-colors"
-                      >
-                        {item}
-                      </Link>
-                    </li>
-                  )
-                )}
+                <li>
+                  <Link
+                    href="/"
+                    className="text-md transition-colors hover:text-yellow"
+                  >
+                    Home
+                  </Link>
+                </li>
+
+                <li>
+                  <Link
+                    href="/about"
+                    className="text-md transition-colors hover:text-yellow"
+                  >
+                    About Us
+                  </Link>
+                </li>
+
+                <li>
+                  <Link
+                    href="/services"
+                    className="text-md transition-colors hover:text-yellow"
+                  >
+                    Services
+                  </Link>
+                </li>
+
+                <li>
+                  <Link
+                    href="/blog"
+                    className="text-md transition-colors hover:text-yellow"
+                  >
+                    Blog
+                  </Link>
+                </li>
               </ul>
             </div>
 
             {/* Our Products - 20% */}
             <div className="lg:col-span-2">
-              <h3 className="text-[22px] font-bold mb-7.5">Our Products</h3>
+              <h3 className="mb-7.5 text-[22px] font-bold">Our Products</h3>
+
               <ul className="space-y-3 text-gray-200">
-                {["Field Crop", "Spices Crop", "Pulse Crop", "Forage Crop"].map(
-                  (item) => (
-                    <li key={item}>
-                      <Link
-                        href="#"
-                        className="hover:text-yellow transition-colors"
-                      >
-                        {item}
-                      </Link>
-                    </li>
-                  )
-                )}
+                <li>
+                  <Link
+                    href="/product"
+                    className="transition-colors hover:text-yellow"
+                  >
+                    Vegetable Crop
+                  </Link>
+                </li>
+
+                <li>
+                  <Link
+                    href="/product"
+                    className="transition-colors hover:text-yellow"
+                  >
+                    Field Crop
+                  </Link>
+                </li>
               </ul>
             </div>
 
@@ -154,9 +187,9 @@ export default function Footer() {
 
         {/* BOTTOM BAR: COPYRIGHT */}
         <div className="bg-primary-dark border-t border-white/10 py-6">
-          <div className="container mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-300">
-            <p>Copyright © {new Date().getFullYear()} All Rights Reserved.</p>
-            <div className="flex gap-6">
+          <div className="container mx-auto px-6 md:px-12 flex flex-col md:flex-row  items-center justify-center gap-4 text-sm text-gray-300">
+            <p> © {new Date().getFullYear()} Kartavya Seeds. All Rights Reserved.</p>
+            {/* <div className="flex gap-6">
               <Link href="#" className="hover:text-white">
                 Terms & Condition
               </Link>
@@ -164,7 +197,7 @@ export default function Footer() {
               <Link href="#" className="hover:text-white">
                 Privacy Policy
               </Link>
-            </div>
+            </div> */}
           </div>
         </div>
       </footer>
