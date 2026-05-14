@@ -2,6 +2,8 @@
 
 import Breadcrumb from "@/app/Components/Breadcrumb";
 import header from "@/app/assets/page-header-bg.jpg";
+import { Autoplay, EffectFade } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -15,7 +17,7 @@ import {
 } from "react-icons/fa";
 import AnimatedHeading from "../Components/AnimatedHeading";
 import variety1 from '@/app/assets/JUMBO.png';
-import variety2 from '@/app/assets/KABUL.png';
+import variety2 from '@/app/assets/Kartavya-101.png';
 import variety3 from '@/app/assets/Kailash.png';
 import variety4 from '@/app/assets/KAMINI.png';
 
@@ -33,8 +35,8 @@ const categories = [
 const galleryImages = [
     variety1.src,
     variety2.src,
-    variety3.src,
-    variety4.src,
+    // variety3.src,
+    // variety4.src,
 ];
 
 const specifications = [
@@ -79,7 +81,7 @@ export default function VarietyDetailPage() {
                         {/* LEFT CONTENT */}
                         <div>
                             {/* Heading */}
-                            <div className="mb-7">
+                            {/* <div className="mb-7">
                                 <span className="mb-1 inline-block text-sm font-bold uppercase tracking-[6px] text-primary">
                                     Tomato Variety
                                 </span>
@@ -87,70 +89,70 @@ export default function VarietyDetailPage() {
                                 <AnimatedHeading className="text-4xl font-black uppercase leading-tight text-primary sm:text-5xl md:text-6xl">
                                     Jumbo
                                 </AnimatedHeading>
-                            </div>
+                            </div> */}
 
 
 
                             {/* IMAGE SHOWCASE */}
-                            <div className="mt-10 grid  lg:grid-cols-[1fr_1fr]">
-                                {/* LEFT BIG ROUND IMAGE */}
-                                <div className="flex items-center justify-start">
-                                    <div className="group relative">
-                                        {/* Outer Ring */}
-                                        <div className="absolute inset-0 scale-110 rounded-full  transition duration-500 group-hover:scale-[1.15] group-hover:border-secondary" />
+                            <div className="mt-10 overflow-hidden">
+                                <Swiper
+                                    // modules={[Autoplay]}
+                                    // autoplay={{
+                                    //   delay: 2500,
+                                    //   disableOnInteraction: false,
+                                    // }}
+                                    speed={1000}
+                                    loop={galleryImages.length > 2}
+                                    centeredSlides={false}
+                                    breakpoints={{
+                                        0: {
+                                            slidesPerView: 1,
+                                            spaceBetween: 20,
+                                        },
+                                        640: {
+                                            slidesPerView: 1.5,
+                                            spaceBetween: 25,
+                                        },
+                                        1024: {
+                                            slidesPerView: 2,
+                                            spaceBetween: 20,
+                                        },
+                                    }}
+                                    className="w-full"
+                                >
+                                    {galleryImages.map((image, index) => (
+                                        <SwiperSlide key={index}>
+                                            <div className="flex justify-center py-6">
+                                                <div className="group relative">
+                                                    {/* Glow */}
+                                                    <div className="absolute inset-0 rounded-full blur-2xl transition duration-500 "></div>
 
-                                        {/* Main Image */}
-                                        <div className="relative h-80 w-80 overflow-hidden rounded-full   bg-white shadow-[0_25px_80px_rgba(0,0,0,0.12)]">
-                                            <Image
-                                                src={galleryImages[0]}
-                                                alt="KS - 101"
-                                                fill
-                                                className="object-cover transition duration-700 group-hover:scale-110"
-                                            />
+                                                    {/* Image */}
+                                                    <div className="relative h-75 w-75 overflow-hidden rounded-full border-[6px] border-primary/20 bg-white  transition duration-500 group-hover:-translate-y-2 group-hover:border-secondary">
+                                                        <Image
+                                                            src={image}
+                                                            alt="Gallery"
+                                                            fill
+                                                            className="object-contain transition duration-700 group-hover:scale-110"
+                                                        />
 
-                                            {/* Overlay */}
-                                            <div className="absolute inset-0 bg-linear-to-t from-dark-grey/70 via-transparent to-transparent" />
+                                                        {/* Overlay */}
+                                                        {/* <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent" /> */}
 
+                                                        {/* Content */}
+                                                        {/* <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-center">
+                                                            <h3 className="text-3xl font-black uppercase text-white">
+                                                                Jumbo
+                                                            </h3>
 
-                                            {/* Bottom Content */}
-                                            <div className="absolute bottom-10 left-1/2 -translate-x-1/2 text-center">
-                                                <h3 className="text-3xl font-black uppercase text-white">
-                                                    Jumbo
-                                                </h3>
-
-                                                <div className="mx-auto mt-2 h-0.75 w-20 rounded-full bg-secondary" />
+                                                            <div className="mx-auto mt-2 h-0.75 w-20 rounded-full bg-secondary transition-all duration-300 group-hover:w-28" />
+                                                        </div> */}
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
-
-
-                                    </div>
-                                </div>
-
-                                {/* RIGHT ROUND IMAGES */}
-                                <div className="grid grid-cols-2 gap-6 self-center">
-                                    {galleryImages.slice(1, 5).map((image, index) => (
-                                        <div
-                                            key={index}
-                                            className="group relative flex items-center justify-center"
-                                        >
-                                            {/* Outer Ring */}
-                                            <div className="absolute inset-0 scale-110 rounded-full transition duration-500 group-hover:scale-[1.15] group-hover:border-secondary/40" />
-
-                                            {/* Image */}
-                                            <div className="relative h-45 w-45 overflow-hidden rounded-full  bg-white shadow-[0_15px_50px_rgba(0,0,0,0.08)]">
-                                                <Image
-                                                    src={image}
-                                                    alt="Gallery"
-                                                    fill
-                                                    className="object-cover transition duration-700 group-hover:scale-110"
-                                                />
-
-                                                {/* Overlay */}
-                                                <div className="absolute inset-0 bg-dark-grey/10 transition duration-300 group-hover:bg-transparent" />
-                                            </div>
-                                        </div>
+                                        </SwiperSlide>
                                     ))}
-                                </div>
+                                </Swiper>
                             </div>
 
                             {/* Description */}
@@ -202,18 +204,18 @@ export default function VarietyDetailPage() {
 
                         {/* RIGHT SIDEBAR */}
                         <div>
-                            <div className="sticky top-32 space-y-8">
+                            <div className="flex flex-col items-start gap-4">
                                 {/* Categories */}
                                 <div className="rounded-[35px] border border-[#e5e5e5] bg-white p-7 shadow-[0_10px_40px_rgba(0,0,0,0.04)]">
                                     <div className="mb-4 flex items-center gap-4">
-                                        <div className="flex h-14 w-14 items-center justify-center rounded-full bg-secondary/10 text-secondary">
+                                        {/* <div className="flex h-14 w-14 items-center justify-center rounded-full bg-secondary/10 text-secondary">
                                             <FaLeaf className="text-xl" />
-                                        </div>
+                                        </div> */}
 
                                         <div>
-                                            <span className="text-xs font-bold uppercase tracking-[4px] text-primary">
+                                            {/* <span className="text-xs font-bold uppercase tracking-[4px] text-primary">
                                                 Categories
-                                            </span>
+                                            </span> */}
 
                                             <h3 className=" text-2xl font-black text-dark-grey">
                                                 Product Categories
@@ -225,8 +227,8 @@ export default function VarietyDetailPage() {
                                         {categories.map((category, index) => (
                                             <Link
                                                 key={index}
-                                                href={`/products/${category.slug}`}
-                                                className={`group flex items-center justify-between rounded-2xl border px-3 py-3 transition duration-300 ${category.slug === "vegetable-crops"
+                                                href={`#`}
+                                                className={`group flex gap-10 items-center justify-between rounded-2xl border px-3 py-3 transition duration-300 ${category.slug === "vegetable-crops"
                                                     ? "border-secondary bg-secondary text-white"
                                                     : "border-[#eee] hover:border-secondary/30 hover:bg-[#fafafa]"
                                                     }`}
@@ -247,7 +249,7 @@ export default function VarietyDetailPage() {
                                 </div>
 
                                 {/* Catalog */}
-                                <div className="relative overflow-hidden rounded-[35px] bg-dark-grey p-7 text-white shadow-[0_15px_50px_rgba(0,0,0,0.08)]">
+                                <div className="relative overflow-hidden rounded-[35px] bg-white p-7 text-white shadow-[0_15px_50px_rgba(0,0,0,0.08)]">
                                     {/* Background Circle */}
                                     <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full border-30 border-white/5" />
 
@@ -255,29 +257,29 @@ export default function VarietyDetailPage() {
                                         Download
                                     </span> */}
 
-                                    <h3 className="mt-2 text-3xl font-black leading-tight">
+                                    <h3 className=" text-2xl font-black text-dark-grey">
                                         Product
-                                        <span className="pl-2 text-secondary">
-                                            Catlog
+                                        <span className="pl-2 ">
+                                            Catalogue
                                         </span>
                                     </h3>
 
-                                    <p className="mt-2  text-white/70">
+                                    {/* <p className="mt-2  text-white/70">
                                         Download our latest catalog and explore premium agricultural
                                         seed varieties.
-                                    </p>
+                                    </p> */}
 
-                                    <div className="mt-5 flex items-center gap-4">
-                                        <button className="flex items-center justify-center gap-3 rounded-full bg-white px-5 py-3 text-xs font-bold uppercase  text-dark-grey transition duration-300 hover:bg-secondary whitespace-nowrap">
-                                            <FaEye className="text-sm" />
+                                    <div className="mt-5 flex flex-col justify-start items-center gap-4">
+                                        <button className="flex items-center w-65 cursor-pointer justify-start gap-3 rounded-xl bg-secondary px-5 py-3 text-md text-white font-bold uppercase   transition duration-300 hover:bg-primary whitespace-nowrap">
+                                            <FaEye className="text-md" />
 
-                                            <span>View PDF</span>
+                                            <span>View Catalogue</span>
                                         </button>
 
-                                        <button className="flex items-center justify-center gap-3 rounded-full bg-secondary px-5 py-3 text-xs font-bold uppercase  text-dark-grey transition duration-300 hover:bg-white whitespace-nowrap">
-                                            <FaDownload className="text-sm" />
+                                        <button className="flex items-center cursor-pointer justify-start gap-3 rounded-xl bg-secondary px-5 py-3 text-md text-white font-bold uppercase   transition duration-300 hover:bg-primary whitespace-nowrap">
+                                            <FaDownload className="text-md" />
 
-                                            <span>Download PDF</span>
+                                            <span>Download Catalogue</span>
                                         </button>
                                     </div>
                                 </div>
