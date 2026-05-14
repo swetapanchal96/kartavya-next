@@ -6,6 +6,7 @@ import img2 from '@/app/assets/2.jpeg';
 import img3 from '@/app/assets/3.jpg';
 import img4 from '@/app/assets/4.png';
 import Image from "next/image";
+import aboutImg from '@/app/assets/post-3.jpg';
 
 export default function IncrementBasicSeedPage() {
     return (
@@ -28,7 +29,7 @@ export default function IncrementBasicSeedPage() {
 
                 <div className="container relative z-10 mx-auto px-4 md:px-12">
                     {/* Heading */}
-                    <div className="mx-auto max-w-4xl text-center">
+                    {/* <div className="mx-auto max-w-4xl text-center">
                         <span className="text-sm font-bold uppercase tracking-[4px] text-primary">
                             Professional Seed Services
                         </span>
@@ -38,14 +39,25 @@ export default function IncrementBasicSeedPage() {
                         </AnimatedHeading>
 
                         <div className="mx-auto mt-5 h-0.5 w-20 bg-secondary"></div>
-                    </div>
+                    </div> */}
 
                     {/* Main Content */}
                     <div className="mx-auto mt-8 max-w-6xl">
                         <div className="grid items-center gap-10 lg:grid-cols-2">
                             {/* Left Content */}
                             <div>
-                                <p className="text-lg  text-[#666]">
+                                <div className=" max-w-4xl text-start">
+                                    <span className="text-sm font-bold uppercase tracking-[4px] text-primary">
+                                        Professional Seed Services
+                                    </span>
+
+                                    <AnimatedHeading className="mt-2 text-4xl lg:text-6xl font-bold text-dark-grey md:text-5xl">
+                                        Increment of Basic Seed
+                                    </AnimatedHeading>
+
+                                    
+                                </div>
+                                <p className="text-lg mt-3 text-[#666]">
                                     Our Basic Seeds Increament service will provide you
                                     with all the professionalism, commitment and safety in
                                     your materials.
@@ -58,9 +70,31 @@ export default function IncrementBasicSeedPage() {
                                 </p>
                             </div>
 
+                            <div className="relative">
+                                <div className="relative z-10 rounded-[40px] overflow-hidden shadow-2xl border-white border-10">
+                                    <Image
+                                        src={aboutImg}
+                                        alt="Advanced Seed Research"
+                                        className="w-full h-100 object-cover"
+                                    />
+                                </div>
+                                {/* Curved decorative element behind image to match homepage style */}
+                                <div className="absolute -top-10 -left-10 w-64 h-64 bg-[#8BA92B]/10 rounded-full blur-3xl z-0"></div>
+
+                                {/* DSIR Achievement Badge */}
+                                {/* <div className="absolute -bottom-8 -right-8 bg-white p-6 rounded-3xl shadow-xl border border-gray-100 flex items-center gap-4 max-w-xs z-20">
+                                    <div className="w-16 h-16 bg-secondary rounded-2xl flex items-center justify-center text-white text-2xl"><IoTrophy /> </div>
+                                    <div>
+                                        <h4 className="font-bold text-primary text-sm">DSIR Recognized</h4>
+                                        <p className="text-[11px] text-gray-500">Ministry of Science & Technology, Govt. of India</p>
+                                    </div>
+                                </div> */}
+                            </div>
+
                             {/* Right Highlights */}
-                            <div className="grid gap-6 sm:grid-cols-2">
-                                {/* Box */}
+                            {/* <div className="grid gap-6 sm:grid-cols-2">
+                                
+                                
                                 <div className="rounded-[30px] border border-[#ececec] bg-[#f8faf5] p-8 transition duration-300 hover:-translate-y-2 hover:shadow-lg">
                                     <span className="text-5xl font-bold text-primary">
                                         01
@@ -75,7 +109,7 @@ export default function IncrementBasicSeedPage() {
                                     </p>
                                 </div>
 
-                                {/* Box */}
+                                
                                 <div className="rounded-[30px] border border-[#ececec] bg-white p-8 transition duration-300 hover:-translate-y-2 hover:shadow-lg">
                                     <span className="text-5xl font-bold text-secondary">
                                         02
@@ -90,7 +124,7 @@ export default function IncrementBasicSeedPage() {
                                         seed lines.
                                     </p>
                                 </div>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </div>
@@ -132,7 +166,7 @@ export default function IncrementBasicSeedPage() {
                             <div className="absolute inset-0 bg-linear-to-t from-black/50 via-black/10 to-transparent"></div>
 
                             {/* Content */}
-                            <div className="absolute bottom-0 left-0 p-8 md:p-10">
+                            {/* <div className="absolute bottom-0 left-0 p-8 md:p-10">
                                 <span className="rounded-full bg-white/10 px-4 py-2 text-xs font-bold uppercase tracking-[3px] text-white backdrop-blur-md">
                                     Research Infrastructure
                                 </span>
@@ -140,7 +174,7 @@ export default function IncrementBasicSeedPage() {
                                 <h3 className="mt-5 text-3xl font-bold text-white">
                                     Protected Seed Development Facilities
                                 </h3>
-                            </div>
+                            </div> */}
                         </div>
 
                         {/* Right Side Images */}
@@ -157,11 +191,11 @@ export default function IncrementBasicSeedPage() {
 
                                 <div className="absolute inset-0 bg-linear-to-t from-black/40 to-transparent"></div>
 
-                                <div className="absolute bottom-0 left-0 p-6">
+                                {/* <div className="absolute bottom-0 left-0 p-6">
                                     <h3 className="text-2xl font-bold text-white">
                                         Precision Cultivation
                                     </h3>
-                                </div>
+                                </div> */}
                             </div>
 
                             {/* Bottom Grid */}
@@ -178,11 +212,11 @@ export default function IncrementBasicSeedPage() {
 
                                     <div className="absolute inset-0 bg-linear-to-t from-black/40 to-transparent"></div>
 
-                                    <div className="absolute bottom-0 left-0 p-5">
+                                    {/* <div className="absolute bottom-0 left-0 p-5">
                                         <h3 className="text-lg font-bold text-white">
                                             Isolation Protection
                                         </h3>
-                                    </div>
+                                    </div> */}
                                 </div>
 
                                 {/* Image */}
@@ -197,11 +231,11 @@ export default function IncrementBasicSeedPage() {
 
                                     <div className="absolute inset-0 bg-linear-to-t from-black/40 to-transparent"></div>
 
-                                    <div className="absolute bottom-0 left-0 p-5">
+                                    {/* <div className="absolute bottom-0 left-0 p-5">
                                         <h3 className="text-lg font-bold text-white">
                                             Hybrid Quality
                                         </h3>
-                                    </div>
+                                    </div> */}
                                 </div>
                             </div>
                         </div>

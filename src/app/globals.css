@@ -43,3 +43,13 @@
 .custom-pagination .swiper-pagination-bullet-active {
   background: #663F2E !important;
 }
+
+@keyframes moveLine {
+  0% {
+    transform: translateY(-120px);
+  }
+
+  100% {
+    transform: translateY(1200px);
+  }
+}

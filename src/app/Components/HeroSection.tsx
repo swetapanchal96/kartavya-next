@@ -13,40 +13,40 @@ import banner5 from '@/app/assets/banner-5.jpg';
 const slides = [
   {
     id: 1,
-    title: "Science led Innovation",
-    subtitle: "Developing high-yield seeds through research.",
+    title: "Kisan ka Vikas Hi Hamara Kartavya",
+    subtitle: "20 years of empowering Indian farming community.",
     image: banner1.src,
     origin: "20% 20%",
     zoomType: "in"
   },
   {
     id: 2,
-    title: "Seed for every need",
-    subtitle: "Empowering farmers with quality and reliability.",
+    title: "Premium Seeds for Bumper Harvest",
+    subtitle: "Research based seeds for maximum stand and top yields.",
     image: banner2.src,
     origin: "80% 80%",
     zoomType: "in"
   },
   {
     id: 3,
-    title: "Rooted in Excellence",
-    subtitle: "Sustainable agriculture for a better tomorrow.",
+    title: "Gold Standard in Seed Research",
+    subtitle: "Certified by Department of Scientific and Industrial Research, Govt of India",
     image: banner3.src,
     origin: "center center",
     zoomType: "out"
   },
   {
     id: 4,
-    title: "Science led Innovation",
-    subtitle: "Developing high-yield seeds through research.",
+    title: "Seeding the Future of Agriculture",
+    subtitle: "Investing in R&D & infrastructure to power breakthroughs.",
     image: banner4.src,
     origin: "20% 20%",
     zoomType: "in"
   },
   {
     id: 5,
-    title: "Seed for every need",
-    subtitle: "Empowering farmers with quality and reliability.",
+    title: "Kisan ka Vikas Hi Hamara Kartavya",
+    subtitle: "20 years of empowering Indian farming community.",
     image: banner5.src,
     origin: "80% 80%",
     zoomType: "in"
