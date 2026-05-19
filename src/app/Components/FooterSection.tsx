@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   FaYoutube,
-  FaTwitter,
   FaFacebookF,
   FaLinkedinIn,
   FaPhoneAlt,
@@ -12,8 +11,7 @@ import {
   FaEnvelope,
 } from "react-icons/fa";
 import { IoLocationSharp } from "react-icons/io5";
-import logo from "@/app/assets/Kartavya-Seeds-Logo-round.png"; // Adjust path to your logo
-import { FaArrowRightLong, FaXTwitter } from "react-icons/fa6";
+import logo from "@/app/assets/Kartavya-Seeds-Logo-round.png"; // Adjust path to your
 
 export default function Footer() {
   return (
@@ -76,112 +74,100 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* MIDDLE SECTION: LINKS GRID */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-10 gap-12 py-12">
-            {/* About Company - 40% */}
-            <div className="lg:col-span-3">
-              <h3 className="text-[22px] font-bold mb-7.5">About Company</h3>
-              <p className="text-gray-200 max-w-98.5 leading-relaxed mb-6">
-                Join us in making a lasting impact on our planet. Together, we can
-                protect nature, reduce our carbon footprint.
-              </p>
-              <div className="flex gap-3">
-                {[FaYoutube, FaInstagram, FaFacebookF, FaLinkedinIn].map(
-                  (Icon, i) => (
+          {/* MIDDLE SECTION */}
+          <div className="grid grid-cols-1 lg:grid-cols-[1.5fr_0.8fr] gap-16 py-8 items-start">
+
+            {/* Quick Links */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+              <div>
+
+                <h3 className="mb-3 text-[24px] font-bold text-white">
+                  Quick Links
+                </h3>
+
+                <div className="flex flex-col gap-2">
+
+                  {[
+                    { title: "About Us", link: "/about" },
+                    { title: "R&D", link: "/research&development" },
+                    { title: "News & Articles", link: "/news-articles" },
+                    { title: "Events", link: "/events" },
+                  ].map((item, index) => (
                     <Link
-                      key={i}
-                      href="#"
-                      className="bg-yellow hover:bg-secondary p-4 rounded-full text-primary hover:scale-110 transition-transform"
+                      key={index}
+                      href={item.link}
+                      className="group flex items-center gap-3 text-lg text-white/80 transition-all duration-300 hover:text-yellow"
                     >
-                      <Icon size={22} />
+                      <span className="h-2 w-2 rounded-full bg-yellow transition-all duration-300 group-hover:scale-150"></span>
+
+                      {item.title}
                     </Link>
-                  )
-                )}
+                  ))}
+
+                </div>
+
               </div>
-            </div>
+              {/* Our Products */}
+              <div>
 
-            {/* Quick Link - 20% */}
-            <div className="lg:col-span-2">
-              <h3 className="mb-7.5 text-[22px] font-bold">Quick Link</h3>
+                <h3 className="mb-3 text-[24px] font-bold text-white">
+                  Our Products
+                </h3>
 
-              <ul className="space-y-3 text-white">
-                <li>
+                <div className="flex flex-col gap-2">
+
                   <Link
-                    href="/"
-                    className="text-md transition-colors hover:text-yellow"
+                    href="/product?slug=vegetables"
+                    className="group flex items-center gap-3 text-lg text-white/80 transition-all duration-300 hover:text-yellow"
                   >
-                    Home
-                  </Link>
-                </li>
+                    <span className="h-2 w-2 rounded-full bg-yellow transition-all duration-300 group-hover:scale-150"></span>
 
-                <li>
-                  <Link
-                    href="/about"
-                    className="text-md transition-colors hover:text-yellow"
-                  >
-                    About Us
-                  </Link>
-                </li>
-
-                <li>
-                  <Link
-                    href="/services"
-                    className="text-md transition-colors hover:text-yellow"
-                  >
-                    Services
-                  </Link>
-                </li>
-
-                <li>
-                  <Link
-                    href="/blog"
-                    className="text-md transition-colors hover:text-yellow"
-                  >
-                    Blog
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            {/* Our Products - 20% */}
-            <div className="lg:col-span-2">
-              <h3 className="mb-7.5 text-[22px] font-bold">Our Products</h3>
-
-              <ul className="space-y-3 text-gray-200">
-                <li>
-                  <Link
-                    href="/product"
-                    className="transition-colors hover:text-yellow"
-                  >
                     Vegetable Crop
                   </Link>
-                </li>
 
-                <li>
                   <Link
-                    href="/product"
-                    className="transition-colors hover:text-yellow"
+                    href="/product?slug=field"
+                    className="group flex items-center gap-3 text-lg text-white/80 transition-all duration-300 hover:text-yellow"
                   >
+                    <span className="h-2 w-2 rounded-full bg-yellow transition-all duration-300 group-hover:scale-150"></span>
+
                     Field Crop
                   </Link>
-                </li>
-              </ul>
-            </div>
 
-            {/* Location - 40% */}
-            <div className="lg:col-span-3">
-              <h3 className="text-[22px] font-bold mb-7.5">Location</h3>
-              <div className="rounded-lg overflow-hidden border border-white/10 h-40 relative">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3672.447844621532!2d72.4984534760334!3d23.007304516246473!2m3!1f0!3f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e9ac290877997%3A0xc33e143091c63865!2sSignature%202!5e0!3m2!1sen!2sin!4v1714560000000!5m2!1sen!2sin"
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                ></iframe>
+                </div>
+
               </div>
             </div>
+
+            {/* Social Media */}
+            <div>
+              <h3 className="mb-3 text-[24px] font-bold text-white">
+                Social Media
+              </h3>
+
+              <div className="flex flex-wrap gap-4">
+
+                {[
+                  FaYoutube,
+                  FaInstagram,
+                  FaFacebookF,
+                  FaLinkedinIn,
+                ].map((Icon, i) => (
+                  <Link
+                    key={i}
+                    href="#"
+                    className="group flex h-14 w-14 items-center justify-center rounded-full bg-yellow text-primary transition-all duration-300 hover:-translate-y-1 hover:scale-110 hover:bg-secondary"
+                  >
+                    <Icon size={22} />
+                  </Link>
+                ))}
+
+              </div>
+
+            </div>
+
+
+
           </div>
         </div>
 

@@ -3,18 +3,6 @@
 import AnimatedHeading from "../Components/AnimatedHeading";
 import Breadcrumb from "../Components/Breadcrumb";
 import header from "@/app/assets/page-header-bg.jpg";
-// imports
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Navigation } from "swiper/modules";
-import img1 from '@/app/assets/T-4.jpg'
-import img2 from '@/app/assets/Picture4.png'
-import img3 from '@/app/assets/sw-pe.jpeg'
-import img4 from '@/app/assets/Wa-4.jpeg'
-import img5 from '@/app/assets/M-2.jpg'
-import img6 from '@/app/assets/Wa-4.jpeg'
-import img7 from '@/app/assets/Cu-4.png'
-import img8 from '@/app/assets/Bi-2.png'
-import img9 from '@/app/assets/CHANDRA.png'
 import Image from "next/image";
 import smallogo from '@/app/assets/ks--.png'
 import { FaArrowLeft, FaArrowRight, FaLeaf } from "react-icons/fa";
@@ -25,47 +13,39 @@ import storage from '@/app/assets/storage.webp';
 import lab from '@/app/assets/lab.webp';
 import advance from '@/app/assets/advance-tech.webp';
 import bg from '@/app/assets/kartavya-bg-3.png'
+import map from '@/app/assets/Indian-map.webp'
+import { useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import bg1 from  '@/app/assets/Bitter-Gourd/Bi-1.png'
+import bg2 from  '@/app/assets/Bitter-Gourd/Bi-2.png'
+import bg3 from  '@/app/assets/Bitter-Gourd/Bi-3.png'
+import bg4 from  '@/app/assets/Bitter-Gourd/Bi-4.png'
+import cu1 from  '@/app/assets/Cucumber/Cu-1.png'
+import cu2 from  '@/app/assets/Cucumber/Cu-2.png'
+import cu3 from  '@/app/assets/Cucumber/Cu-3.png'
+import cu4 from  '@/app/assets/Cucumber/Cu-4.png'
+import hp1 from  '@/app/assets/Hot-Pepper/Picture1.png'
+import hp2 from  '@/app/assets/Hot-Pepper/Picture2.png'
+import hp3 from  '@/app/assets/Hot-Pepper/Picture3.png'
+import hp4 from  '@/app/assets/Hot-Pepper/Picture4.png'
+import m1 from  '@/app/assets/Melon/M-1.jpg'
+import m2 from  '@/app/assets/Melon/M-2.jpg'
+import m3 from  '@/app/assets/Melon/M-3.png'
+import m4 from  '@/app/assets/Melon/M-4.jpg'
+import sp1 from  '@/app/assets/Sweet-Paper/1.jpg'
+import sp2 from  '@/app/assets/Sweet-Paper/2.png'
+import sp3 from  '@/app/assets/Sweet-Paper/sw-pe.jpeg'
+import sp4 from  '@/app/assets/Sweet-Paper/4.png'
+import tomato1 from  '@/app/assets/Tomato/T-1.jpg'
+import tomato2 from  '@/app/assets/Tomato/T-2.jpeg'
+import tomato3 from  '@/app/assets/Tomato/T-3.png'
+import tomato4 from  '@/app/assets/Tomato/T-4.jpg'
+import wm1 from  '@/app/assets/Water-Melon/Wa-1.jpeg'
+import wm2 from  '@/app/assets/Water-Melon/Wa-2.png'
+import wm3 from  '@/app/assets/Water-Melon/Wa-3.jpeg'
+import wm4 from  '@/app/assets/Water-Melon/Wa-4.jpeg'
 
-
-// crop images data
-const cropImages = [
-    {
-        title: "Tomato",
-        image: img1.src,
-    },
-    {
-        title: "Hot Pepper",
-        image: img2.src,
-    },
-    {
-        title: "Sweet Pepper",
-        image: img3.src,
-    },
-    {
-        title: "Watermelon",
-        image: img4.src,
-    },
-    {
-        title: "Musk Melon",
-        image: img5.src,
-    },
-    {
-        title: "Eggplant",
-        image: img6.src,
-    },
-    {
-        title: "Cucumber",
-        image: img7.src,
-    },
-    {
-        title: "Bitter Gourd",
-        image: img8.src,
-    },
-    {
-        title: "Okra",
-        image: img9.src,
-    },
-];
 
 // data
 const facilities = [
@@ -99,9 +79,85 @@ const facilities = [
     },
 ];
 
-
+const crops = [
+    {
+        name: "Tomato",
+        slug: "tomato",
+        images: [
+            tomato1.src,
+            tomato2.src,
+            tomato3.src,
+            tomato4.src,
+        ],
+    },
+    {
+        name: "Hot Pepper",
+        slug: "hot-pepper",
+        images: [
+            hp1.src,
+            hp2.src,
+            hp3.src,
+            hp4.src,
+        ],
+    },
+    {
+        name: "Sweet Pepper",
+        slug: "sweet-pepper",
+        images: [
+            sp1.src,
+            sp2.src,
+            sp3.src,
+            sp4.src,
+        ],
+    },
+    {
+        name: "Watermelon",
+        slug: "watermelon",
+        images: [
+            wm1.src,
+            wm2.src,
+            wm3.src,
+            wm4.src,
+        ],
+    },
+    {
+        name: "Musk Melon",
+        slug: "musk-melon",
+        images: [
+            m1.src,
+            m2.src,
+            m3.src,
+            m4.src,
+        ],
+    },
+    {
+        name: "Cucumber",
+        slug: "cucumber",
+        images: [
+            cu1.src,
+            cu2.src,
+            cu3.src,
+            cu4.src,
+        ],
+    },
+    {
+        name: "Bitter Gourd",
+        slug: "bitter-gourd",
+        images: [
+            bg1.src,
+            bg2.src,
+            bg3.src,
+            bg4.src,
+        ],
+    }
+];
 
 export default function IncrementBasicSeedPage() {
+    // state
+    const [activeCrop, setActiveCrop] = useState("tomato");
+    // active images
+    const activeImages =
+        crops.find((item: any) => item.slug === activeCrop)?.images || [];
     return (
         <>
             <Breadcrumb
@@ -117,12 +173,13 @@ export default function IncrementBasicSeedPage() {
             {/* Why Choose India Section */}
             <section className="relative overflow-hidden bg-[#f8faf5] py-20 ">
                 {/* Background Effects */}
-                <div className="absolute -left-25 top-0 h-80 w-80 rounded-full bg-primary/5 blur-3xl"></div>
-                <div className="absolute -bottom-30 right-0 h-80 w-80 rounded-full bg-secondary/10 blur-3xl"></div>
+                <div className="absolute -left-30 -top-30 h-80 w-80 rounded-full bg-primary/5 blur-3xl"></div>
+
+                <div className="absolute -bottom-30 -right-30 h-80 w-[320px] rounded-full bg-secondary/10 blur-3xl"></div>
 
                 <div className="container relative z-10 mx-auto px-4 md:px-12">
-                    {/* Heading */}
-                    <div className="max-w-4xl">
+                    {/* Center Heading */}
+                    <div className="mx-auto max-w-5xl text-center">
                         <span className="text-sm font-bold uppercase tracking-[4px] text-primary">
                             Global Production Advantage
                         </span>
@@ -131,116 +188,104 @@ export default function IncrementBasicSeedPage() {
                             Why Choose India For Seed Production?
                         </h2>
 
-                        <div className="mt-6 h-0.5 w-24 bg-secondary"></div>
+                        <div className="mx-auto mt-5 h-0.5 w-24 bg-secondary"></div>
                     </div>
 
                     {/* Main Layout */}
-                    <div className="mt-10 grid gap-16 lg:grid-cols-12">
-                        {/* Left Large Statement */}
-                        <div className="relative lg:col-span-5">
-                            <div className="sticky top-32">
-                                <span className="text-[140px] font-black leading-none text-primary/5">
-                                    INDIA
-                                </span>
+                    <div className="relative mt-16">
+                        <div className="grid items-center gap-10 lg:grid-cols-12">
 
-                                <div className="-mt-8">
-                                    <h3 className="text-3xl font-bold text-dark-grey md:text-4xl">
-                                        A Globally Trusted Destination For Modern Seed
-                                        Production
-                                    </h3>
+                            {/* Left Points */}
+                            <div className="space-y-10 lg:col-span-3">
+                                {[
+                                    "Second Largest Producer In World",
+                                    "Easily Availability Of Skill Human Resources",
+                                    "Seed Production In Multiple Seasons",
+                                ].map((item, index) => (
+                                    <div
+                                        key={index}
+                                        className="group flex items-start gap-5"
+                                    >
+                                        {/* Creative Bullet */}
+                                        <div className="relative mt-1 flex h-10 w-10 shrink-0 items-center justify-center">
+                                            {/* Pulse Ring */}
+                                            <div className="absolute h-10 w-10 rounded-full border border-primary/20 transition duration-300 group-hover:scale-110 group-hover:border-secondary"></div>
 
-                                    <p className="mt-4 text-lg  text-[#666]">
-                                        India offers the perfect balance of climate diversity,
-                                        skilled manpower, multi-season production capability,
-                                        and cost-effective agricultural infrastructure.
-                                    </p>
+                                            {/* Diamond */}
+                                            <div className="flex h-5 w-5 rotate-45 items-center justify-center rounded-sm bg-primary transition duration-300 group-hover:rotate-135 group-hover:bg-secondary">
+                                                <div className="h-2 w-2 rounded-full bg-white"></div>
+                                            </div>
+                                        </div>
+
+                                        {/* Text */}
+                                        <div>
+                                            <h3 className="text-xl font-bold leading-[1.6] text-dark-grey transition duration-300 group-hover:text-primary">
+                                                {item}
+                                            </h3>
+
+                                            <div className="mt-3 h-0.5 w-12 rounded-full bg-secondary transition-all duration-300 group-hover:w-24"></div>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+
+                            {/* Center Map */}
+                            <div className="relative flex justify-center lg:col-span-6">
+                                {/* Glow */}
+                                <div className="absolute h-125 w-125 rounded-full bg-primary/5 blur-3xl"></div>
+
+                                {/* Floating Circle */}
+                                <div className="absolute left-10 top-20 h-8 w-8 rounded-full bg-secondary/20 blur-sm"></div>
+
+                                <div className="absolute bottom-20 right-10 h-10 w-10 rounded-full bg-primary/10 blur-sm"></div>
+
+                                {/* Map */}
+                                <div className="relative">
+                                    <Image
+                                        src={map.src}
+                                        alt="India Production Map"
+                                        width={700}
+                                        height={700}
+                                        className="relative z-10 h-auto w-full max-w-137.5 object-contain transition duration-700 hover:scale-[1.02]"
+                                    />
+
+                                    {/* Decorative Ring */}
+                                    <div className="absolute inset-0 rounded-full border border-primary/10"></div>
                                 </div>
                             </div>
-                        </div>
 
-                        {/* Right Scrollable Content */}
-                        <div className="lg:col-span-7">
-                            <div className="h-112.5 overflow-y-auto  scrollbar-thin scrollbar-thumb-primary/30 scrollbar-track-transparent [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
-                                <div className="space-y-8">
-                                    {/* Row */}
-                                    <div className="group flex gap-8 border-b border-[#e8e8e8] pb-5">
-                                        <span className="text-6xl font-bold text-primary transition duration-300 group-hover:translate-x-2">
-                                            01
-                                        </span>
+                            {/* Right Points */}
+                            <div className="space-y-10 lg:col-span-3">
+                                {[
+                                    "Diverse Region & Agro Climatic Zones For Production",
+                                    "Cost-Effective Seed Production",
+                                    "Quality Assurance Systems",
+                                ].map((item, index) => (
+                                    <div
+                                        key={index}
+                                        className="group flex items-start gap-5"
+                                    >
+                                        {/* Creative Bullet */}
+                                        <div className="relative mt-1 flex h-10 w-10 shrink-0 items-center justify-center">
+                                            {/* Pulse Ring */}
+                                            <div className="absolute h-10 w-10 rounded-full border border-secondary/20 transition duration-300 group-hover:scale-110 group-hover:border-primary"></div>
 
+                                            {/* Diamond */}
+                                            <div className="flex h-5 w-5 rotate-45 items-center justify-center rounded-sm bg-secondary transition duration-300 group-hover:rotate-135 group-hover:bg-primary">
+                                                <div className="h-2 w-2 rounded-full bg-white"></div>
+                                            </div>
+                                        </div>
+
+                                        {/* Text */}
                                         <div>
-                                            <h3 className="text-3xl font-normal text-dark-grey">
-                                                Second Largest Producer In World
+                                            <h3 className="text-xl font-bold leading-[1.6] text-dark-grey transition duration-300 group-hover:text-primary">
+                                                {item}
                                             </h3>
+
+                                            <div className="mt-3 h-0.5 w-12 rounded-full bg-primary transition-all duration-300 group-hover:w-24"></div>
                                         </div>
                                     </div>
-
-                                    {/* Row */}
-                                    <div className="group flex gap-8 border-b border-[#e8e8e8] pb-5">
-                                        <span className="text-6xl font-bold text-secondary transition duration-300 group-hover:translate-x-2">
-                                            02
-                                        </span>
-
-                                        <div>
-                                            <h3 className="text-3xl font-normal  text-dark-grey">
-                                                Easily Availability Of Skill Human Resources
-                                            </h3>
-                                        </div>
-                                    </div>
-
-                                    {/* Row */}
-                                    <div className="group flex gap-8 border-b border-[#e8e8e8] pb-5">
-                                        <span className="text-6xl font-bold text-primary transition duration-300 group-hover:translate-x-2">
-                                            03
-                                        </span>
-
-                                        <div>
-                                            <h3 className="text-3xl font-normal  text-dark-grey">
-                                                Seed Production In Multiple Seasons
-                                            </h3>
-                                        </div>
-                                    </div>
-
-                                    {/* Row */}
-                                    <div className="group flex gap-8 border-b border-[#e8e8e8] pb-5">
-                                        <span className="text-6xl font-bold text-secondary transition duration-300 group-hover:translate-x-2">
-                                            04
-                                        </span>
-
-                                        <div>
-                                            <h3 className="text-3xl font-normal  text-dark-grey">
-                                                Diverse Region & Agro Climatic Zones For
-                                                Production
-                                            </h3>
-                                        </div>
-                                    </div>
-
-                                    {/* Row */}
-                                    <div className="group flex gap-8 border-b border-[#e8e8e8] pb-5">
-                                        <span className="text-6xl font-bold text-primary transition duration-300 group-hover:translate-x-2">
-                                            05
-                                        </span>
-
-                                        <div>
-                                            <h3 className="text-3xl font-normal  text-dark-grey">
-                                                Cost-Effective Seed Production
-                                            </h3>
-                                        </div>
-                                    </div>
-
-                                    {/* Row */}
-                                    <div className="group flex gap-8">
-                                        <span className="text-6xl font-bold text-secondary transition duration-300 group-hover:translate-x-2">
-                                            06
-                                        </span>
-
-                                        <div>
-                                            <h3 className="text-3xl font-normal  text-dark-grey">
-                                                Quality Assurance Systems
-                                            </h3>
-                                        </div>
-                                    </div>
-                                </div>
+                                ))}
                             </div>
                         </div>
                     </div>
@@ -990,132 +1035,97 @@ export default function IncrementBasicSeedPage() {
                 </div>
             </section>
 
-            {/* Core Crops Section */}
-            <section className="relative overflow-hidden bg-[#f8faf5] py-20 ">
-                {/* Background Blur */}
-                <div className="absolute -left-30 -top-30 h-80 w-80 rounded-full bg-primary/5 blur-3xl"></div>
+            {/* Our Core Crops Section */}
+            <section className="relative overflow-hidden bg-primary py-20 ">
+                {/* Texture */}
+                <div className="absolute inset-0 opacity-[0.05]">
+                    <div className="h-full w-full "></div>
+                </div>
 
-                <div className="absolute -bottom-30 -right-30 h-80 w-80 rounded-full bg-secondary/10 blur-3xl"></div>
+                {/* Blur Effects */}
+                <div className="absolute left-[-120px] top-[-120px] h-[320px] w-[320px] rounded-full bg-white/5 blur-3xl"></div>
+
+                <div className="absolute bottom-[-120px] right-[-120px] h-[320px] w-[320px] rounded-full bg-secondary/10 blur-3xl"></div>
 
                 <div className="container relative z-10 mx-auto px-4 md:px-12">
                     {/* Heading */}
                     <div className="mx-auto max-w-5xl text-center">
-                        <span className="text-sm font-bold uppercase tracking-[4px] text-primary">
-                            Production Expertise
+                        <span className="text-sm font-bold uppercase tracking-[4px] text-secondary">
+                            Our Core Crops
                         </span>
 
-                        <h2 className=" text-4xl font-bold leading-tight text-dark-grey md:text-5xl">
-                            Our Core Crops
+                        <h2 className="mt-2 text-4xl font-bold text-white md:text-5xl lg:text-6xl">
+                            Production Expertise
                         </h2>
 
-                        <div className="mx-auto mt-4 h-0.5 w-24 bg-secondary"></div>
+                        <div className="mx-auto mt-3 h-0.5  w-24 bg-secondary"></div>
                     </div>
 
-                    {/* Main Layout */}
-                    <div className="mt-10 grid items-center gap-16 lg:grid-cols-12">
-                        {/* Left Content */}
-                        <div className="lg:col-span-4">
-                            <div className="sticky top-32">
-                                <h3 className="text-3xl font-bold  text-primary">
-                                    Specialized Production Across Diverse Vegetable Crops
-                                </h3>
+                    {/* Crop Tabs */}
+                    <div className="mt-5 flex flex-wrap items-center justify-center gap-4">
+                        {crops.map((crop, index) => (
+                            <button
+                                key={index}
+                                onClick={() => setActiveCrop(crop.slug)}
+                                className={`rounded-full px-7 py-3 text-sm font-bold uppercase  transition duration-300 ${activeCrop === crop.slug
+                                        ? "bg-secondary text-dark-grey shadow-lg"
+                                        : "bg-white text-primary hover:bg-secondary hover:text-dark-grey"
+                                    }`}
+                            >
+                                {crop.name}
+                            </button>
+                        ))}
+                    </div>
 
-                                <p className="mt-4 text-lgtext-[#666]">
-                                    We focus on high-quality hybrid seed production across
-                                    multiple vegetable crops grown under controlled and
-                                    scientifically managed conditions.
-                                </p>
+                    {/* Images Grid */}
+                    <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+                        {activeImages.map((image, index) => (
+                            <div
+                                key={index}
+                                className="group flex justify-center"
+                            >
+                                {/* Rounded Image */}
+                                <div className="relative h-65 w-65 overflow-hidden rounded-2xl  bg-white shadow-[0_20px_60px_rgba(0,0,0,0.18)] transition duration-500 group-hover:-translate-y-3 group-hover:border-secondary">
 
-                                {/* Crop List */}
-                                <div className="mt-5 grid grid-cols-2 gap-y-2">
-                                    {[
-                                        "Tomato",
-                                        "Hot Pepper",
-                                        "Sweet Pepper",
-                                        "Watermelon",
-                                        "Musk Melon",
-                                        "Eggplant",
-                                        "Cucumber",
-                                        "Bitter Gourd",
-                                        "Okra",
-                                    ].map((crop, index) => (
-                                        <div
-                                            key={index}
-                                            className="flex items-center gap-3"
-                                        >
-                                            <div className="h-2 w-2 rounded-full bg-primary"></div>
+                                    {/* Glow */}
+                                    <div className="absolute inset-0 rounded-full bg-primary/10 opacity-0 transition duration-500 group-hover:opacity-100"></div>
 
-                                            <span className="text-lg font-medium text-dark-grey">
-                                                {crop}
-                                            </span>
-                                        </div>
-                                    ))}
+                                    {/* Image */}
+                                    <Image
+                                        src={image}
+                                        alt="Crop"
+                                        fill
+                                        className="object-fill transition duration-700 group-hover:scale-110"
+                                    />
+
+                                    {/* Overlay */}
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+
+                                    {/* Crop Name */}
+                                    {/* <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-center">
+                                        <h3 className="text-3xl font-black uppercase text-white">
+                                            {
+                                                crops.find(
+                                                    (item) => item.slug === activeCrop
+                                                )?.name
+                                            }
+                                        </h3>
+
+                                        <div className="mx-auto mt-3 h-[3px] w-20 rounded-full bg-secondary transition-all duration-300 group-hover:w-28"></div>
+                                    </div> */}
                                 </div>
                             </div>
-                        </div>
-
-                        {/* Right Slider */}
-                        <div className="relative lg:col-span-8">
-                            {/* Background Card */}
-                            <div className="absolute inset-0 rounded-[40px] bg-white shadow-[0_25px_80px_rgba(0,0,0,0.05)]"></div>
-
-                            <div className="relative p-6 md:p-10">
-                                <Swiper
-                                    modules={[Autoplay]}
-                                    autoplay={{
-                                        delay: 2500,
-                                        disableOnInteraction: false,
-                                    }}
-                                    speed={1000}
-                                    loop={true}
-                                    breakpoints={{
-                                        0: {
-                                            slidesPerView: 1.2,
-                                            spaceBetween: 20,
-                                        },
-                                        640: {
-                                            slidesPerView: 2,
-                                            spaceBetween: 24,
-                                        },
-                                        1024: {
-                                            slidesPerView: 2.5,
-                                            spaceBetween: 28,
-                                        },
-                                    }}
-                                >
-                                    {cropImages.map((item, index) => (
-                                        <SwiperSlide key={index}>
-                                            <div className="group overflow-hidden rounded-full border border-[#ececec] bg-[#f8faf5]">
-                                                {/* Image */}
-                                                <div className="relative h-65 w-65 overflow-hidden">
-                                                    <img
-                                                        src={item.image}
-                                                        alt={item.title}
-                                                        className=" object-cover transition duration-700 group-hover:scale-110"
-                                                    />
-
-                                                    {/* Overlay */}
-                                                    <div className="absolute inset-0 bg-linear-to-t from-black/60 via-black/10 to-transparent"></div>
-
-                                                    {/* Content */}
-                                                    {/* <div className="absolute bottom-0 left-0 p-8">
-                      <span className="text-sm font-bold uppercase tracking-[4px] text-secondary">
-                        Core Crop
-                      </span>
-
-                      <h3 className="mt-3 text-3xl font-bold text-white">
-                        {item.title}
-                      </h3>
-                    </div> */}
-                                                </div>
-                                            </div>
-                                        </SwiperSlide>
-                                    ))}
-                                </Swiper>
-                            </div>
-                        </div>
+                        ))}
                     </div>
                 </div>
+                <div className="absolute -bottom-1  h-[135vh] w-full opacity-20 pointer-events-none">
+                        <Image
+                          src={bg.src}
+                          alt="background-texture"
+                          fill
+                          className="object-cover object-bottom"
+                        />
+                      </div>
             </section>
         </>
     )
