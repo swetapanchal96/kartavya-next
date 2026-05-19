@@ -108,11 +108,11 @@ export default function ContactPage() {
             } else {
                 setErrorMessage("Something went wrong.");
             }
-        } catch (error:any) {
+        } catch (error: any) {
             setErrorMessage(
-        error?.response?.data?.message ||
-          "Failed to submit form."
-      );
+                error?.response?.data?.message ||
+                "Failed to submit form."
+            );
         } finally {
             setLoading(false);
         }
@@ -261,12 +261,18 @@ export default function ContactPage() {
                         </div>
 
                         {/* RIGHT FORM */}
-                        <div className="relative overflow-hidden rounded-[40px] border border-[#e5e5e5] bg-white p-10 shadow-[0_20px_80px_rgba(0,0,0,0.05)] lg:p-14">
-                            {/* Decorative Shape */}
+                        <div className="relative overflow-hidden rounded-[40px] border border-[#e5e5e5]  p-4 shadow-[0_20px_80px_rgba(0,0,0,0.05)] ">
+
                             <div className="absolute right-0 top-0 h-48 w-48 rounded-full bg-secondary/10 blur-3xl" />
 
-                            {/* Heading */}
-                            <div className="relative mb-6">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14691.91096285721!2d72.493119!3d22.987846!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e9aeba8538b39%3A0xff36690af0489f23!2sSIGNATURE-2%2C%20105%2C%20Sarkhej%20-%20Sanand%20Rd%2C%20Sarkhej%2C%20Ahmedabad%2C%20Sarkhej-Okaf%2C%20Gujarat%20382210!5e0!3m2!1sen!2sin!4v1778219534210!5m2!1sen!2sin"
+                                className="h-full min-h-[600px] rounded-4xl w-full border-0"
+                                loading="lazy"
+                                referrerPolicy="no-referrer-when-downgrade"
+                            ></iframe>
+
+                            {/* <div className="relative mb-6">
                                 <span className="text-sm font-bold uppercase tracking-[5px] text-primary">
                                     Send Message
                                 </span>
@@ -277,11 +283,11 @@ export default function ContactPage() {
                                         Conversation
                                     </span>
                                 </h3>
-                            </div>
+                            </div> */}
 
-                            {/* Form */}
-                            <form onSubmit={handleSubmit} className="relative space-y-3">
-                                {/* Row */}
+
+                            {/* <form onSubmit={handleSubmit} className="relative space-y-3">
+                               
                                 <div className="grid gap-8 md:grid-cols-2">
                                     <div>
                                         <label className="mb-2 block text-sm font-bold uppercase tracking-[3px] text-primary">
@@ -314,7 +320,7 @@ export default function ContactPage() {
                                     </div>
                                 </div>
 
-                                {/* Row */}
+                                
                                 <div className="grid gap-8 md:grid-cols-2">
                                     <div>
                                         <label className="mb-2 block text-sm font-bold uppercase tracking-[3px] text-primary">
@@ -348,7 +354,7 @@ export default function ContactPage() {
                                     </div>
                                 </div>
 
-                                {/* Message */}
+                               
                                 <div>
                                     <label className="mb-2 block text-sm font-bold uppercase tracking-[3px] text-primary">
                                         Message
@@ -364,7 +370,7 @@ export default function ContactPage() {
                                     />
                                 </div>
 
-                                {/* Button */}
+                                
                                 <button
                                     type="submit"
                                     disabled={loading}
@@ -375,27 +381,27 @@ export default function ContactPage() {
                                     </span>
                                 </button>
 
-                                {/* Success Message */}
+                                
                                 {successMessage && (
                                     <p className="mt-4 text-green-600">
                                         {successMessage}
                                     </p>
                                 )}
 
-                                {/* Error Message */}
+                                
                                 {errorMessage && (
                                     <p className="mt-4 text-red-600 font-medium">
                                         {errorMessage}
                                     </p>
                                 )}
-                            </form>
+                            </form> */}
                         </div>
                     </div>
                 </div>
             </section>
 
             {/* MAP SECTION */}
-            <section className="relative h-125 overflow-hidden">
+            {/* <section className="relative h-125 overflow-hidden">
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14691.91096285721!2d72.493119!3d22.987846!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e9aeba8538b39%3A0xff36690af0489f23!2sSIGNATURE-2%2C%20105%2C%20Sarkhej%20-%20Sanand%20Rd%2C%20Sarkhej%2C%20Ahmedabad%2C%20Sarkhej-Okaf%2C%20Gujarat%20382210!5e0!3m2!1sen!2sin!4v1778219534210!5m2!1sen!2sin"
                     width="100%"
@@ -404,22 +410,8 @@ export default function ContactPage() {
                     className="border-0 grayscale"
                 />
 
-                {/* Overlay Card */}
-                {/* <div className="absolute left-1/2 top-10 z-10 w-[90%] max-w-md -translate-x-1/2 rounded-[30px] bg-white p-8 shadow-[0_20px_80px_rgba(0,0,0,0.15)]">
-                    <span className="text-sm font-bold uppercase tracking-[5px] text-primary">
-                        Visit Office
-                    </span>
-
-                    <h3 className="mt-4 text-3xl font-black text-dark-grey">
-                        Kartavya Seeds
-                    </h3>
-
-                    <p className="mt-5 leading-[2] text-[#666]">
-                        Visit our office to connect with our team and explore innovative
-                        agricultural seed solutions.
-                    </p>
-                </div> */}
-            </section>
+                
+            </section> */}
         </>
     );
 }
