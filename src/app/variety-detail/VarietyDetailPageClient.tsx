@@ -657,7 +657,7 @@ const categories = [
     },
     {
         name: "Field Crops",
-        slug: "filed",
+        slug: "field",
         type: 2,
     },
 ];
@@ -989,10 +989,11 @@ export default function VarietyDetailPage() {
                                     </h3>
 
                                     <div className="mt-5 flex flex-col justify-start items-center gap-4">
-                                        <button className="flex items-center w-65 cursor-pointer justify-start gap-3 rounded-xl bg-secondary px-5 py-3 text-md text-white font-bold uppercase transition duration-300 hover:bg-primary whitespace-nowrap">
-                                            <FaEye className="text-md" />
-                                            <span>View Catalogue</span>
-                                        </button>
+                                        <Link href="https://heyzine.com/flip-book/e4f3d3f75f.html" target="_blank"
+                                        className="flex items-center w-65 cursor-pointer justify-start gap-3 rounded-xl bg-secondary px-5 py-3 text-md text-white font-bold uppercase transition duration-300 hover:bg-primary whitespace-nowrap">
+                                        <FaEye className="text-md" />
+                                        <span>View Catalogue</span>
+                                    </Link>
 
                                         <button className="flex items-center cursor-pointer justify-start gap-3 rounded-xl bg-secondary px-5 py-3 text-md text-white font-bold uppercase transition duration-300 hover:bg-primary whitespace-nowrap">
                                             <FaDownload className="text-md" />

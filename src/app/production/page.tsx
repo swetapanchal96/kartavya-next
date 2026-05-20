@@ -2,7 +2,7 @@
 
 import AnimatedHeading from "../Components/AnimatedHeading";
 import Breadcrumb from "../Components/Breadcrumb";
-import header from "@/app/assets/page-header-bg.jpg";
+import header from "@/app/assets/Productionbanner.webp";
 import Image from "next/image";
 import smallogo from '@/app/assets/ks--.png'
 import { FaArrowLeft, FaArrowRight, FaLeaf } from "react-icons/fa";
