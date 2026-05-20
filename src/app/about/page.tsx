@@ -1,7 +1,7 @@
 "use client"
 
 import Breadcrumb from "@/app/Components/Breadcrumb";
-import header from '@/app/assets/page-header-bg.jpg';
+import header from '@/app/assets/Aboutus_banner.webp';
 import Image from 'next/image';
 import aboutImg from '@/app/assets/fact-bg.jpg';
 import AnimatedHeading from "../Components/AnimatedHeading";
