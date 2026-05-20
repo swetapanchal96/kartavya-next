@@ -1,6 +1,6 @@
 import AnimatedHeading from "../Components/AnimatedHeading";
 import Breadcrumb from "../Components/Breadcrumb";
-import header from "@/app/assets/page-header-bg.jpg";
+import header from "@/app/assets/BASICSEEDSBANNER.webp";
 import img1 from '@/app/assets/1.jpg';
 import img2 from '@/app/assets/2.jpeg';
 import img3 from '@/app/assets/3.jpg';

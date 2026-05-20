@@ -2,7 +2,7 @@
 import { motion, Variants } from "framer-motion";
 import AnimatedHeading from "../Components/AnimatedHeading";
 import Breadcrumb from "../Components/Breadcrumb";
-import header from "@/app/assets/page-header-bg.jpg";
+import header from "@/app/assets/R&D_banner.webp";
 import farmer from '@/app/assets/kartavya-icons/Farmer-livelihood&sustainability.svg'
 import food from '@/app/assets/kartavya-icons/Food-sustainability.svg'
 import higher from '@/app/assets/kartavya-icons/Higher-yeild.svg'

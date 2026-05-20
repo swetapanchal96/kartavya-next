@@ -280,7 +280,7 @@ type ProductType = {
     title: string;
     image: string;
     veg_slug: string;
-    field_slug:string;
+    field_slug: string;
     sub_vegetables?: any[];
 };
 
@@ -297,7 +297,7 @@ export default function ProductPage() {
 
     const getProductType = () => {
         if (slug === "vegetables") return 1;
-        if (slug === "field"   ) return 2;
+        if (slug === "field") return 2;
         return 1;
     };
 
@@ -332,7 +332,7 @@ export default function ProductPage() {
     useEffect(() => {
         getProducts();
     }, [slug]);
-console.log(products,"products=====")
+    console.log(products, "products=====")
     return (
         <>
             <Breadcrumb
@@ -418,22 +418,20 @@ console.log(products,"products=====")
                                         <Link
                                             key={category.slug}
                                             href={`/product?slug=${category.slug}`}
-                                            className={`group flex gap-10 items-center justify-between rounded-2xl border px-3 py-3 transition duration-300 ${
-                                                slug === category.slug
-                                                    ? "border-secondary bg-secondary text-white"
-                                                    : "border-[#eee] hover:border-secondary/30 hover:bg-[#fafafa]"
-                                            }`}
+                                            className={`group flex gap-10 items-center justify-between rounded-2xl border px-3 py-3 transition duration-300 ${slug === category.slug
+                                                ? "border-secondary bg-secondary text-white"
+                                                : "border-[#eee] hover:border-secondary/30 hover:bg-[#fafafa]"
+                                                }`}
                                         >
                                             <span className="font-bold uppercase tracking-[2px]">
                                                 {category.name}
                                             </span>
 
                                             <FaChevronRight
-                                                className={`transition duration-300 group-hover:translate-x-1 ${
-                                                    slug === category.slug
-                                                        ? "text-white"
-                                                        : "text-primary"
-                                                }`}
+                                                className={`transition duration-300 group-hover:translate-x-1 ${slug === category.slug
+                                                    ? "text-white"
+                                                    : "text-primary"
+                                                    }`}
                                             />
                                         </Link>
                                     ))}
@@ -450,10 +448,11 @@ console.log(products,"products=====")
                                 </h3>
 
                                 <div className="mt-5 flex flex-col justify-start items-start gap-4">
-                                    <button className="flex items-center w-65 cursor-pointer justify-start gap-3 rounded-xl bg-secondary px-5 py-3 text-md text-white font-bold uppercase transition duration-300 hover:bg-primary whitespace-nowrap">
+                                    <Link href="https://heyzine.com/flip-book/e4f3d3f75f.html" target="_blank"
+                                        className="flex items-center w-65 cursor-pointer justify-start gap-3 rounded-xl bg-secondary px-5 py-3 text-md text-white font-bold uppercase transition duration-300 hover:bg-primary whitespace-nowrap">
                                         <FaEye className="text-md" />
                                         <span>View Catalogue</span>
-                                    </button>
+                                    </Link>
 
                                     <button className="flex items-center cursor-pointer justify-start gap-3 rounded-xl bg-secondary px-5 py-3 text-md text-white font-bold uppercase transition duration-300 hover:bg-primary whitespace-nowrap">
                                         <FaDownload className="text-md" />

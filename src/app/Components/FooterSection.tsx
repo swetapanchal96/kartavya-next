@@ -13,6 +13,25 @@ import {
 import { IoLocationSharp } from "react-icons/io5";
 import logo from "@/app/assets/Kartavya-Seeds-Logo-round.png"; // Adjust path to your
 
+const socialLinks = [
+  {
+    icon: FaYoutube,
+    link: "https://www.youtube.com/@kartavyaseeds3833",
+  },
+  {
+    icon: FaInstagram,
+    link: "https://www.instagram.com/kartavyaseeds",
+  },
+  {
+    icon: FaFacebookF,
+    link: "https://www.facebook.com/kartavyaseeds",
+  }
+  // {
+  //   icon: FaLinkedinIn,
+  //   link: "https://linkedin.com",
+  // },
+];
+
 export default function Footer() {
   return (
     <>
@@ -134,6 +153,15 @@ export default function Footer() {
                     Field Crop
                   </Link>
 
+                  {/* <Link
+                    href="/product?slug=field"
+                    className="group flex items-center gap-3 text-lg text-white/80 transition-all duration-300 hover:text-yellow"
+                  >
+                    <span className="h-2 w-2 rounded-full bg-yellow transition-all duration-300 group-hover:scale-150"></span>
+
+                    Fruit Crop
+                  </Link> */}
+
                 </div>
 
               </div>
@@ -147,20 +175,21 @@ export default function Footer() {
 
               <div className="flex flex-wrap gap-4">
 
-                {[
-                  FaYoutube,
-                  FaInstagram,
-                  FaFacebookF,
-                  FaLinkedinIn,
-                ].map((Icon, i) => (
-                  <Link
-                    key={i}
-                    href="#"
-                    className="group flex h-14 w-14 items-center justify-center rounded-full bg-yellow text-primary transition-all duration-300 hover:-translate-y-1 hover:scale-110 hover:bg-secondary"
-                  >
-                    <Icon size={22} />
-                  </Link>
-                ))}
+                {socialLinks.map((item, i) => {
+                  const Icon = item.icon;
+
+                  return (
+                    <Link
+                      key={i}
+                      href={item.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group flex h-14 w-14 items-center justify-center rounded-full bg-yellow text-primary transition-all duration-300 hover:-translate-y-1 hover:scale-110 hover:bg-secondary"
+                    >
+                      <Icon size={22} />
+                    </Link>
+                  );
+                })}
 
               </div>
 

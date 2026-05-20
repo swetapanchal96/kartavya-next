@@ -20,8 +20,9 @@ export default function KeepExploring() {
                         <div className="mt-5 flex flex-wrap items-center justify-center gap-4">
 
                             {[
-                                { title: "Vegetable Product", link: "/product?slug=vegetables" },
-                                { title: "Field Crop Product", link: "/product?slug=field" },
+                                { title: "Vegetable Crop", link: "/product?slug=vegetables" },
+                                { title: "Field Crop", link: "/product?slug=field" },
+                                // { title: "Fruit Crop", link: "/product?slug=fruit" },
                                 { title: "R&D", link: "/research&development" },
                                 { title: "Services", link: "/production" },
                                 { title: "Partnership", link: "/partnership" },
