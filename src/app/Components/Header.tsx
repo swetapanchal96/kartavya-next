@@ -42,11 +42,15 @@ const navLinks: NavLink[] = [
     dropdown: [
       {
         label: "Vegetables Products",
-        href: "product?slug=vegetables",
+        href: "/product?slug=vegetables",
       },
       {
         label: "Field Crops Products",
-        href: "product?slug=field",
+        href: "/product?slug=field",
+      },
+      {
+        label: "Fruit Crops Products",
+        href: "/product?slug=fruit",
       },
     ],
   },
