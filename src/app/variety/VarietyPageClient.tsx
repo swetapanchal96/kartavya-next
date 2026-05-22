@@ -264,16 +264,23 @@ const categories = [
     slug: "filed",
     type: 2,
   },
+  {
+    name: "Fruit Crops",
+    slug: "fruit",
+    type: 3,
+  },
 ];
 
 type SubVegetableType = {
   id: number;
   sub_vegetable_name?: string;
   sub_field_crop_name?: string;
+  sub_foot_crop_name?: string;
   master_image: string;
   description: string;
   sub_veg_slug?: string;
   sub_field_slug?: string;
+  sub_foot_slug?: string;
   gallery_images?: {
     id: number;
     image: string;
@@ -286,9 +293,10 @@ type ProductType = {
   image: string;
   veg_slug?: string;
   field_slug?: string;
+  foot_slug?: string;
   sub_vegetables?: SubVegetableType[];
   sub_field_crops?: SubVegetableType[];
-
+  sub_foot_crops?: SubVegetableType[];
 };
 
 export default function VarietyPage() {
@@ -321,6 +329,10 @@ export default function VarietyPage() {
             return item.field_slug === slug;
           }
 
+          if (type === 3) {
+            return item.foot_slug === slug;
+          }
+
           return false;
         });
 
@@ -334,6 +346,13 @@ export default function VarietyPage() {
           if (type === 2) {
             setVarieties(
               currentProduct.sub_field_crops ||
+              currentProduct.sub_vegetables ||
+              []
+            );
+          }
+          if (type === 3) {
+            setVarieties(
+              currentProduct.sub_foot_crops ||
               currentProduct.sub_vegetables ||
               []
             );
@@ -368,8 +387,8 @@ export default function VarietyPage() {
         breadcrumbs={[
           { label: "Home", href: "/" },
           {
-            label: type === 2 ? "Field Crops" : "Vegetable Crops",
-            href: `/product?slug=${type === 2 ? "field" : "vegetables"}`,
+            label: type === 2 ? "Field Crops" : type === 3 ? "Fruit Crops" : "Vegetable Crops",
+            href: `/product?slug=${type === 2 ? "field" : type === 3 ? "fruits" : "vegetables"}`,
           },
           { label: `${productTitle} Varieties` },
         ]}
@@ -393,12 +412,16 @@ export default function VarietyPage() {
                     const varietyName =
                       type === 2
                         ? variety.sub_field_crop_name || variety.sub_vegetable_name
-                        : variety.sub_vegetable_name;
+                        : type === 3
+                          ? variety.sub_foot_crop_name
+                          : variety.sub_vegetable_name;
 
                     const varietySlug =
                       type === 2
                         ? variety.sub_field_slug || variety.sub_veg_slug
-                        : variety.sub_veg_slug;
+                        : type === 3
+                          ? variety.sub_foot_slug
+                          : variety.sub_veg_slug;
 
                     return (
                       <Link
@@ -453,8 +476,8 @@ export default function VarietyPage() {
                       key={category.slug}
                       href={`/product?slug=${category.slug}`}
                       className={`group flex gap-10 items-center justify-between rounded-2xl border px-3 py-3 transition duration-300 ${type === category.type
-                          ? "border-secondary bg-secondary text-white"
-                          : "border-[#eee] hover:border-secondary/30 hover:bg-[#fafafa]"
+                        ? "border-secondary bg-secondary text-white"
+                        : "border-[#eee] hover:border-secondary/30 hover:bg-[#fafafa]"
                         }`}
                     >
                       <span className="font-bold uppercase tracking-[2px]">

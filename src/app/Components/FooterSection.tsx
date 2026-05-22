@@ -153,14 +153,14 @@ export default function Footer() {
                     Field Crop
                   </Link>
 
-                  {/* <Link
-                    href="/product?slug=field"
+                  <Link
+                    href="/product?slug=fruit"
                     className="group flex items-center gap-3 text-lg text-white/80 transition-all duration-300 hover:text-yellow"
                   >
                     <span className="h-2 w-2 rounded-full bg-yellow transition-all duration-300 group-hover:scale-150"></span>
 
                     Fruit Crop
-                  </Link> */}
+                  </Link>
 
                 </div>
 
