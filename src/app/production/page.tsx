@@ -10,6 +10,7 @@ import nursery from '@/app/assets/farm-nursery.webp';
 import nethouse from '@/app/assets/net-house.webp';
 import dryunit from '@/app/assets/drying-unit.webp';
 import storage from '@/app/assets/storage.webp';
+import growbag from '@/app/assets/grow-bag.jpeg';
 import lab from '@/app/assets/lab.webp';
 import advance from '@/app/assets/advance-tech.webp';
 import bg from '@/app/assets/kartavya-bg-3.png'
@@ -63,7 +64,7 @@ const facilities = [
     },
     {
         title: "New Technologies (Production In Grow Bags)",
-        image: "/images/facilities/facility-4.jpg",
+        image: growbag.src,
     },
     {
         title: "Quality Control Lab",

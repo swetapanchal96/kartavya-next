@@ -6,7 +6,7 @@ import img2 from '@/app/assets/2.jpeg';
 import img3 from '@/app/assets/3.jpg';
 import img4 from '@/app/assets/4.png';
 import Image from "next/image";
-import aboutImg from '@/app/assets/post-3.jpg';
+import aboutImg from '@/app/assets/Increment-of-basic-seeds.jpeg';
 
 export default function IncrementBasicSeedPage() {
     return (

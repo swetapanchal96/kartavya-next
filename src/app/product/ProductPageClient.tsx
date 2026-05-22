@@ -254,6 +254,9 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import axios from "axios";
+import vegetableHeader from "@/app/assets/Vegetable-crop.webp";
+import fieldHeader from "@/app/assets/Field-Crop.webp";
+import fruitHeader from "@/app/assets/Fruits-Crop.webp";
 
 import {
     FaDownload,
@@ -273,6 +276,11 @@ const categories = [
         slug: "field",
         type: 2,
     },
+    {
+        name: "Fruit Crops",
+        slug: "fruit",
+        type: 3,
+    },
 ];
 
 type ProductType = {
@@ -281,6 +289,7 @@ type ProductType = {
     image: string;
     veg_slug: string;
     field_slug: string;
+    foot_slug: string;
     sub_vegetables?: any[];
 };
 
@@ -298,8 +307,16 @@ export default function ProductPage() {
     const getProductType = () => {
         if (slug === "vegetables") return 1;
         if (slug === "field") return 2;
+        if (slug === "fruit") return 3;
         return 1;
     };
+
+    const getBreadcrumbImage = () => {
+        if (slug === "field") return fieldHeader.src;
+        if (slug === "fruit") return fruitHeader.src;
+        return vegetableHeader.src;
+    };
+
 
     const type = getProductType();
     const getProducts = async () => {
@@ -338,7 +355,7 @@ export default function ProductPage() {
             <Breadcrumb
                 title={pageTitle}
                 subtitle="Growing Trust Since Years"
-                backgroundImage={header.src}
+                backgroundImage={getBreadcrumbImage()}
                 breadcrumbs={[
                     { label: "Home", href: "/" },
                     { label: pageTitle },
@@ -364,7 +381,12 @@ export default function ProductPage() {
                                     {products.map((product) => (
                                         <Link
                                             key={product.id}
-                                            href={`/variety?slug=${type === 1 ? product.veg_slug : product.field_slug}&type=${type}`}
+                                            href={`/variety?slug=${type === 1
+                                                ? product.veg_slug
+                                                : type === 3
+                                                    ? product.foot_slug
+                                                    : product.field_slug
+                                                }&type=${type}`}
                                             className="group relative flex flex-col items-center text-center"
                                         >
                                             {/* Circle Image */}
