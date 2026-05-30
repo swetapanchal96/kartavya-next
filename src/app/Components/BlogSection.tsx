@@ -5,155 +5,226 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaLeaf, FaArrowRight } from "react-icons/fa";
 import AnimatedHeading from "./AnimatedHeading";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 import blog1 from "@/app/assets/post-1.jpg";
 import blog2 from "@/app/assets/post-2.jpg";
 import blog3 from "@/app/assets/post-3.jpg";
 import bg from '@/app/assets/kartavya-bg-4.png'
+import { apiUrl } from "@/config";
 
 export default function BlogSection() {
+  const [event, setEvent] = useState<any>(null);
+  const [eventError, setEventError] = useState("");
+  const [articles, setArticles] = useState<any[]>([]);
+  const [articleError, setArticleError] = useState("");
+
+  useEffect(() => {
+    const fetchEvent = async () => {
+      try {
+        setEventError("");
+
+        const res = await axios.post(
+          `${apiUrl}/event-list`
+        );
+
+        if (res.data?.success && res.data?.data?.length > 0) {
+          setEvent(res.data.data[0]);
+        }
+      } catch (error: any) {
+        console.log("Event API Error:", error);
+        setEventError(
+          error?.response?.data?.message ||
+          error?.message ||
+          "Something went wrong while fetching events."
+        );
+      }
+    };
+
+    fetchEvent();
+  }, []);
+
+  useEffect(() => {
+
+
+    const fetchArticles = async () => {
+      try {
+        setArticleError("");
+
+        const res = await axios.post(
+          `${apiUrl}/article-list`
+        );
+
+        if (res.data?.success && res.data?.data?.length > 0) {
+
+          setArticles(res.data.data.slice(0, 3));
+
+        } else {
+
+          setArticleError(
+            res.data?.message || "No articles found."
+          );
+        }
+
+      } catch (error: any) {
+
+        console.log("Article API Error:", error);
+
+        setArticleError(
+          error?.response?.data?.message ||
+          error?.message ||
+          "Something went wrong while fetching articles."
+        );
+      }
+    };
+
+    fetchArticles();
+  }, [])
+
   return (
     // <section className="py-20 bg-linear-to-br from-blue/50 via-secondary/35  to-primary/50 overflow-hidden relative">
-      <section className="py-20 bg-primary overflow-hidden relative">
-      {/* Background Blur */}
-      {/* <div className="absolute top-20 left-10 w-72 h-72 bg-secondary/10 rounded-full blur-3xl"></div> */}
-      {/* <div className="absolute bottom-20 right-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl"></div> */}
-
+    <section className="py-20 bg-primary overflow-hidden relative">
       <div className="container mx-auto px-6 md:px-12 relative z-10">
-
         {/* Section Heading */}
         <div className="text-center mb-10">
           <p className="flex items-center text-lg justify-center gap-3 uppercase tracking-[5px] text-white font-semibold mb-4">
             <FaLeaf />
-            Latest Blog
+            Media & Events
           </p>
 
           <AnimatedHeading className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
-            Insights & Agricultural Stories
+            Know the Latest News & Events
           </AnimatedHeading>
         </div>
 
         {/* Blog Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-[50%_50%] gap-4 items-start">
 
-          {/* Left Large Blog Card */}
-          <div className="rounded-3xl border border-gray-200 bg-white overflow-hidden hover:shadow-xl transition-all duration-500 group">
+          {/* LEFT SIDE EVENTS */}
 
-            {/* Image */}
-            <div className="relative h-88 overflow-hidden">
-              <Image
-                src={blog1}
-                alt="Blog Image"
-                fill
-                className="object-cover transition-all duration-700 group-hover:scale-105"
-              />
-            </div>
+          <div className="">
+            <Link href='/events'>
+              <div className="rounded-3xl border border-gray-200 bg-white overflow-hidden hover:shadow-xl transition-all duration-500 group">
 
-            {/* Content */}
-            <div className="p-6">
-              <h3 className="text-3xl font-bold text-primary mb-2 leading-tight">
-                How to Improve Sustainable Farming
-              </h3>
+                {/* Image */}
+                <div className="relative h-88 overflow-hidden">
+                  <Image
+                    src={event?.masterimage}
+                    alt={event?.title || "Event Image"}
 
-              <p className="text-light-grey text-md leading-6 mb-6">
-                Discover modern agricultural practices that improve crop
-                quality, increase yield, and promote long-term environmental
-                sustainability for future generations.
-              </p>
+                    fill
+                    className="object-cover transition-all duration-700 group-hover:scale-105"
+                  />
+                </div>
 
+                {/* Content */}
+                <div className="p-6">
+
+                  <p className="text-secondary uppercase tracking-[3px] font-semibold mb-3">
+                    Events
+                  </p>
+
+                  <h3 className="text-3xl font-bold text-primary mb-5 leading-tight">
+                    {eventError
+                      ? eventError
+                      : event?.title || "Loading Event..."}
+                  </h3>
+                </div>
+              </div>
+            </Link>
+            <div className="pt-4">
               <Link
-                href="#"
+                href="/events"
                 className="inline-flex items-center gap-3 text-secondary font-semibold text-lg hover:gap-4 transition-all duration-300"
               >
-                Read More
+                View More Events
                 <FaArrowRight />
               </Link>
             </div>
           </div>
 
-          {/* Right Side Small Cards */}
-          <div className="space-y-8">
+          {/* RIGHT SIDE NEWS & ARTICLES */}
+          <div className="space-y-3">
 
-            {/* Card 1 */}
-            <div className="grid grid-cols-1 md:grid-cols-2 rounded-3xl border border-gray-200 bg-white overflow-hidden hover:shadow-xl transition-all duration-500 group">
+            {articleError ? (
 
-              {/* Image */}
-              <div className="relative h-75 md:h-full overflow-hidden">
-                <Image
-                  src={blog2}
-                  alt="Blog Image"
-                  fill
-                  className="object-cover transition-all duration-700 group-hover:scale-105"
-                />
+              <div className="rounded-3xl bg-white p-8 text-center text-red-500 font-semibold">
+                {articleError}
               </div>
 
-              {/* Content */}
-              <div className="p-6 flex flex-col justify-center">
-                <h3 className="text-2xl font-bold text-primary mb-3 leading-tight">
-                  Future of Renewable Energy
-                </h3>
+            ) : articles.length > 0 ? (
 
-                <p className="text-light-grey text-md leading-6 mb-3">
-                  Explore sustainable farming solutions and agricultural
-                  innovations helping farmers grow better every season.
-                </p>
+              <>
+                {articles.map((article) => (
 
-                <Link
-                  href="#"
-                  className="inline-flex items-center gap-3 text-secondary font-semibold text-lg hover:gap-4 transition-all duration-300"
-                >
-                  Read More
-                  <FaArrowRight />
-                </Link>
+                  <Link
+                    key={article.id}
+                    href='/news-articles'
+                    className="grid grid-cols-1 h-42.5 md:grid-cols-[40%_60%] rounded-3xl border border-gray-200 bg-white overflow-hidden hover:shadow-xl transition-all duration-500 group"
+                  >
+
+                    {/* Image */}
+                    <div className="relative h-60 md:h-full overflow-hidden">
+                      <Image
+                        src={article.image}
+                        alt={article.title}
+                        fill
+                        unoptimized
+                        className="object-cover object-center transition-all duration-700 group-hover:scale-105"
+                      />
+                    </div>
+
+                    {/* Content */}
+                    <div className="p-6 flex flex-col justify-center">
+
+                      <p className="text-secondary uppercase tracking-[3px] font-semibold mb-3">
+                        News & Article
+                      </p>
+
+                      <h3 className="text-2xl font-bold text-primary leading-tight transition duration-300 group-hover:text-secondary line-clamp-2">
+                        {article.title}
+                      </h3>
+
+                    </div>
+
+                  </Link>
+
+                ))}
+
+                {/* Button */}
+                <div className="pt-1 flex justify-end">
+                  <Link
+                    href="/news-articles"
+                    className="inline-flex items-center gap-3 text-secondary font-semibold text-lg hover:gap-4 transition-all duration-300"
+                  >
+                    View More News
+                    <FaArrowRight />
+                  </Link>
+                </div>
+              </>
+
+            ) : (
+
+              <div className="rounded-3xl bg-white p-8 text-center font-semibold text-primary">
+                Loading articles...
               </div>
-            </div>
 
-            {/* Card 2 */}
-            <div className="grid grid-cols-1 md:grid-cols-2 rounded-3xl border border-gray-200 bg-white overflow-hidden hover:shadow-xl transition-all duration-500 group">
-
-              {/* Image */}
-              <div className="relative h-75 md:h-full overflow-hidden">
-                <Image
-                  src={blog3}
-                  alt="Blog Image"
-                  fill
-                  className="object-cover transition-all duration-700 group-hover:scale-105"
-                />
-              </div>
-
-              {/* Content */}
-              <div className="p-6 flex flex-col justify-center">
-                <h3 className="text-2xl font-bold text-primary mb-3 leading-tight">
-                  Eco-Friendly Gardening
-                </h3>
-
-                <p className="text-light-grey text-md leading-6 mb-3">
-                  Learn smart techniques to improve soil quality and protect
-                  natural resources while achieving better farming outcomes.
-                </p>
-
-                <Link
-                  href="#"
-                  className="inline-flex items-center gap-3 text-secondary font-semibold text-lg hover:gap-4 transition-all duration-300"
-                >
-                  Read More
-                  <FaArrowRight />
-                </Link>
-              </div>
-            </div>
+            )}
 
           </div>
+
         </div>
       </div>
 
-      <div className="absolute -bottom-1  h-[145vh] w-full opacity-30 pointer-events-none">
-              <Image
-                src={bg.src}
-                alt="background-texture"
-                fill
-                className="object-cover object-bottom"
-              />
-            </div>
+      <div className="absolute -bottom-1  h-[150vh] w-full opacity-30 pointer-events-none">
+        <Image
+          src={bg.src}
+          alt="background-texture"
+          fill
+          className="object-cover object-bottom"
+        />
+      </div>
     </section>
   );
 }

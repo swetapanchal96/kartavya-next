@@ -8,45 +8,53 @@ import AnimatedHeading from "./AnimatedHeading";
 import Image from "next/image";
 import bg from '@/app/assets/kartavya-bg-2.png'
 
-const farmerVideos = [
-    {
-        id: 1,
-        title:
-            "Classic Okra",
-        embed:
-            "https://www.youtube.com/embed/WeT_WC5NQEU?si=K5Jhx3CU8UYfm0Jn",
-    },
-    {
-        id: 2,
-        title:
-            "Padma Chilli",
-        embed:
-            "https://www.youtube.com/embed/vsTF7Eve2o8?si=_ZMktQI-qsQ5chw5",
-    },
-    {
-        id: 3,
-        title:
-            "Magic Chilli",
-        embed:
-            "https://www.youtube.com/embed/CM7LRWeNHbg?si=x4iELFSE6WNNHnHg",
-    },
-    {
-        id: 4,
-        title:
-            "Tansen Watermelon",
-        embed:
-            "https://www.youtube.com/embed/XRtvalh5WzA?si=yf7X6W3EF5zFc6-7",
-    },
-    {
-        id: 5,
-        title:
-            "Rudra-55 Cabbage",
-        embed:
-            "https://www.youtube.com/embed/5V6KnGiGHuw?si=r8ZcRvRm7ssmjeHK",
-    },
-];
+interface FarmerStoriesSectionProps {
+    videos: any[];
+    loading?: boolean;
+}
 
-export default function FarmerStoriesSection() {
+// const farmerVideos = [
+//     {
+//         id: 1,
+//         title:
+//             "Classic Okra",
+//         embed:
+//             "https://www.youtube.com/embed/WeT_WC5NQEU?si=K5Jhx3CU8UYfm0Jn",
+//     },
+//     {
+//         id: 2,
+//         title:
+//             "Padma Chilli",
+//         embed:
+//             "https://www.youtube.com/embed/vsTF7Eve2o8?si=_ZMktQI-qsQ5chw5",
+//     },
+//     {
+//         id: 3,
+//         title:
+//             "Magic Chilli",
+//         embed:
+//             "https://www.youtube.com/embed/CM7LRWeNHbg?si=x4iELFSE6WNNHnHg",
+//     },
+//     {
+//         id: 4,
+//         title:
+//             "Tansen Watermelon",
+//         embed:
+//             "https://www.youtube.com/embed/XRtvalh5WzA?si=yf7X6W3EF5zFc6-7",
+//     },
+//     {
+//         id: 5,
+//         title:
+//             "Rudra-55 Cabbage",
+//         embed:
+//             "https://www.youtube.com/embed/5V6KnGiGHuw?si=r8ZcRvRm7ssmjeHK",
+//     },
+// ];
+
+export default function FarmerStoriesSection({
+    videos,
+    loading,
+}: FarmerStoriesSectionProps) {
     return (
         <section className="relative py-20 bg-[#f7f7f7] overflow-hidden">
 
@@ -101,35 +109,69 @@ export default function FarmerStoriesSection() {
                     }}
                     className="pb-20"
                 >
-                    {farmerVideos.map((video) => (
-                        <SwiperSlide key={video.id}>
-                            <div className="group">
+                    {loading ? (
 
-                                {/* Video Card */}
-                                <div className="rounded-[20px] overflow-hidden shadow-lg bg-white opacity-100 hover:shadow-2xl transition-all duration-500">
+                        <div className="text-center text-xl font-semibold text-primary">
+                            Loading Videos...
+                        </div>
 
-                                    {/* Video */}
-                                    <div className="relative h-62.5 overflow-hidden">
-                                        <iframe
-                                            src={video.embed}
-                                            title={video.title}
-                                            className="w-full h-full"
-                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                            allowFullScreen
-                                        />
+                    ) : videos?.length > 0 ? (
+
+                        videos.map((video: any, index: number) => (
+
+                            <SwiperSlide
+                                key={video.id || index}
+                            >
+
+                                <div className="group">
+
+                                    {/* Video Card */}
+                                    <div className="rounded-[20px] overflow-hidden shadow-lg bg-white hover:shadow-2xl transition-all duration-500">
+
+                                        {/* Video */}
+                                        <div className="relative h-62.5 overflow-hidden">
+
+                                            <iframe
+                                                src={
+                                                    video.video_url
+                                                        ?.replace(
+                                                            "youtu.be/",
+                                                            "www.youtube.com/embed/"
+                                                        )
+                                                        ?.split("?")[0]
+                                                }
+                                                title={video.title}
+                                                className="w-full h-full"
+                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                                allowFullScreen
+                                            />
+
+                                        </div>
+
+                                        {/* Title */}
+                                        <div className="p-5 bg-yellow">
+
+                                            <h3 className="text-primary font-extrabold text-xl leading-7 line-clamp-2 min-h-7 transition-all duration-300">
+                                                {video.title}
+                                            </h3>
+
+                                        </div>
+
                                     </div>
 
-                                    {/* Title (max 2 lines) */}
-                                    <div className="p-5 bg-yellow">
-                                        <h3 className="text-primary font-extrabold text-xl leading-7 line-clamp-2 min-h-7   opacity-100 transition-all duration-300">
-                                            {video.title}
-                                        </h3>
-                                    </div>
                                 </div>
 
-                            </div>
-                        </SwiperSlide>
-                    ))}
+                            </SwiperSlide>
+
+                        ))
+
+                    ) : (
+
+                        <div className="text-center text-xl font-semibold text-primary">
+                            No videos found.
+                        </div>
+
+                    )}
                 </Swiper>
 
                 {/* Bottom Controls */}

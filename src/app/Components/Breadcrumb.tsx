@@ -50,14 +50,14 @@ export default function Breadcrumb({
         <div className="container mx-auto px-4">
           <div className="flex min-h-90 flex-col items-center justify-center py-20 text-center md:min-h-107.5">
             {/* Subtitle */}
-            {subtitle && (
+            {/* {subtitle && (
               <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-5 py-2 backdrop-blur-md">
                 <span className="h-2 w-2 rounded-full bg-secondary" />
                 <span className="text-sm font-medium tracking-wide text-white">
                   {subtitle}
                 </span>
               </div>
-            )}
+            )} */}
 
             {/* Title */}
             <h1 className="max-w-4xl text-4xl font-bold leading-tight text-white md:text-6xl">
@@ -65,10 +65,10 @@ export default function Breadcrumb({
             </h1>
 
             {/* Accent Line */}
-            <div className="mt-6 h-1 w-24 rounded-full bg-secondary" />
+            <div className="mt-3 h-1 w-24 rounded-full bg-secondary" />
 
             {/* Breadcrumb */}
-            <div className="mt-8">
+            <div className="mt-4">
               <div className="inline-flex flex-wrap items-center justify-center rounded-full border border-white/10 bg-white/10 px-5 py-3 backdrop-blur-xl">
                 {breadcrumbs.map((item, index) => {
                   const isLast = index === breadcrumbs.length - 1;

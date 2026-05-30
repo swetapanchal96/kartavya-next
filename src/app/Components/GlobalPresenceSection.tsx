@@ -2,14 +2,17 @@
 
 import React from "react";
 import Image from "next/image";
-import worldMap from "@/app/assets/Kartavya-Global-Presence.webp";
-import { FaLeaf } from "react-icons/fa";
+import worldMap from "@/app/assets/Kartavya-Global-Presence-updated.webp";
+import { FaLeaf, FaMapMarkerAlt } from "react-icons/fa";
 import AnimatedHeading from "./AnimatedHeading";
 
 const countries = [
+  // {
+  //   name: "USA",
+  //   flag: "https://flagcdn.com/w40/us.png",
+  // },
   {
-    name: "USA",
-    flag: "https://flagcdn.com/w40/us.png",
+    name: "Middle East",
   },
   {
     name: "Italy",
@@ -19,14 +22,14 @@ const countries = [
     name: "Turkey",
     flag: "https://flagcdn.com/w40/tr.png",
   },
-  {
-    name: "Jordan",
-    flag: "https://flagcdn.com/w40/jo.png",
-  },
-  {
-    name: "Iran",
-    flag: "https://flagcdn.com/w40/ir.png",
-  },
+  // {
+  //   name: "Jordan",
+  //   flag: "https://flagcdn.com/w40/jo.png",
+  // },
+  // {
+  //   name: "Iran",
+  //   flag: "https://flagcdn.com/w40/ir.png",
+  // },
   {
     name: "Pakistan",
     flag: "https://flagcdn.com/w40/pk.png",
@@ -81,12 +84,13 @@ export default function GlobalPresenceSection() {
                 className="flex items-center gap-4 group"
               >
                 {/* Flag */}
-                <div className="w-10 h-10 rounded-full  flex items-center justify-center shrink-0  group-hover:scale-110 transition-all duration-300">
-                  <img
+                <div className="w-7 h-7 my-2 rounded-full bg-primary flex items-center justify-center shrink-0  group-hover:scale-110 transition-all duration-300">
+                  {/* <img
                     src={country.flag}
                     alt={country.name}
                     className="w-5 h-5 rounded-full object-cover"
-                  />
+                  /> */}
+                  <FaMapMarkerAlt className="text-white text-sm" />
                 </div>
 
                 {/* Country Name */}

@@ -35,7 +35,7 @@ export default function ResearchDevelopmentPage() {
         <>
             <Breadcrumb
                 title="Research & Development"
-                subtitle="Growing Trust Since Years"
+                // subtitle="Growing Trust Since Years"
                 backgroundImage={header.src}
                 breadcrumbs={[
                     { label: "Home", href: "/" },
@@ -182,7 +182,7 @@ export default function ResearchDevelopmentPage() {
 
                             <motion.div custom={0.4} variants={fadeUp}>
                                 <AnimatedHeading className="max-w-xl text-3xl font-bold text-primary md:text-[46px]">
-                                    Recognized by DSIR for Research & Development Excellence
+                                    Recognized by DSIR(Govt of India) for Research & Development Excellence
                                 </AnimatedHeading>
                             </motion.div>
 
@@ -248,12 +248,12 @@ export default function ResearchDevelopmentPage() {
                 <div className="container mx-auto px-4 md:px-12">
                     {/* Heading */}
                     <div className="text-center">
-                        <span className="text-sm font-bold uppercase tracking-[4px] text-primary">
+                        <span className="text-lg font-semibold uppercase tracking-[4px] text-primary">
                             Seed Innovation
                         </span>
 
                         <AnimatedHeading className="mt-2 text-4xl font-bold text-dark-grey md:text-5xl lg:text-6xl">
-                            Why we need new variety???
+                            Why we need new hybrid???
                         </AnimatedHeading>
 
                         <div className="mx-auto mt-2 h-1 w-24 bg-secondary"></div>
@@ -385,7 +385,7 @@ export default function ResearchDevelopmentPage() {
                 <div className="container relative z-10 mx-auto px-4 md:px-10">
                     {/* Heading */}
                     <div className="mx-auto max-w-4xl text-center">
-                        <span className="inline-block animate-[pulse_3s_ease-in-out_infinite] text-xs font-bold uppercase tracking-[5px] text-primary">
+                        <span className="inline-block text-lg font-semibold uppercase tracking-[5px] text-primary">
                             Research Excellence
                         </span>
 
@@ -416,9 +416,9 @@ export default function ResearchDevelopmentPage() {
                                     <div className="absolute -left-10 top-0 h-36 w-36 rounded-full bg-[#ffeded] blur-3xl transition-all duration-700 group-hover:scale-150 group-hover:opacity-100"></div>
 
                                     {/* Animated Border */}
-                                    <div className="relative border-l-2 border-[#e53935]/20 pl-6 transition-all duration-500 group-hover:border-[#e53935]">
-                                        <span className="inline-flex items-center gap-2 rounded-full bg-[#fff1f1] px-4 py-2 text-[14px] font-bold uppercase tracking-[3px] text-[#e53935] transition-all duration-500 group-hover:scale-105">
-                                            <span className="h-2 w-2 animate-slowPing rounded-full bg-[#e53935]"></span>
+                                    <div className="relative border-l-2 border-[#0a2a1a]/20 pl-6 transition-all duration-500 group-hover:border-[#0a2a1a]">
+                                        <span className="inline-flex items-center gap-2 rounded-full bg-[#0a2a1a]/10 px-4 py-2 text-[14px] font-bold uppercase tracking-[3px] text-[#0a2a1a] transition-all duration-500 group-hover:scale-105">
+                                            <span className="h-2 w-2 animate-slowPing rounded-full bg-[#0a2a1a]"></span>
                                             High-Yielding Varieties
                                         </span>
 
@@ -437,8 +437,8 @@ export default function ResearchDevelopmentPage() {
                                 {/* Center Orb */}
                                 <div className="absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 lg:block">
                                     <div className="relative flex h-6 w-6 items-center justify-center">
-                                        <div className="absolute h-10 w-10 animate-slowPing rounded-full bg-[#e53935]/20"></div>
-                                        <div className="h-5 w-5 rounded-full border-4 border-white bg-[#e53935] shadow-[0_0_30px_rgba(229,57,53,0.7)]"></div>
+                                        <div className="absolute h-10 w-10 animate-slowPing rounded-full bg-[#0a2a1a]/20"></div>
+                                        <div className="h-5 w-5 rounded-full border-4 border-white bg-[#0a2a1a] shadow-[0_0_35px_rgba(10,42,26,0.45)]"></div>
                                     </div>
                                 </div>
                             </div>
@@ -482,7 +482,7 @@ export default function ResearchDevelopmentPage() {
                                     <div className="absolute -left-10 top-0 h-36 w-36 rounded-full bg-yellow-400/10 blur-3xl transition-all duration-700 group-hover:scale-150"></div>
 
                                     <div className="relative border-l-2 border-[#f4b400]/20 pl-6 transition-all duration-500 group-hover:border-[#f4b400]">
-                                        <span className="inline-flex items-center gap-2 rounded-full bg-black/5 px-4 py-2 text-[14px] font-bold uppercase tracking-[3px] text-[#1e1e1e] transition-all duration-500 group-hover:scale-105">
+                                        <span className="inline-flex items-center gap-2 rounded-full bg-black/5 px-4 py-2 text-[14px] font-bold uppercase tracking-[3px] text-[#f4b400] transition-all duration-500 group-hover:scale-105">
                                             <span className="h-2 w-2 animate-slowPing rounded-full bg-[#f4b400]"></span>
                                             Climate Resilience
                                         </span>
@@ -611,7 +611,7 @@ export default function ResearchDevelopmentPage() {
 
                     {/* ================= HEADING ================= */}
                     <div className="mx-auto max-w-5xl text-center">
-                        <span className="inline-block rounded-full border border-white/10 bg-white/5 px-5 py-2 text-sm font-bold uppercase tracking-[4px] text-secondary backdrop-blur-xl">
+                        <span className="inline-block rounded-full border border-white/10 bg-white/5 px-5 py-2 text-lg font-semibold uppercase tracking-[4px] text-secondary backdrop-blur-xl">
                             Seed Development Process
                         </span>
 
@@ -676,7 +676,7 @@ export default function ResearchDevelopmentPage() {
                                 </div>
 
                                 <h3 className="mt-3 text-[30px] font-black leading-none text-[#fff8f5]">
-                                    Line
+                                    Line Development
                                 </h3>
 
                                 <p className="mx-auto mt-2 max-w-64 text-base text-[#f5e9e5]/80">
@@ -788,7 +788,7 @@ export default function ResearchDevelopmentPage() {
                                 </div>
 
                                 <h3 className="mt-3 text-[30px] font-black leading-none text-[#fff8f5]">
-                                    Preliminary
+                                    Station Trials
                                 </h3>
 
                                 <p className="mx-auto mt-2 max-w-64 text-base  text-[#f5e9e5]/80">

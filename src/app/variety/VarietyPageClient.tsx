@@ -261,7 +261,7 @@ const categories = [
   },
   {
     name: "Field Crops",
-    slug: "filed",
+    slug: "field",
     type: 2,
   },
   {
@@ -378,17 +378,28 @@ export default function VarietyPage() {
     }
   }, [slug, type]);
 
+  const toTitleCase = (text?: string) =>
+  text
+    ?.toLowerCase()
+    .split(" ")
+    .map(
+      (word) =>
+        word.charAt(0).toUpperCase() +
+        word.slice(1)
+    )
+    .join(" ");
+
   return (
     <>
       <Breadcrumb
         title={`${productTitle} Varieties`}
-        subtitle="Growing Trust Since Years"
+        // subtitle="Growing Trust Since Years"
         backgroundImage={header.src}
         breadcrumbs={[
           { label: "Home", href: "/" },
           {
             label: type === 2 ? "Field Crops" : type === 3 ? "Fruit Crops" : "Vegetable Crops",
-            href: `/product?slug=${type === 2 ? "field" : type === 3 ? "fruits" : "vegetables"}`,
+            href: `/product?slug=${type === 2 ? "field" : type === 3 ? "fruit" : "vegetables"}`,
           },
           { label: `${productTitle} Varieties` },
         ]}
@@ -442,8 +453,8 @@ export default function VarietyPage() {
                         </div>
 
                         <div className="mt-4">
-                          <h3 className="text-xl font-black uppercase tracking-[1px] text-dark-grey transition duration-300 group-hover:text-secondary">
-                            {varietyName}
+                          <h3 className="text-xl font-black  tracking-[1px] text-dark-grey transition duration-300 group-hover:text-secondary">
+                            {toTitleCase(varietyName)}
                           </h3>
 
                           <div className="mx-auto mt-1 h-0.75 w-16 rounded-full bg-secondary transition-all duration-500 group-hover:w-28" />
@@ -502,16 +513,16 @@ export default function VarietyPage() {
                 </h3>
 
                 <div className="mt-5 flex flex-col justify-start items-start gap-4">
-                  <Link href="https://heyzine.com/flip-book/e4f3d3f75f.html" target="_blank"
+                  <Link href="https://heyzine.com/flip-book/08f0c37450.html" target="_blank"
                     className="flex items-center w-65 cursor-pointer justify-start gap-3 rounded-xl bg-secondary px-5 py-3 text-md text-white font-bold uppercase transition duration-300 hover:bg-primary whitespace-nowrap">
                     <FaEye className="text-md" />
                     <span>View Catalogue</span>
                   </Link>
 
-                  <button className="flex items-center cursor-pointer justify-start gap-3 rounded-xl bg-secondary px-5 py-3 text-md text-white font-bold uppercase transition duration-300 hover:bg-primary whitespace-nowrap">
+                  <Link href='/pdf/Final-Catalogue.pdf' target="_blank" className="flex items-center cursor-pointer justify-start gap-3 rounded-xl bg-secondary px-5 py-3 text-md text-white font-bold uppercase transition duration-300 hover:bg-primary whitespace-nowrap">
                     <FaDownload className="text-sm" />
                     <span>Download Catalogue</span>
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>

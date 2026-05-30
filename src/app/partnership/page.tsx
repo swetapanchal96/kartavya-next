@@ -1,12 +1,14 @@
 "use client";
 
 import { useEffect, useState } from "react";
-
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
 import Breadcrumb from "@/app/Components/Breadcrumb";
 import header from "@/app/assets/page-header-bg.jpg";
 
 import {
   FaCheckCircle,
+  FaEnvelope,
   FaLeaf,
   FaPhoneAlt,
   FaSeedling,
@@ -33,8 +35,10 @@ interface FormDataType {
   full_name: string;
   phone_number: string;
   email_address: string;
-  city_state: string;
   business_name: string;
+  city_name: string;
+  state_name: string;
+  country_name: string;
   Distribution_Network: string;
   message: string;
 }
@@ -43,14 +47,16 @@ const initialFormData: FormDataType = {
   full_name: "",
   phone_number: "",
   email_address: "",
-  city_state: "",
+  city_name: "",
+  state_name: "",
+  country_name: "",
   business_name: "",
   Distribution_Network: "",
   message: "",
 };
 
 export default function PartnershipPage() {
-  const [activeTab, setActiveTab] = useState("partners");
+  const [activeTab, setActiveTab] = useState<1 | 2>(1);
   const [loading, setLoading] = useState(false);
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
@@ -95,7 +101,8 @@ export default function PartnershipPage() {
         full_name: formData.full_name,
         phone_number: formData.phone_number,
         email_address: formData.email_address,
-        city_state: formData.city_state,
+        city_name: formData.city_name,
+        state_name: formData.state_name,
         business_name: formData.business_name,
         Distribution_Network: formData.Distribution_Network,
         message: formData.message,
@@ -131,7 +138,7 @@ export default function PartnershipPage() {
     <>
       <Breadcrumb
         title="Partnership"
-        subtitle="Growing Trust Since Years"
+        // subtitle="Growing Trust Since Years"
         backgroundImage={header.src}
         breadcrumbs={[
           { label: "Home", href: "/" },
@@ -147,11 +154,11 @@ export default function PartnershipPage() {
         <div className="container relative z-10 mx-auto px-4 md:px-12">
           {/* Heading */}
           <div className="mx-auto mb-10 max-w-4xl text-center">
-            <span className="mb-2 inline-block text-sm font-bold uppercase tracking-[6px] text-primary">
+            <span className="mb-2 inline-block text-lg font-semibold uppercase tracking-[6px] text-primary">
               Grow With Us
             </span>
 
-            <AnimatedHeading className="text-4xl font-black uppercase  text-dark-grey sm:text-5xl md:text-6xl">
+            <AnimatedHeading className="text-4xl font-black uppercase  text-primary sm:text-5xl md:text-6xl">
               Become Our
               <span className="block text-secondary">
                 Trusted Partner
@@ -162,7 +169,7 @@ export default function PartnershipPage() {
           {/* Main Layout */}
           <div className="grid overflow-hidden rounded-[40px] bg-white shadow-[0_25px_80px_rgba(0,0,0,0.06)] xl:grid-cols-[42%_58%]">
             {/* LEFT SIDE */}
-            <div className="relative overflow-hidden bg-dark-grey p-10 lg:p-14">
+            <div className="relative overflow-hidden bg-primary p-10 lg:p-14">
               {/* Decorative */}
               <div className="absolute -left-20 -top-20 h-72 w-72 rounded-full border-40 border-secondary/10" />
 
@@ -215,7 +222,7 @@ export default function PartnershipPage() {
                 </div>
 
                 {/* Bottom Box */}
-                <div className="mt-14 rounded-[30px] border border-white/10 bg-white/5 p-6 backdrop-blur-md">
+                {/* <div className="mt-14 rounded-[30px] border border-white/10 bg-white/5 p-6 backdrop-blur-md">
                   <div className="flex items-start gap-5">
                     <div className="flex h-14 w-14 items-center justify-center rounded-full bg-secondary text-dark-grey">
                       <FaPhoneAlt className="text-xl" />
@@ -227,9 +234,60 @@ export default function PartnershipPage() {
                       </span>
 
                       <a href="tel:+917046777222" className="mt-2 text-2xl font-black text-white hover:text-secondary">
-                        +91 70467 77222
+                        +91 7046 777 222
                       </a>
                     </div>
+                  </div>
+                </div> */}
+
+                {/* Export Inquiry */}
+                <div className="mt-5 rounded-[30px] border border-white/10 bg-white/5 p-6 backdrop-blur-md">
+                  <div className="space-y-5">
+
+                    {/* Phone */}
+                    <div className="flex items-start gap-5">
+
+                      <div className="flex h-14 w-14 items-center justify-center rounded-full bg-secondary text-dark-grey">
+                        <FaPhoneAlt className="text-xl" />
+                      </div>
+
+                      <div>
+                        <span className="text-sm uppercase tracking-[3px] text-white/50">
+                          Export Inquiry
+                        </span>
+
+                        <a
+                          href="tel:+917990189941"
+                          className="mt-2 block text-xl font-black text-white hover:text-secondary"
+                        >
+                          +91 79901 89941
+                        </a>
+                      </div>
+
+                    </div>
+
+                    {/* Email */}
+                    <div className="flex items-start gap-5">
+
+                      <div className="flex h-14 w-14 items-center justify-center rounded-full bg-secondary text-dark-grey">
+                        <FaEnvelope className="text-xl" />
+                      </div>
+
+                      <div>
+                        <span className="text-sm uppercase tracking-[3px] text-white/50">
+                          Export Inquiry
+                        </span>
+
+                        <a
+                          href="mailto:export@kartavyaseeds.com"
+                          className="mt-2 block text-lg font-bold text-white hover:text-secondary break-all"
+                        >
+                          export@kartavyaseeds.com
+                        </a>
+                      </div>
+
+                    </div>
+
                   </div>
                 </div>
               </div>
@@ -238,20 +296,20 @@ export default function PartnershipPage() {
             {/* RIGHT SIDE */}
             <div className="p-8 lg:p-10">
               {/* Tabs */}
-              <div className="mb-5 flex flex-wrap gap-4">
+              <div className="mb-3 flex flex-wrap gap-4">
                 {/* {partnershipTabs.map((tab) => ( */}
                 <button
-                  onClick={() => setActiveTab("1")}
-                  className={`rounded-full px-4 py-4 text-sm font-bold uppercase tracking-[3px] transition duration-300 ${activeTab === "1"
+                  onClick={() => setActiveTab(1)}
+                  className={`rounded-full px-4 py-4 text-sm font-bold uppercase tracking-[3px] transition duration-300 ${activeTab === 1
                     ? "bg-secondary text-dark-grey shadow-[0_10px_30px_rgba(180,211,66,0.35)]"
                     : "border border-[#e5e5e5] bg-white text-[#666] hover:border-secondary/30"
                     }`}
                 >
-                  International Registration
+                  Become International Partner
                 </button>
                 <button
-                  onClick={() => setActiveTab("2")}
-                  className={`rounded-full px-4 py-4 text-sm font-bold uppercase tracking-[3px] transition duration-300 ${activeTab === "2"
+                  onClick={() => setActiveTab(2)}
+                  className={`rounded-full px-4 py-4 text-sm font-bold uppercase tracking-[3px] transition duration-300 ${activeTab === 2
                     ? "bg-secondary text-dark-grey shadow-[0_10px_30px_rgba(180,211,66,0.35)]"
                     : "border border-[#e5e5e5] bg-white text-[#666] hover:border-secondary/30"
                     }`}
@@ -262,10 +320,10 @@ export default function PartnershipPage() {
               </div>
 
               {/* Form Heading */}
-              <div className="mb-5">
+              <div className="mb-3">
                 <div className="mb-2 flex items-center gap-4">
                   <div className="flex h-14 w-14 items-center justify-center rounded-full bg-secondary/10 text-secondary">
-                    {activeTab === "1" ? (
+                    {activeTab === 1 ? (
                       <FaUserTie className="text-xl" />
                     ) : (
                       <FaSeedling className="text-xl" />
@@ -273,7 +331,7 @@ export default function PartnershipPage() {
                   </div>
 
                   <span className="text-sm font-bold uppercase tracking-[4px] text-primary">
-                    {activeTab === "1"
+                    {activeTab === 1
                       ? "International Registration"
                       : "Distributor Registration"}
                   </span>
@@ -287,9 +345,9 @@ export default function PartnershipPage() {
               </div>
 
               {/* FORM */}
-              <form onSubmit={handleSubmit} className="space-y-8">
+              <form onSubmit={handleSubmit} className="space-y-6">
                 {/* Row */}
-                <div className="grid gap-6 md:grid-cols-2 mb-4">
+                <div className="grid gap-6 md:grid-cols-2 mb-3">
                   <div>
                     <label className="mb-2 block text-sm font-bold uppercase tracking-[3px] text-primary">
                       Full Name
@@ -310,20 +368,45 @@ export default function PartnershipPage() {
                       Phone Number
                     </label>
 
-                    <input
-                      type="tel"
-                      name="phone_number"
-                      maxLength={10}
-                      placeholder="Enter phone number"
+                    <PhoneInput
+                      country={"in"}
                       value={formData.phone_number}
-                      onChange={handleChange}
-                      className="h-13 w-full rounded-2xl border border-[#ddd] bg-[#fafafa] px-4 text-dark-grey outline-none transition duration-300 focus:border-secondary"
+                      onChange={(phone) =>
+                        setFormData({
+                          ...formData,
+                          phone_number: phone,
+                        })
+                      }
+                      inputProps={{
+                        name: "phone_number",
+                        required: true,
+                      }}
+                      containerClass="w-full"
+                      inputClass="!w-full !h-13 !rounded-2xl !border !border-[#ddd] !bg-[#fafafa] !pl-16 !text-dark-grey focus:!border-secondary"
+                      buttonClass="!rounded-l-2xl !border-[#ddd] !bg-[#fafafa]"
+                      dropdownClass="!text-dark-grey"
                     />
                   </div>
                 </div>
 
                 {/* Row */}
-                <div className="grid gap-6 md:grid-cols-2 mb-4">
+                <div className="grid gap-4 md:grid-cols-2 mb-3">
+
+                  <div>
+                    <label className="mb-2 block text-sm font-bold uppercase tracking-[3px] text-primary">
+                      Business Name
+                    </label>
+
+                    <input
+                      type="text"
+                      name="business_name"
+                      placeholder="Enter business name"
+                      value={formData.business_name}
+                      onChange={handleChange}
+                      className="h-13 w-full rounded-2xl border border-[#ddd] bg-[#fafafa] px-4 text-dark-grey outline-none transition duration-300 focus:border-secondary"
+                    />
+                  </div>
+
                   <div>
                     <label className="mb-2 block text-sm font-bold uppercase tracking-[3px] text-primary">
                       Email Address
@@ -339,24 +422,59 @@ export default function PartnershipPage() {
                     />
                   </div>
 
+
+
                   <div>
                     <label className="mb-2 block text-sm font-bold uppercase tracking-[3px] text-primary">
-                      City / State
+                      City
                     </label>
 
                     <input
                       type="text"
-                      name="city_state"
-                      placeholder="Enter location"
-                      value={formData.city_state}
+                      name="city_name"
+                      placeholder="Enter city"
+                      value={formData.city_name}
                       onChange={handleChange}
                       className="h-13 w-full rounded-2xl border border-[#ddd] bg-[#fafafa] px-4 text-dark-grey outline-none transition duration-300 focus:border-secondary"
                     />
                   </div>
+
+                  <div>
+                    <label className="mb-2 block text-sm font-bold uppercase tracking-[3px] text-primary">
+                      State
+                    </label>
+
+                    <input
+                      type="text"
+                      name="state_name"
+                      placeholder="Enter state"
+                      value={formData.state_name}
+                      onChange={handleChange}
+                      className="h-13 w-full rounded-2xl border border-[#ddd] bg-[#fafafa] px-4 text-dark-grey outline-none transition duration-300 focus:border-secondary"
+                    />
+                  </div>
+
+
                 </div>
 
+                {activeTab === 1 && (
+                  <div>
+                    <label className="mb-2 block text-sm font-bold uppercase tracking-[3px] text-primary">
+                      Country
+                    </label>
+
+                    <input
+                      type="text"
+                      name="country_name"
+                      placeholder="Enter country"
+                      value={formData.country_name}
+                      onChange={handleChange}
+                      className="h-13 w-full rounded-2xl border border-[#ddd] bg-[#fafafa] px-4 text-dark-grey outline-none transition duration-300 focus:border-secondary"
+                    />
+                  </div>
+                )}
                 {/* Dynamic Field */}
-                <div className="mb-4">
+                {/* <div className="mb-4">
                   <label className="mb-2 block text-sm font-bold uppercase tracking-[3px] text-primary">
                     {activeTab === "1"
                       ? "Business Name"
@@ -383,7 +501,7 @@ export default function PartnershipPage() {
                     }
                     className="h-13 w-full rounded-2xl border border-[#ddd] bg-[#fafafa] px-4 text-dark-grey outline-none transition duration-300 focus:border-secondary"
                   />
-                </div>
+                </div> */}
 
                 {/* Message */}
                 <div className="mb-4">

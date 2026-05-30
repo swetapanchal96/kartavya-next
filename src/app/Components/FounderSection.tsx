@@ -44,7 +44,7 @@ export default function FounderSection() {
                         viewport={{ once: true, amount: 0.3 }}
                         className="py-16 lg:py-20"
                     >
-                        <motion.div variants={fadeInUp} className="flex items-center gap-3 mb-6">
+                        <motion.div variants={fadeInUp} className="flex items-center gap-3 mb-3">
                             <span className="text-secondary text-xl"><FaLeaf /></span>
                             <span className="text-lg font-bold uppercase tracking-[4px] text-gray-400">
                                 Our Founder & CEO
@@ -55,12 +55,12 @@ export default function FounderSection() {
                             variants={fadeInUp}
                             onMouseEnter={() => setIsHovering(true)}
                             onMouseLeave={() => setIsHovering(false)}
-                            className="text-5xl md:text-[60px] font-extrabold leading-[1.1] mb-8 cursor-default"
+                            className="text-5xl md:text-[60px] font-extrabold leading-[1.1] mb-4 cursor-default"
                         >
                             Harshad Paneliya
                         </motion.h2>
 
-                        <div className="space-y-6 text-[17px] leading-relaxed text-gray-300 max-w-xl">
+                        <div className="space-y-3 text-[17px] leading-relaxed text-gray-300 max-w-xl">
                             <motion.p variants={fadeInUp}>
                                 Harshad Paneliya, the Visionary Founder and CEO of Kartavya Seeds, is an
                                 accomplished agriculturist and an expert plant breeder. With a robust academic
@@ -72,7 +72,7 @@ export default function FounderSection() {
                                 As a Plant breeder, Harshad Paneliya has played a pivotal role in developing high-yielding, stress-tolerant hybrids that meet the diverse needs of farmers. His ability to combine traditional farming wisdom with cutting-edge research has positioned Kartavya Seeds as a trusted partner for farmers across regions.
                             </motion.p>
 
-                            <motion.div variants={fadeInUp} className="pt-6">
+                            <motion.div variants={fadeInUp} className="">
                                 <div className="border-l-4 border-yellow pl-6 py-2">
                                     <p className="text-white font-semibold text-lg italic leading-snug">
                                         "Harshad Paneliya leads with a vision of sustainable agriculture,

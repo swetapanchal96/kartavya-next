@@ -4,131 +4,39 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { FaLeaf } from "react-icons/fa";
 import AnimatedHeading from "./AnimatedHeading";
-import bg from '@/app/assets/kartavya-bg-3.png'
+import bg from '@/app/assets/kartavya-Our-Product .png'
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Navigation } from "swiper/modules";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
-import product1 from "@/app/assets/103.png";
-import product2 from "@/app/assets/109.png";
-import product3 from "@/app/assets/BALI.png";
-import product4 from "@/app/assets/MASTI.png";
-import product5 from "@/app/assets/NAGMA.png";
-import product6 from "@/app/assets/ANU.png";
-import product7 from "@/app/assets/KARTAVYA-VIJAY.png";
-import product8 from "@/app/assets/KARTAVYA-SUPER.png";
-import product9 from "@/app/assets/LALI.png";
-import product10 from "@/app/assets/HONEY.png";
-import product11 from "@/app/assets/CHANDRA.png";
-import product12 from "@/app/assets/RUDRA-55.png";
-import product13 from "@/app/assets/GOLDY.png";
-import product14 from "@/app/assets/KARTAVYA-2-IN-1.png";
+import Link from "next/link";
+
+interface OurProductsSectionProps {
+  products: any[];
+  loading?: boolean;
+}
 
 
-const categories = [
-  // "All",
-  "Tomato",
-  "Chilli",
-  "Bitter Gourd",
-  "Bottle Gourd",
-  "Sponge Gourd",
-  "Cucumber",
-  "Watermelon",
-  "Muskmelon",
-  "Okra",
-  "Cabbage",
-  // "Radish",
-  "Sweet Corn",
-  "Cotton",
-];
+export default function OurProductsSection({
+  products,
+  loading,
+}: OurProductsSectionProps) {
 
-const products = [
-  {
-    id: 1,
-    category: "Tomato",
-    image: product1,
-  },
-  {
-    id: 2,
-    category: "Tomato",
-    image: product2,
-  },
-  {
-    id: 3,
-    category: "Bitter Gourd",
-    image: product3,
-  },
-  {
-    id: 4,
-    category: "Bitter Gourd",
-    image: product4,
-  },
-  {
-    id: 5,
-    category: "Bottle Gourd",
-    image: product5,
-  },
-  {
-    id: 6,
-    category: "Bottle Gourd",
-    image: product6,
-  },
-  {
-    id: 7,
-    category: "Watermelon",
-    image: product7,
-  },
-  {
-    id: 8,
-    category: "Watermelon",
-    image: product8,
-  },
-  {
-    id: 9,
-    category: "Muskmelon",
-    image: product9,
-  },
-  {
-    id: 10,
-    category: "Muskmelon",
-    image: product10,
-  },
-  {
-    id: 11,
-    category: "Okra",
-    image: product11,
-  },
-  {
-    id: 12,
-    category: "Cabbage",
-    image: product12,
-  },
-  {
-    id: 13,
-    category: "Sweet Corn",
-    image: product13,
-  },
-  {
-    id: 14,
-    category: "Cotton",
-    image: product14,
-  },
-];
+  const toTitleCase = (text: string) =>
+  text
+    .toLowerCase()
+    .split(" ")
+    .map(
+      word =>
+        word.charAt(0).toUpperCase() +
+        word.slice(1)
+    )
+    .join(" ");
 
-export default function OurProductsSection() {
-  const [activeTab, setActiveTab] = useState("All");
-
-  // const filteredProducts =
-  //   activeTab === "All"
-  //     ? products
-  //     : products.filter((item) => item.category === activeTab);
-
-  const filteredProducts =
-    (activeTab === "All"
-      ? products
-      : products.filter((item) => item.category === activeTab)
-    ).slice(0, 8);
 
   return (
     // <section className="py-20 bg-linear-to-br from-blue/50 via-secondary/35  to-primary/50 overflow-hidden relative">
-    <section className="py-20 bg-primary overflow-hidden relative">
+    <section className="py-20 bg-[#0a2a1a] overflow-hidden relative">
       {/* <div className="absolute inset-0 bg-primary/10 pointer-events-none"></div> */}
 
       {/* Background Blur */}
@@ -150,57 +58,134 @@ export default function OurProductsSection() {
         </div>
 
         {/* Filter Tabs */}
-        <div className=" rounded-full  p-4 md:p-5 mb-5 max-w-6xl mx-auto">
+        {/* <div className=" rounded-full  p-4 md:p-5 mb-5 max-w-6xl mx-auto">
           <div className="flex flex-wrap justify-center gap-4">
 
-            {categories.map((item) => (
+            {products.map((product, index) => (
               <button
-                key={item}
-                onClick={() => setActiveTab(item)}
-                className={`px-7 py-3 rounded-full font-medium text-sm md:text-base transition-all duration-300
-                  ${activeTab === item
-                    ? "bg-primary text-white shadow-lg"
-                    : "text-primary bg-white border-primary border hover:border-secondary hover:bg-yellow hover:text-primary"
-                  }`}
+                key={product.id || index}
+                onClick={() => { }}
+                className="px-7 py-3 rounded-full font-medium text-sm md:text-base transition-all duration-300 text-primary bg-white border-primary border hover:border-secondary hover:bg-yellow hover:text-primary"
               >
-                {item}
+                {product.title}
               </button>
             ))}
 
           </div>
-        </div>
+        </div> */}
 
-        {/* Product Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
+        {/* Products Slider */}
+        {loading ? (
 
-          {filteredProducts.map((product) => (
-            <div
-              key={product.id}
-              className="group flex justify-center"
+          <div className="text-center text-2xl font-semibold text-white">
+            Loading Products...
+          </div>
+
+        ) : products?.length > 0 ? (
+          <div className="relative">
+            <Swiper
+              modules={[Autoplay, Navigation]}
+              slidesPerView={4}
+              spaceBetween={30}
+              loop={true}
+              speed={1000}
+              navigation={{
+                nextEl: ".product-next",
+                prevEl: ".product-prev",
+              }}
+              autoplay={{
+                delay: 3000,
+                disableOnInteraction: false,
+              }}
+              breakpoints={{
+                0: {
+                  slidesPerView: 1,
+                },
+                640: {
+                  slidesPerView: 2,
+                },
+                1024: {
+                  slidesPerView: 3,
+                },
+                1280: {
+                  slidesPerView: 4,
+                },
+              }}
             >
-              <div className="relative w-65 h-65 rounded-full overflow-hidden cursor-pointer shadow-xl  transition-all duration-500 hover:-translate-y-2">
 
-                {/* Product Image */}
-                <Image
-                  src={product.image}
-                  alt="Product"
-                  fill
-                  className="object-cover transition-all duration-700 group-hover:scale-110"
-                />
+              {products.map((product: any, index: number) => (
 
-                {/* Overlay */}
-                <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-all duration-500"></div>
+                <SwiperSlide key={product.id || index}>
 
-                {/* Shine Effect */}
-                <div className="absolute top-0 -left-[150%] w-[50%] h-full bg-white/20 skew-x-[-20deg] group-hover:left-[150%] transition-all duration-1000 ease-in-out"></div>
-              </div>
+                  <Link
+                    href={`/variety?slug=${product.slug}&type=${product.type === "vegetable"
+                      ? 1
+                      : product.type === "foot_crops"
+                        ? 3
+                        : 2
+                      }`}
+                    className="group flex flex-col items-center text-center"
+                  >
+
+                    {/* Rounded Image */}
+                    <div className="relative w-65 h-65 rounded-full overflow-hidden shadow-xl transition-all duration-500 hover:-translate-y-2">
+
+                      <Image
+                        src={product.image}
+                        alt={product.title}
+                        fill
+                        unoptimized
+                        className="object-cover transition-all duration-700 group-hover:scale-110"
+                      />
+
+                      {/* Overlay */}
+                      <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-all duration-500"></div>
+
+                      {/* Shine Effect */}
+                      <div className="absolute top-0 -left-[150%] w-[50%] h-full bg-white/20 skew-x-[-20deg] group-hover:left-[150%] transition-all duration-1000 ease-in-out"></div>
+
+                    </div>
+
+                    {/* Title */}
+                    <h3 className="mt-5 text-2xl font-bold text-white transition duration-300 group-hover:text-secondary">
+                      {toTitleCase(product.title)}
+                    </h3>
+
+                  </Link>
+
+                </SwiperSlide>
+
+              ))}
+
+            </Swiper>
+            {/* Navigation Buttons */}
+            <div className="pointer-events-none absolute left-0 top-1/2 z-20 flex w-full -translate-y-1/2 items-center justify-between ">
+
+              {/* Prev */}
+              <button className="product-prev pointer-events-auto flex h-14 w-14 items-center justify-center rounded-full border-2 border-white bg-white/10 text-4xl text-white backdrop-blur-md transition-all duration-300 hover:bg-yellow hover:text-primary">
+                <FaChevronLeft className="text-lg" />
+              </button>
+
+              {/* Next */}
+              <button className="product-next pointer-events-auto flex h-14 w-14 items-center justify-center rounded-full border-2 border-white bg-white/10 text-4xl text-white backdrop-blur-md transition-all duration-300 hover:bg-yellow hover:text-primary">
+                <FaChevronRight className="text-lg" />
+              </button>
+
             </div>
-          ))}
+          </div>
 
-        </div>
+        ) : (
+
+          <div className="text-center text-2xl font-semibold text-white">
+            No Products Found.
+          </div>
+
+        )}
+
+        
       </div>
 
-      <div className="absolute -bottom-1  h-[165vh] w-full opacity-20 pointer-events-none">
+      <div className="absolute -bottom-1  h-[103vh] w-full opacity-50 pointer-events-none">
         <Image
           src={bg.src}
           alt="background-texture"

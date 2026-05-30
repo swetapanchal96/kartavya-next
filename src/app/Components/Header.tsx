@@ -45,13 +45,14 @@ const navLinks: NavLink[] = [
         href: "/product?slug=vegetables",
       },
       {
-        label: "Field Crops Products",
-        href: "/product?slug=field",
-      },
-      {
         label: "Fruit Crops Products",
         href: "/product?slug=fruit",
       },
+      {
+        label: "Field Crops Products",
+        href: "/product?slug=field",
+      }
+      
     ],
   },
   { label: "Partnership", href: "/partnership" },
