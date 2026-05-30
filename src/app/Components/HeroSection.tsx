@@ -30,7 +30,7 @@ const slides = [
   {
     id: 3,
     title: "Gold Standard in Seed Research",
-    subtitle: "Certified by Department of Scientific and Industrial Research, Govt of India",
+    subtitle: "Recognised by Department of Scientific and Industrial Research, Govt of India",
     image: banner3.src,
     origin: "center center",
     zoomType: "out"
@@ -41,15 +41,15 @@ const slides = [
     subtitle: "Investing in R&D & infrastructure to power breakthroughs.",
     image: banner4.src,
     origin: "20% 20%",
-    zoomType: "in"
+    zoomType: "out"
   },
   {
     id: 5,
-    title: "Kisan ka Vikas Hi Hamara Kartavya",
-    subtitle: "20 years of empowering Indian farming community.",
+    title: "Taking on Climate Challenges",
+    subtitle: "Seeds developed for superior drought tolerance and disease resistance.",
     image: banner5.src,
-    origin: "80% 80%",
-    zoomType: "in"
+    origin: "20% 20%",
+    zoomType: "out"
   },
 ];
 

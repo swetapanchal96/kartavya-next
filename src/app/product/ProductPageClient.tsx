@@ -258,11 +258,11 @@ import vegetableHeader from "@/app/assets/Vegetable-crop.webp";
 import fieldHeader from "@/app/assets/Field-Crop.webp";
 import fruitHeader from "@/app/assets/Fruits-Crop.webp";
 
+
 import {
     FaDownload,
     FaEye,
-    FaChevronRight
-} from "react-icons/fa";
+    FaChevronRight} from "react-icons/fa";
 import { apiUrl } from "@/config";
 
 const categories = [
@@ -350,11 +350,23 @@ export default function ProductPage() {
         getProducts();
     }, [slug]);
     console.log(products, "products=====")
+
+    const toTitleCase = (text: string) =>
+  text
+    ?.toLowerCase()
+    .split(" ")
+    .map(
+      (word) =>
+        word.charAt(0).toUpperCase() +
+        word.slice(1)
+    )
+    .join(" ");
+
     return (
         <>
             <Breadcrumb
                 title={pageTitle}
-                subtitle="Growing Trust Since Years"
+                // subtitle="Growing Trust Since Years"
                 backgroundImage={getBreadcrumbImage()}
                 breadcrumbs={[
                     { label: "Home", href: "/" },
@@ -406,8 +418,8 @@ export default function ProductPage() {
 
                                             {/* Product Name */}
                                             <div className="mt-4">
-                                                <h3 className="text-xl font-black uppercase tracking-[1px] text-dark-grey transition duration-300 group-hover:text-secondary">
-                                                    {product.title}
+                                                <h3 className="text-xl font-black  tracking-[1px] text-dark-grey transition duration-300 group-hover:text-secondary">
+                                                   {toTitleCase(product.title)}
                                                 </h3>
 
                                                 {/* Bottom Line */}
@@ -470,16 +482,17 @@ export default function ProductPage() {
                                 </h3>
 
                                 <div className="mt-5 flex flex-col justify-start items-start gap-4">
-                                    <Link href="https://heyzine.com/flip-book/e4f3d3f75f.html" target="_blank"
+                                    <Link href="https://heyzine.com/flip-book/08f0c37450.html" target="_blank"
                                         className="flex items-center w-65 cursor-pointer justify-start gap-3 rounded-xl bg-secondary px-5 py-3 text-md text-white font-bold uppercase transition duration-300 hover:bg-primary whitespace-nowrap">
                                         <FaEye className="text-md" />
                                         <span>View Catalogue</span>
                                     </Link>
 
-                                    <button className="flex items-center cursor-pointer justify-start gap-3 rounded-xl bg-secondary px-5 py-3 text-md text-white font-bold uppercase transition duration-300 hover:bg-primary whitespace-nowrap">
+                                    <Link href='/pdf/Final-Catalogue.pdf' target="_blank" className="flex items-center cursor-pointer justify-start gap-3 rounded-xl bg-secondary px-5 py-3 text-md text-white font-bold uppercase transition duration-300 hover:bg-primary whitespace-nowrap"
+                                    >
                                         <FaDownload className="text-md" />
                                         <span>Download Catalogue</span>
-                                    </button>
+                                    </Link>
                                 </div>
                             </div>
                         </div>

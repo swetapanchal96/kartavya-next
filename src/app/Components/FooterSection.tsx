@@ -25,11 +25,11 @@ const socialLinks = [
   {
     icon: FaFacebookF,
     link: "https://www.facebook.com/kartavyaseeds",
-  }
-  // {
-  //   icon: FaLinkedinIn,
-  //   link: "https://linkedin.com",
-  // },
+  },
+  {
+    icon: FaLinkedinIn,
+    link: "https://www.linkedin.com/company/kartavyaseeds/",
+  },
 ];
 
 export default function Footer() {
@@ -71,7 +71,7 @@ export default function Footer() {
               <div>
                 <h4 className="font-bold text-[22px] leading-tight">Contact</h4>
                 <p className="text-md text-gray-200 hover:text-yellow">
-                  <Link href="tel:+917046777222">+91 70467 77222 </Link>
+                  <Link href="tel:+917046777222">+91 7046 777 222 </Link>
                 </p>
               </div>
             </div>
@@ -145,21 +145,21 @@ export default function Footer() {
                   </Link>
 
                   <Link
-                    href="/product?slug=field"
-                    className="group flex items-center gap-3 text-lg text-white/80 transition-all duration-300 hover:text-yellow"
-                  >
-                    <span className="h-2 w-2 rounded-full bg-yellow transition-all duration-300 group-hover:scale-150"></span>
-
-                    Field Crop
-                  </Link>
-
-                  <Link
                     href="/product?slug=fruit"
                     className="group flex items-center gap-3 text-lg text-white/80 transition-all duration-300 hover:text-yellow"
                   >
                     <span className="h-2 w-2 rounded-full bg-yellow transition-all duration-300 group-hover:scale-150"></span>
 
                     Fruit Crop
+                  </Link>
+
+                  <Link
+                    href="/product?slug=field"
+                    className="group flex items-center gap-3 text-lg text-white/80 transition-all duration-300 hover:text-yellow"
+                  >
+                    <span className="h-2 w-2 rounded-full bg-yellow transition-all duration-300 group-hover:scale-150"></span>
+
+                    Field Crop
                   </Link>
 
                 </div>

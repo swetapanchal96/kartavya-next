@@ -115,7 +115,7 @@ export default function EventsPage() {
         <>
             <Breadcrumb
                 title="Events"
-                subtitle="Growing Trust Since Years"
+                // subtitle="Growing Trust Since Years"
                 backgroundImage={header.src}
                 breadcrumbs={[
                     { label: "Home", href: "/" },

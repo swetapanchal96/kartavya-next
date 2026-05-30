@@ -21,8 +21,8 @@ export default function KeepExploring() {
 
                             {[
                                 { title: "Vegetable Crop", link: "/product?slug=vegetables" },
-                                { title: "Field Crop", link: "/product?slug=field" },
                                 { title: "Fruit Crop", link: "/product?slug=fruit" },
+                                { title: "Field Crop", link: "/product?slug=field" },
                                 { title: "R&D", link: "/research&development" },
                                 { title: "Services", link: "/production" },
                                 { title: "Partnership", link: "/partnership" },
