@@ -7,6 +7,7 @@ import Footer from "./Components/FooterSection";
 import { CursorProvider } from "./context/CursorContext";
 import GlobalCursor from "./Components/GlobalCursor";
 import KeepExploring from "./Components/KeepExploring";
+import FloatingContact from "./Components/FloatingContact";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -41,6 +42,7 @@ export default function RootLayout({
         <main className="grow">{children}</main>
         <KeepExploring />
         <Footer />
+        <FloatingContact />
         </CursorProvider>
       </body>
     </html>

@@ -20,19 +20,19 @@ import { apiUrl } from "@/config";
 const socialLinks = [
     {
         icon: FaFacebookF,
-        href: "https://facebook.com",
+        href: "https://www.facebook.com/kartavyaseeds",
     },
     {
         icon: FaInstagram,
-        href: "https://instagram.com",
+        href: "https://www.instagram.com/kartavyaseeds",
     },
     {
         icon: FaYoutube,
-        href: "https://youtube.com",
+        href: "https://www.youtube.com/@kartavyaseeds3833",
     },
     {
         icon: FaLinkedinIn,
-        href: "https://linkedin.com",
+        href: "https://www.linkedin.com/company/kartavyaseeds/",
     },
 ];
 
@@ -123,7 +123,7 @@ export default function ContactPage() {
         <>
             <Breadcrumb
                 title="Contact Us"
-                subtitle="Growing Trust Since Years"
+                // subtitle="Growing Trust Since Years"
                 backgroundImage={header.src}
                 breadcrumbs={[
                     { label: "Home", href: "/" },
@@ -140,7 +140,7 @@ export default function ContactPage() {
                 <div className="container relative z-10 mx-auto px-4 md:px-12">
                     {/* Top Heading */}
                     <div className="mx-auto mb-10 max-w-4xl text-center">
-                        <span className="mb-3 inline-block text-sm font-bold uppercase tracking-[6px] text-primary">
+                        <span className="mb-3 inline-block text-lg font-semibold uppercase tracking-[6px] text-primary">
                             Get In Touch
                         </span>
 
@@ -161,7 +161,7 @@ export default function ContactPage() {
 
                             {/* Small Heading */}
                             <div className="mb-7">
-                                <span className="text-sm font-bold uppercase tracking-[5px] text-secondary">
+                                <span className="text-lg font-semibold uppercase tracking-[5px] text-secondary">
                                     Contact Information
                                 </span>
 
@@ -208,7 +208,27 @@ export default function ContactPage() {
                                         </h4>
 
                                         <a href="tel:+917046777222" className="text-white/70">
-                                            +91 70467 77222
+                                            +91 7046 777 222
+                                        </a>
+                                    </div>
+                                </div>
+
+                                {/* Export Inquiry Phone */}
+                                <div className="group flex items-start gap-5">
+                                    <div className="flex h-16 w-16 min-w-16 items-center justify-center rounded-2xl bg-white/10 text-secondary transition duration-300 group-hover:bg-secondary group-hover:text-dark-grey">
+                                        <FaPhoneAlt className="text-2xl" />
+                                    </div>
+
+                                    <div>
+                                        <h4 className="mb-2 text-xl font-bold text-white">
+                                            Export Inquiry
+                                        </h4>
+
+                                        <a
+                                            href="tel:+917990189941"
+                                            className="text-white/70"
+                                        >
+                                            +91 79901 89941
                                         </a>
                                     </div>
                                 </div>
@@ -226,6 +246,28 @@ export default function ContactPage() {
 
                                         <a href="mailto:info@kartavyaseeds.com" className=" text-white/70">
                                             info@kartavyaseeds.com
+                                        </a>
+                                    </div>
+                                </div>
+
+                                
+
+                                {/* Export Inquiry Email */}
+                                <div className="group flex items-start gap-5">
+                                    <div className="flex h-16 w-16 min-w-16 items-center justify-center rounded-2xl bg-white/10 text-secondary transition duration-300 group-hover:bg-secondary group-hover:text-dark-grey">
+                                        <FaEnvelope className="text-3xl" />
+                                    </div>
+
+                                    <div>
+                                        <h4 className="mb-2 text-xl font-bold text-white">
+                                            Export Inquiry
+                                        </h4>
+
+                                        <a
+                                            href="mailto:export@kartavyaseeds.com"
+                                            className="text-white/70 break-all"
+                                        >
+                                            export@kartavyaseeds.com
                                         </a>
                                     </div>
                                 </div>

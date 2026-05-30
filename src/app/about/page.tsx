@@ -3,7 +3,7 @@
 import Breadcrumb from "@/app/Components/Breadcrumb";
 import header from '@/app/assets/Aboutus_banner.webp';
 import Image from 'next/image';
-import aboutImg from '@/app/assets/fact-bg.jpg';
+import aboutImg from '@/app/assets/About-us.jpeg';
 import AnimatedHeading from "../Components/AnimatedHeading";
 import { IoTrophy } from "react-icons/io5";
 import { MdVisibility } from "react-icons/md";
@@ -19,7 +19,7 @@ export default function AboutPage() {
         <>
             <Breadcrumb
                 title="About Kartavya Seeds"
-                subtitle="Growing Trust Since Years"
+                // subtitle="Growing Trust Since Years"
                 backgroundImage={header.src}
                 breadcrumbs={[
                     { label: "Home", href: "/" },
@@ -239,7 +239,7 @@ export default function AboutPage() {
                             </div>
 
                             {/* Content */}
-                            <div className="relative overflow-hidden rounded-4xl border border-primary/10 bg-white/70 p-10 backdrop-blur-xl">
+                            <div className="relative overflow-hidden rounded-4xl border-2  border-primary/50 bg-white/70 p-10 backdrop-blur-xl">
 
                                 {/* Accent Glow */}
                                 <div className="absolute right-0 top-0 h-40 w-40 rounded-full bg-secondary/10 blur-3xl"></div>
@@ -313,11 +313,11 @@ export default function AboutPage() {
 
                                     "To contribute positively to rural development and the strengthening of the agricultural ecosystem.",
 
-                                    "To build long-term relationships with farmers through trust, transparency, and service excellence.",
+                                    "To build long-term relationships with partners through trust, transparency, and service excellence.",
                                 ].map((item, index) => (
                                     <div
                                         key={index}
-                                        className="group relative overflow-hidden rounded-[26px] border border-primary/10 bg-white/70 p-6 backdrop-blur-xl transition-all duration-500 hover:-translate-y-1 hover:border-secondary/30 hover:shadow-xl hover:shadow-secondary/5"
+                                        className="group relative overflow-hidden rounded-[26px] border-2 border-primary/50 bg-white/70 p-6 backdrop-blur-xl transition-all duration-500 hover:-translate-y-1 hover:border-secondary/30 hover:shadow-xl hover:shadow-secondary/5"
                                     >
 
                                         {/* Glow */}
@@ -358,7 +358,7 @@ export default function AboutPage() {
                 <div className="container relative z-10 mx-auto px-4 md:px-12">
 
                     {/* ================= HEADING ================= */}
-                    <div className="mx-auto mb-10 max-w-5xl text-center">
+                    <div className="mx-auto mb-13 max-w-5xl text-center">
 
                         <span className="text-sm font-bold uppercase tracking-[6px] text-primary">
                             Core Values
@@ -373,7 +373,7 @@ export default function AboutPage() {
                     </div>
 
                     {/* ================= CIRCULAR VALUES ================= */}
-                    <div className="relative mx-auto flex h-190 max-w-6xl items-center justify-center">
+                    <div className="relative mx-auto flex h-165 max-w-6xl items-center justify-center">
 
                         {/* ================= CONNECTING SVG LINES ================= */}
                         <svg
@@ -418,10 +418,10 @@ export default function AboutPage() {
                         </svg>
 
                         {/* ================= OUTER RING ================= */}
-                        <div className="absolute h-155 w-155 rounded-full border border-dashed border-primary/30 animate-[spin_60s_linear_infinite] shadow-[0_0_40px_rgba(181,214,58,0.08)]"></div>
+                        <div className="absolute h-125 w-125 rounded-full border-2 border-dashed border-primary/40 animate-[spin_60s_linear_infinite] shadow-[0_0_40px_rgba(181,214,58,0.08)]"></div>
 
                         {/* ================= MIDDLE RING ================= */}
-                        <div className="absolute h-125 w-125 rounded-full border border-dashed border-secondary/70 animate-[spin_45s_linear_infinite_reverse]"></div>
+                        <div className="absolute h-100 w-100 rounded-full border-2 border-dashed border-secondary/70 animate-[spin_45s_linear_infinite_reverse]"></div>
 
                         {/* ================= GLOW DOTS ================= */}
                         {/* <div className="absolute top-[7%] h-3 w-3 rounded-full bg-secondary shadow-[0_0_20px_rgba(181,214,58,0.8)]"></div>
@@ -435,7 +435,7 @@ export default function AboutPage() {
                         <div className="absolute bottom-[16%] right-[20%] h-3 w-3 rounded-full bg-secondary shadow-[0_0_20px_rgba(181,214,58,0.8)]"></div> */}
 
                         {/* ================= CENTER LOGO ================= */}
-                        <div className="relative z-20 flex h-52 w-52 items-center justify-center rounded-full border border-secondary/20 bg-white shadow-[0_30px_120px_rgba(181,214,58,0.18)]">
+                        <div className="relative z-20 flex h-47 w-47 items-center justify-center rounded-full border border-secondary/20 bg-white shadow-[0_30px_120px_rgba(181,214,58,0.18)]">
 
                             {/* Rotating Glow Ring */}
                             <div className="absolute -inset-4.5 rounded-full border border-secondary/10"></div>
@@ -448,15 +448,15 @@ export default function AboutPage() {
                                 <Image
                                     src={logo}
                                     alt="Kartavya Seeds"
-                                    width={120}
-                                    height={120}
+                                    width={100}
+                                    height={100}
                                     className="object-contain"
                                 />
                             </div>
                         </div>
 
                         {/* ================= TOP ================= */}
-                        <div className="absolute top-2 left-1/2 max-w-60 -translate-x-1/2 text-center transition-all duration-700 hover:-translate-y-2">
+                        <div className="absolute -top-11 left-1/2 max-w-60 -translate-x-1/2 text-center transition-all duration-700 hover:-translate-y-2">
 
                             <div className="absolute left-1/2 top-0 h-24 w-24 -translate-x-1/2 rounded-full bg-secondary/5 blur-3xl"></div>
 
@@ -473,7 +473,7 @@ export default function AboutPage() {
                         </div>
 
                         {/* ================= TOP LEFT ================= */}
-                        <div className="absolute left-[7%] top-[22%] max-w-70 text-right transition-all duration-700 hover:-translate-y-2">
+                        <div className="absolute left-0 top-[22%] max-w-70 text-right transition-all duration-700 hover:-translate-y-2">
 
                             <div className="absolute right-0 top-0 h-24 w-24 rounded-full bg-secondary/5 blur-3xl"></div>
 
@@ -493,7 +493,7 @@ export default function AboutPage() {
                         </div>
 
                         {/* ================= TOP RIGHT ================= */}
-                        <div className="absolute right-[7%] top-[22%] max-w-65 transition-all duration-700 hover:-translate-y-2">
+                        <div className="absolute right-5 top-[22%] max-w-65 transition-all duration-700 hover:-translate-y-2">
 
                             <div className="absolute left-0 top-0 h-24 w-24 rounded-full bg-secondary/5 blur-3xl"></div>
 
@@ -510,7 +510,7 @@ export default function AboutPage() {
                         </div>
 
                         {/* ================= BOTTOM LEFT ================= */}
-                        <div className="absolute bottom-[12%] left-[10%] max-w-65 text-right transition-all duration-700 hover:-translate-y-2">
+                        <div className="absolute bottom-[15%] left-5 max-w-65 text-right transition-all duration-700 hover:-translate-y-2">
 
                             <div className="absolute right-0 top-0 h-24 w-24 rounded-full bg-secondary/5 blur-3xl"></div>
 
@@ -530,7 +530,7 @@ export default function AboutPage() {
                         </div>
 
                         {/* ================= BOTTOM RIGHT ================= */}
-                        <div className="absolute bottom-[12%] right-[10%] max-w-65 transition-all duration-700 hover:-translate-y-2">
+                        <div className="absolute bottom-[15%] right-5 max-w-65 transition-all duration-700 hover:-translate-y-2">
 
                             <div className="absolute left-0 top-0 h-24 w-24 rounded-full bg-secondary/5 blur-3xl"></div>
 

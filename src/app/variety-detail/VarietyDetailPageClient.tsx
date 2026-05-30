@@ -1245,15 +1245,26 @@ export default function VarietyDetailPage() {
         ...(detail?.gallery_images || []),
     ];
 
+    const toTitleCase = (text?: string) =>
+  text
+    ?.toLowerCase()
+    .split(" ")
+    .map(
+      (word) =>
+        word.charAt(0).toUpperCase() +
+        word.slice(1)
+    )
+    .join(" ");
+
     return (
         <>
             <Breadcrumb
                 title={detailName || "Variety Detail"}
-                subtitle={
-                    parentProduct?.title
-                        ? `Premium ${parentProduct.title} Variety`
-                        : "Premium Variety"
-                }
+                // subtitle={
+                //     parentProduct?.title
+                //         ? `Premium ${parentProduct.title} Variety`
+                //         : "Premium Variety"
+                // }
                 backgroundImage={header.src}
                 breadcrumbs={[
                     { label: "Home", href: "/" },
@@ -1300,7 +1311,7 @@ export default function VarietyDetailPage() {
                                     <div className="grid items-start gap-5 xl:grid-cols-[40%_60%]">
 
                                         {/* IMAGE SHOWCASE */}
-                                        <div className="mt-10 overflow-hidden">
+                                        <div className=" overflow-hidden">
 
                                             {galleryImages.length > 0 ? (
                                                 <Swiper
@@ -1353,20 +1364,20 @@ export default function VarietyDetailPage() {
                                         </div>
 
                                         {/* DESCRIPTION + INFO */}
-                                        <div className="mt-10">
+                                        <div className="">
 
                                             {/* Description */}
                                             <div>
-                                                <div className="mb-5 flex items-center gap-5">
+                                                {/* <div className="mb-5 flex items-center gap-5">
                                                     <div className="h-0.5 w-15 bg-secondary" />
 
                                                     <span className="text-sm font-bold uppercase tracking-[5px] text-primary">
                                                         Product Information
                                                     </span>
-                                                </div>
+                                                </div> */}
 
-                                                <h3 className="mb-4 text-4xl font-black uppercase text-dark-grey">
-                                                    {detailName}
+                                                <h3 className="mb-4 text-4xl font-black  text-dark-grey">
+                                                    {toTitleCase(detailName)}
                                                 </h3>
 
                                                 <div
@@ -1484,7 +1495,7 @@ export default function VarietyDetailPage() {
                                                                 className="group flex flex-col items-center text-center"
                                                             >
 
-                                                                <div className="relative h-52 w-52 overflow-hidden rounded-full border-[4px] border-primary/20 bg-white transition duration-500 group-hover:border-secondary">
+                                                                <div className="relative h-52 w-52 overflow-hidden rounded-full border-4 border-primary/20 bg-white transition duration-500 group-hover:border-secondary">
 
                                                                     <img
                                                                         src={product.image}
@@ -1495,8 +1506,8 @@ export default function VarietyDetailPage() {
                                                                 </div>
 
                                                                 <div className="mt-4">
-                                                                    <h3 className="text-xl font-black uppercase text-dark-grey transition duration-300 group-hover:text-secondary">
-                                                                        {product.title}
+                                                                    <h3 className="text-xl font-black  text-dark-grey transition duration-300 group-hover:text-secondary">
+                                                                        {toTitleCase(product.title)}
                                                                     </h3>
                                                                 </div>
 
@@ -1514,7 +1525,7 @@ export default function VarietyDetailPage() {
                                         {/* CATALOGUE */}
                                         <div>
 
-                                            <div className="relative overflow-hidden rounded-[35px] bg-white p-7 text-white shadow-[0_15px_50px_rgba(0,0,0,0.08)]">
+                                            <div className="relative overflow-hidden rounded-[35px]  p-7 text-white ">
 
                                                 <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full border-30 border-white/5" />
 
@@ -1526,7 +1537,7 @@ export default function VarietyDetailPage() {
                                                 <div className="mt-5 flex flex-col justify-start  gap-4">
 
                                                     <Link
-                                                        href="https://heyzine.com/flip-book/e4f3d3f75f.html"
+                                                        href="https://heyzine.com/flip-book/08f0c37450.html"
                                                         target="_blank"
                                                         className="flex items-center w-full cursor-pointer  gap-3 rounded-xl bg-secondary px-5 py-3 text-md text-white font-bold uppercase transition duration-300 hover:bg-primary"
                                                     >
@@ -1534,12 +1545,12 @@ export default function VarietyDetailPage() {
                                                         <span>View Catalogue</span>
                                                     </Link>
 
-                                                    <button className="flex items-center w-full cursor-pointer  gap-3 rounded-xl bg-secondary px-5 py-3 text-md text-white font-bold uppercase transition duration-300 hover:bg-primary">
+                                                    <Link href='/pdf/Final-Catalogue.pdf' target="_blank" className="flex items-center w-full cursor-pointer  gap-3 rounded-xl bg-secondary px-5 py-3 text-md text-white font-bold uppercase transition duration-300 hover:bg-primary">
 
                                                         <FaDownload className="text-md" />
                                                         <span>Download Catalogue</span>
 
-                                                    </button>
+                                                    </Link>
 
                                                 </div>
 

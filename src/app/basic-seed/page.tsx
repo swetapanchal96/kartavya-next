@@ -13,7 +13,7 @@ export default function IncrementBasicSeedPage() {
         <>
             <Breadcrumb
                 title="Increment of Basic Seed"
-                subtitle="Growing Trust Since Years"
+                // subtitle="Growing Trust Since Years"
                 backgroundImage={header.src}
                 breadcrumbs={[
                     { label: "Home", href: "/" },
@@ -47,7 +47,7 @@ export default function IncrementBasicSeedPage() {
                             {/* Left Content */}
                             <div>
                                 <div className=" max-w-4xl text-start">
-                                    <span className="text-sm font-bold uppercase tracking-[4px] text-primary">
+                                    <span className="text-lg font-semibold uppercase tracking-[4px] text-primary">
                                         Professional Seed Services
                                     </span>
 
@@ -139,12 +139,12 @@ export default function IncrementBasicSeedPage() {
                 <div className="container relative z-10 mx-auto px-4 md:px-12">
                     {/* Heading */}
                     <div className="mx-auto max-w-4xl text-center">
-                        <span className="text-sm font-bold uppercase tracking-[4px] text-primary">
+                        <span className="text-lg font-semibold uppercase tracking-[4px] text-primary">
                             Infrastructure & Field Operations
                         </span>
 
                         <h2 className="mt-2 text-4xl font-bold text-dark-grey md:text-5xl lg:text-6xl">
-                            Controlled & Secure Seed Environment
+                            Controlled & Secure Seed Handling
                         </h2>
 
                         <div className="mx-auto mt-5 h-0.5 w-20 bg-secondary"></div>
@@ -189,7 +189,7 @@ export default function IncrementBasicSeedPage() {
                                     className="h-70 w-full object-cover transition duration-700 group-hover:scale-105"
                                 />
 
-                                <div className="absolute inset-0 bg-linear-to-t from-black/40 to-transparent"></div>
+                                <div className="absolute inset-0 "></div>
 
                                 {/* <div className="absolute bottom-0 left-0 p-6">
                                     <h3 className="text-2xl font-bold text-white">
@@ -210,7 +210,7 @@ export default function IncrementBasicSeedPage() {
                                         className="h-60 w-full object-cover transition duration-700 group-hover:scale-105"
                                     />
 
-                                    <div className="absolute inset-0 bg-linear-to-t from-black/40 to-transparent"></div>
+                                    <div className="absolute inset-0 "></div>
 
                                     {/* <div className="absolute bottom-0 left-0 p-5">
                                         <h3 className="text-lg font-bold text-white">

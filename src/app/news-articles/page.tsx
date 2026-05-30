@@ -85,7 +85,7 @@ export default function NewsArticlesPage() {
         <>
             <Breadcrumb
                 title="News & Articles"
-                subtitle="Growing Trust Since Years"
+                // subtitle="Growing Trust Since Years"
                 backgroundImage={header.src}
                 breadcrumbs={[
                     { label: "Home", href: "/" },

@@ -92,7 +92,7 @@ export default function AboutVideoSection() {
 
                         <motion.div custom={0.4} variants={fadeUp}>
                             <AnimatedHeading className="max-w-xl text-3xl font-bold text-primary md:text-[46px]">
-                                Recognized by DSIR for Research & Development Excellence
+                                Recognized by DSIR(Govt of India) for Research & Development Excellence
                             </AnimatedHeading>
                         </motion.div>
 

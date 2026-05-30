@@ -18,34 +18,34 @@ import map from '@/app/assets/Indian-map.webp'
 import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
-import bg1 from  '@/app/assets/Bitter-Gourd/Bi-1.png'
-import bg2 from  '@/app/assets/Bitter-Gourd/Bi-2.png'
-import bg3 from  '@/app/assets/Bitter-Gourd/Bi-3.png'
-import bg4 from  '@/app/assets/Bitter-Gourd/Bi-4.png'
-import cu1 from  '@/app/assets/Cucumber/Cu-1.png'
-import cu2 from  '@/app/assets/Cucumber/Cu-2.png'
-import cu3 from  '@/app/assets/Cucumber/Cu-3.png'
-import cu4 from  '@/app/assets/Cucumber/Cu-4.png'
-import hp1 from  '@/app/assets/Hot-Pepper/Picture1.png'
-import hp2 from  '@/app/assets/Hot-Pepper/Picture2.png'
-import hp3 from  '@/app/assets/Hot-Pepper/Picture3.png'
-import hp4 from  '@/app/assets/Hot-Pepper/Picture4.png'
-import m1 from  '@/app/assets/Melon/M-1.jpg'
-import m2 from  '@/app/assets/Melon/M-2.jpg'
-import m3 from  '@/app/assets/Melon/M-3.png'
-import m4 from  '@/app/assets/Melon/M-4.jpg'
-import sp1 from  '@/app/assets/Sweet-Paper/1.jpg'
-import sp2 from  '@/app/assets/Sweet-Paper/2.png'
-import sp3 from  '@/app/assets/Sweet-Paper/sw-pe.jpeg'
-import sp4 from  '@/app/assets/Sweet-Paper/4.png'
-import tomato1 from  '@/app/assets/Tomato/T-1.jpg'
-import tomato2 from  '@/app/assets/Tomato/T-2.jpeg'
-import tomato3 from  '@/app/assets/Tomato/T-3.png'
-import tomato4 from  '@/app/assets/Tomato/T-4.jpg'
-import wm1 from  '@/app/assets/Water-Melon/Wa-1.jpeg'
-import wm2 from  '@/app/assets/Water-Melon/Wa-2.png'
-import wm3 from  '@/app/assets/Water-Melon/Wa-3.jpeg'
-import wm4 from  '@/app/assets/Water-Melon/Wa-4.jpeg'
+import bg1 from '@/app/assets/Bitter-Gourd/Bi-1.png'
+import bg2 from '@/app/assets/Bitter-Gourd/Bi-2.png'
+import bg3 from '@/app/assets/Bitter-Gourd/Bi-3.png'
+import bg4 from '@/app/assets/Bitter-Gourd/Bi-4.png'
+import cu1 from '@/app/assets/Cucumber/Cu-1.png'
+import cu2 from '@/app/assets/Cucumber/Cu-2.png'
+import cu3 from '@/app/assets/Cucumber/Cu-3.png'
+import cu4 from '@/app/assets/Cucumber/Cu-4.png'
+import hp1 from '@/app/assets/Hot-Pepper/Picture1.png'
+import hp2 from '@/app/assets/Hot-Pepper/Picture2.png'
+import hp3 from '@/app/assets/Hot-Pepper/Picture3.png'
+import hp4 from '@/app/assets/Hot-Pepper/Picture4.png'
+import m1 from '@/app/assets/Melon/M-1.jpg'
+import m2 from '@/app/assets/Melon/M-2.jpg'
+import m3 from '@/app/assets/Melon/M-3.png'
+import m4 from '@/app/assets/Melon/M-4.jpg'
+import sp1 from '@/app/assets/Sweet-Paper/1.jpg'
+import sp2 from '@/app/assets/Sweet-Paper/2.png'
+import sp3 from '@/app/assets/Sweet-Paper/sw-pe.jpeg'
+import sp4 from '@/app/assets/Sweet-Paper/4.png'
+import tomato1 from '@/app/assets/Tomato/T-1.jpg'
+import tomato2 from '@/app/assets/Tomato/T-2.jpeg'
+import tomato3 from '@/app/assets/Tomato/T-3.png'
+import tomato4 from '@/app/assets/Tomato/T-4.jpg'
+import wm1 from '@/app/assets/Water-Melon/Wa-1.jpeg'
+import wm2 from '@/app/assets/Water-Melon/Wa-2.png'
+import wm3 from '@/app/assets/Water-Melon/Wa-3.jpeg'
+import wm4 from '@/app/assets/Water-Melon/Wa-4.jpeg'
 
 
 // data
@@ -163,7 +163,7 @@ export default function IncrementBasicSeedPage() {
         <>
             <Breadcrumb
                 title="Production"
-                subtitle="Growing Trust Since Years"
+                // subtitle="Growing Trust Since Years"
                 backgroundImage={header.src}
                 breadcrumbs={[
                     { label: "Home", href: "/" },
@@ -181,7 +181,7 @@ export default function IncrementBasicSeedPage() {
                 <div className="container relative z-10 mx-auto px-4 md:px-12">
                     {/* Center Heading */}
                     <div className="mx-auto max-w-5xl text-center">
-                        <span className="text-sm font-bold uppercase tracking-[4px] text-primary">
+                        <span className="text-lg font-semibold uppercase tracking-[4px] text-primary">
                             Global Production Advantage
                         </span>
 
@@ -236,9 +236,9 @@ export default function IncrementBasicSeedPage() {
                                 <div className="absolute h-125 w-125 rounded-full bg-primary/5 blur-3xl"></div>
 
                                 {/* Floating Circle */}
-                                <div className="absolute left-10 top-20 h-8 w-8 rounded-full bg-secondary/20 blur-sm"></div>
+                                {/* <div className="absolute left-10 top-20 h-8 w-8 rounded-full bg-secondary/20 blur-sm"></div> */}
 
-                                <div className="absolute bottom-20 right-10 h-10 w-10 rounded-full bg-primary/10 blur-sm"></div>
+                                {/* <div className="absolute bottom-20 right-10 h-10 w-10 rounded-full bg-primary/10 blur-sm"></div> */}
 
                                 {/* Map */}
                                 <div className="relative">
@@ -251,7 +251,7 @@ export default function IncrementBasicSeedPage() {
                                     />
 
                                     {/* Decorative Ring */}
-                                    <div className="absolute inset-0 rounded-full border border-primary/10"></div>
+                                    {/* <div className="absolute inset-0 rounded-full border border-primary/10"></div> */}
                                 </div>
                             </div>
 
@@ -301,7 +301,7 @@ export default function IncrementBasicSeedPage() {
                 <div className="container relative z-10 mx-auto px-4 md:px-12">
                     {/* Heading */}
                     <div className="mx-auto max-w-5xl text-center">
-                        <span className="text-sm font-bold uppercase tracking-[4px] text-primary">
+                        <span className="text-lg font-semibold uppercase tracking-[4px] text-primary">
                             Production Excellence
                         </span>
 
@@ -343,9 +343,9 @@ export default function IncrementBasicSeedPage() {
                         {/* Center Visual */}
                         <div className="relative flex justify-center lg:col-span-4">
                             {/* Outer Circle */}
-                            <div className="relative flex h-85 w-85 items-center justify-center rounded-full border border-primary/10 bg-[#f8faf5]">
+                            <div className="relative flex h-85 w-85 items-center justify-center rounded-full border-2 border-primary/50 bg-[#f8faf5]">
                                 {/* Rotating Ring */}
-                                <div className="absolute inset-5 rounded-full border border-dashed border-primary/20 animate-[spin_20s_linear_infinite]"></div>
+                                <div className="absolute inset-5 rounded-full border-2 border-dashed border-primary/50 animate-[spin_20s_linear_infinite]"></div>
 
                                 {/* Inner Circle */}
                                 <div className="relative z-10 flex h-45 w-45 items-center justify-center rounded-full border border-primary/10 bg-white shadow-[0_15px_50px_rgba(0,0,0,0.06)]">
@@ -422,7 +422,7 @@ export default function IncrementBasicSeedPage() {
                 <div className="container relative z-10 mx-auto px-4 md:px-12">
                     {/* Heading */}
                     <div className="mx-auto max-w-5xl text-center">
-                        <span className="text-md flex gap-3 items-center justify-center font-bold uppercase tracking-[4px] text-secondary">
+                        <span className="text-lg flex gap-3 items-center justify-center font-semibold uppercase tracking-[4px] text-secondary">
                             <FaLeaf />
                             Advanced Infrastructure
                         </span>
@@ -531,7 +531,7 @@ export default function IncrementBasicSeedPage() {
                 <div className="container relative z-10 mx-auto px-4 md:px-12">
                     {/* Heading */}
                     <div className="mx-auto max-w-5xl text-center">
-                        <span className="text-sm font-bold uppercase tracking-[4px] text-primary">
+                        <span className="text-lg font-semibold uppercase tracking-[4px] text-primary">
                             Quality Assurance
                         </span>
 
@@ -573,7 +573,7 @@ export default function IncrementBasicSeedPage() {
                             </div>
 
                             {/* Card */}
-                            <div className="group rounded-[35px] border border-[#ececec] bg-[#fdfdfd] p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+                            <div className="group rounded-[35px] border-2 border-primary/30 bg-[#fdfdfd] p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
                                 {/* <span className="text-lg font-bold uppercase tracking-[4px] text-secondary">
                                     02
                                 </span> */}
@@ -588,7 +588,7 @@ export default function IncrementBasicSeedPage() {
                             </div>
 
                             {/* Card */}
-                            <div className="group rounded-[35px] border border-[#ececec] bg-[#fdfdfd] p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+                            <div className="group rounded-[35px] border-2 border-primary/30 bg-[#fdfdfd] p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
                                 {/* <span className="text-lg font-bold uppercase tracking-[4px] text-secondary">
                                     03
                                 </span> */}
@@ -647,7 +647,7 @@ export default function IncrementBasicSeedPage() {
                             </div>
 
                             {/* Card */}
-                            <div className="group rounded-[35px] border border-[#ececec] bg-[#fdfdfd] p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+                            <div className="group rounded-[35px] border-2 border-primary/30 bg-[#fdfdfd] p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
                                 {/* <span className="text-lg font-bold uppercase tracking-[4px] text-secondary">
                                     04
                                 </span> */}
@@ -675,7 +675,7 @@ export default function IncrementBasicSeedPage() {
                 <div className="container relative z-10 mx-auto px-4 md:px-12">
                     {/* Heading */}
                     <div className="max-w-5xl">
-                        <span className="text-sm font-bold uppercase tracking-[4px] text-primary">
+                        <span className="text-lg font-semibold uppercase tracking-[4px] text-primary">
                             Production Workflow
                         </span>
 
@@ -1037,7 +1037,7 @@ export default function IncrementBasicSeedPage() {
             </section>
 
             {/* Our Core Crops Section */}
-            <section className="relative overflow-hidden bg-primary py-20 ">
+            <section className="relative overflow-hidden bg-primary py-20">
                 {/* Texture */}
                 <div className="absolute inset-0 opacity-[0.05]">
                     <div className="h-full w-full "></div>
@@ -1051,7 +1051,7 @@ export default function IncrementBasicSeedPage() {
                 <div className="container relative z-10 mx-auto px-4 md:px-12">
                     {/* Heading */}
                     <div className="mx-auto max-w-5xl text-center">
-                        <span className="text-sm font-bold uppercase tracking-[4px] text-secondary">
+                        <span className="text-lg font-semibold uppercase tracking-[4px] text-secondary">
                             Our Core Crops
                         </span>
 
@@ -1069,8 +1069,8 @@ export default function IncrementBasicSeedPage() {
                                 key={index}
                                 onClick={() => setActiveCrop(crop.slug)}
                                 className={`rounded-full px-7 py-3 text-sm font-bold uppercase  transition duration-300 ${activeCrop === crop.slug
-                                        ? "bg-secondary text-dark-grey shadow-lg"
-                                        : "bg-white text-primary hover:bg-secondary hover:text-dark-grey"
+                                    ? "bg-secondary text-dark-grey shadow-lg"
+                                    : "bg-white text-primary hover:bg-secondary hover:text-dark-grey"
                                     }`}
                             >
                                 {crop.name}
@@ -1119,14 +1119,90 @@ export default function IncrementBasicSeedPage() {
                         ))}
                     </div>
                 </div>
-                <div className="absolute -bottom-1  h-[135vh] w-full opacity-20 pointer-events-none">
-                        <Image
-                          src={bg.src}
-                          alt="background-texture"
-                          fill
-                          className="object-cover object-bottom"
-                        />
-                      </div>
+                <div className="absolute -bottom-1  h-[103vh] w-full opacity-20 pointer-events-none">
+                    <Image
+                        src={bg.src}
+                        alt="background-texture"
+                        fill
+                        className="object-cover object-bottom"
+                    />
+                </div>
+            </section>
+
+            <section className="relative overflow-hidden bg-[#f8f6f1] py-20">
+
+                <div className="container mx-auto px-6 md:px-12">
+
+
+
+                    {/* Main Box */}
+                    <div className="relative overflow-hidden rounded-[40px] border border-primary/10 bg-white shadow-[0_20px_60px_rgba(0,0,0,0.08)]">
+
+                        {/* Decorative Left Side */}
+                        <div className="absolute left-0 top-0 hidden h-full w-[18%] bg-primary lg:block">
+
+                            <div className="flex h-full items-center justify-center">
+
+                                <div className="-rotate-90 whitespace-nowrap text-5xl font-black tracking-[3px] text-white/10">
+                                    KARTAVYA SEEDS
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        {/* Content */}
+                        <div className="relative z-10 lg:pl-[20%] p-10 md:p-16">
+                            <span className="text-lg font-semibold uppercase tracking-[4px] text-secondary">
+                                Our Services For Clients
+                            </span>
+                            {/* Heading */}
+                            <h2 className="mb-7 text-4xl md:text-5xl font-black text-primary">
+                                Our Organization Provides
+                            </h2>
+
+                            {/* Services Grid */}
+                            <div className="grid gap-4 md:grid-cols-2">
+
+                                {[
+                                    "Consistent Quality",
+                                    "Reliable Seed Production",
+                                    "Confidentiality of Parents Lines",
+                                    "Disinfected Seed Production Process",
+                                    "Prompt Deliveries",
+                                    "Customization per-region and climate",
+                                    "Technical support for performance trials",
+                                ].map((item, index) => (
+
+                                    <div
+                                        key={index}
+                                        className="group flex items-center gap-3 rounded-2xl border border-primary/10 bg-[#faf8f4] p-3 transition-all duration-300 hover:border-secondary hover:bg-white hover:shadow-xl"
+                                    >
+
+                                        {/* Bullet */}
+                                        <div className="mt-1 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-primary transition-all duration-300 group-hover:bg-secondary">
+
+                                            <div className="h-3 w-3 rotate-45 bg-white"></div>
+
+                                        </div>
+
+                                        {/* Text */}
+                                        <h3 className="text-xl font-semibold  text-primary">
+                                            {item}
+                                        </h3>
+
+                                    </div>
+
+                                ))}
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
             </section>
         </>
     )
