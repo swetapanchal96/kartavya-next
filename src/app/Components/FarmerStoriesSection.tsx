@@ -56,7 +56,7 @@ export default function FarmerStoriesSection({
     loading,
 }: FarmerStoriesSectionProps) {
     return (
-        <section className="relative py-20 bg-[#f7f7f7] overflow-hidden">
+        <section className="relative py-15 md:py-20 bg-[#f7f7f7] overflow-hidden">
 
             {/* Background Decorative Circle */}
             {/* Animated Background Decorative Circles */}
@@ -67,15 +67,15 @@ export default function FarmerStoriesSection({
             <div className="container mx-auto px-6 relative md:px-12">
 
                 {/* Section Heading */}
-                <div className="text-center mb-14">
-                    <p className="flex items-center justify-center gap-3 uppercase tracking-[5px] text-secondary text-lg font-semibold mb-2">
+                <div className="text-center mb-7 md:mb-14">
+                    <p className="flex items-center justify-center gap-3 uppercase tracking-[5px] text-secondary text-md md:text-lg font-semibold mb-2">
                         <FaLeaf />
                         Farmer Stories
                     </p>
 
-                    <AnimatedHeading className="text-4xl md:text-5xl  font-bold text-primary leading-tight max-w-5xl mx-auto">
+                    <h2 className="text-3xl md:text-5xl  font-bold text-primary leading-tight max-w-5xl mx-auto">
                         What Our Farmers Say About Kartavya
-                    </AnimatedHeading>
+                    </h2>
                 </div>
 
                 {/* Video Slider */}

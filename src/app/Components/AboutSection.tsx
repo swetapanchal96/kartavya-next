@@ -38,10 +38,10 @@ export default function AboutVideoSection() {
                         variants={fadeUp}
                         custom={0.2}
                     >
-                        <div className="relative h-120 w-full overflow-hidden rounded-xl shadow-xl">
+                        {/* <div className="relative h-60 md:h-120 w-full overflow-hidden rounded-xl shadow-xl">
                             {!playVideo ? (
                                 <>
-                                    {/* Thumbnail Image */}
+                                    
                                     <Image
                                         src={about.src}
                                         alt="About Video"
@@ -50,7 +50,7 @@ export default function AboutVideoSection() {
                                         priority
                                     />
 
-                                    {/* Play Button */}
+                                    
                                     <motion.button
                                         onClick={() => setPlayVideo(true)}
                                         whileHover={{ scale: 1.08 }}
@@ -61,20 +61,39 @@ export default function AboutVideoSection() {
                                     </motion.button>
                                 </>
                             ) : (
-                                <iframe
-                                    className="h-full w-full"
-                                    src="https://www.youtube.com/embed/YOUR_VIDEO_ID?autoplay=1"
-                                    title="About Video"
-                                    allow="autoplay; encrypted-media"
-                                    allowFullScreen
-                                />
+                                <video
+                                    className="h-full w-full object-contain"
+                                    controls
+                                    autoPlay
+                                    playsInline
+                                >
+                                    <source
+                                        src="/pdf/kartavya-seed.mp4"
+                                        type="video/mp4"
+                                    />
+                                </video>
                             )}
+                        </div> */}
+                        <div className="relative h-60 md:h-120 w-full overflow-hidden rounded-xl ">
+                            <video
+                                className="h-full w-full object-contain"
+                                controls
+                                autoPlay
+                                muted
+                                playsInline
+                            >
+                                <source
+                                    src="/pdf/kartavya-seed.mp4"
+                                    type="video/mp4"
+                                />
+                                Your browser does not support the video tag.
+                            </video>
                         </div>
                     </motion.div>
 
                     {/* right SIDE - Content */}
                     <motion.div
-                        className="p-4"
+                        className="p-0 md:p-4"
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true, amount: 0.3 }}
@@ -82,24 +101,24 @@ export default function AboutVideoSection() {
                         <motion.p
                             custom={0.2}
                             variants={fadeUp}
-                            className="mb-3 flex items-center gap-2 text-lg font-semibold uppercase tracking-[4px] text-secondary"
+                            className="mb-3 flex items-center gap-2 text-md md:text-lg font-semibold uppercase tracking-[1px] md:tracking-[4px] text-secondary"
                         >
-                            <span className="text-lg">
+                            <span className="text-md md:text-lg">
                                 <FaLeaf />
                             </span>
                             Research & Development
                         </motion.p>
 
                         <motion.div custom={0.4} variants={fadeUp}>
-                            <AnimatedHeading className="max-w-xl text-3xl font-bold text-primary md:text-[46px]">
+                            <h2 className="max-w-xl text-2xl font-bold text-primary md:text-[46px]">
                                 Recognized by DSIR(Govt of India) for Research & Development Excellence
-                            </AnimatedHeading>
+                            </h2>
                         </motion.div>
 
                         <motion.p
                             custom={0.6}
                             variants={fadeUp}
-                            className="mt-3 text-[16px] leading-7 text-[#555]"
+                            className="mt-3 text-[16px] leading-6 md:leading-7 text-[#555]"
                         >
                             Our Focus On Research and Development has won us
                             recognition from Government Of India’s Department of
@@ -110,7 +129,7 @@ export default function AboutVideoSection() {
                         <motion.p
                             custom={0.8}
                             variants={fadeUp}
-                            className="mt-3 text-[16px] leading-7 text-[#555]"
+                            className="mt-3 text-[16px] leading-6 md:leading-7 text-[#555]"
                         >
                             We operate a <strong>24-acre Main Research and Development Station</strong>
                             {" "}along with <strong>Three Regional Research Facilities</strong>
@@ -120,7 +139,7 @@ export default function AboutVideoSection() {
                         <motion.p
                             custom={1}
                             variants={fadeUp}
-                            className="mt-3 text-[16px] leading-7 text-[#555]"
+                            className="mt-3 text-[16px] leading-6 md:leading-7 text-[#555]"
                         >
                             All dedicated to continuous innovation and genetic
                             advancement. Our advanced R&D programs focus on

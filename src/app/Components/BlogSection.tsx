@@ -84,18 +84,18 @@ export default function BlogSection() {
 
   return (
     // <section className="py-20 bg-linear-to-br from-blue/50 via-secondary/35  to-primary/50 overflow-hidden relative">
-    <section className="py-20 bg-primary overflow-hidden relative">
+    <section className="py-15 md:py-20 bg-primary overflow-hidden relative">
       <div className="container mx-auto px-6 md:px-12 relative z-10">
         {/* Section Heading */}
         <div className="text-center mb-10">
-          <p className="flex items-center text-lg justify-center gap-3 uppercase tracking-[5px] text-white font-semibold mb-4">
+          <p className="flex items-center text-md md:text-lg justify-center gap-3 uppercase tracking-[5px] text-white font-semibold mb-2 md:mb-4">
             <FaLeaf />
             Media & Events
           </p>
 
-          <AnimatedHeading className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
             Know the Latest News & Events
-          </AnimatedHeading>
+          </h2>
         </div>
 
         {/* Blog Layout */}
@@ -108,7 +108,7 @@ export default function BlogSection() {
               <div className="rounded-3xl border border-gray-200 bg-white overflow-hidden hover:shadow-xl transition-all duration-500 group">
 
                 {/* Image */}
-                <div className="relative h-88 overflow-hidden">
+                <div className="relative h-50 md:h-88 overflow-hidden">
                   <Image
                     src={event?.masterimage}
                     alt={event?.title || "Event Image"}
@@ -119,13 +119,13 @@ export default function BlogSection() {
                 </div>
 
                 {/* Content */}
-                <div className="p-6">
+                <div className="p-4 md:p-6">
 
                   <p className="text-secondary uppercase tracking-[3px] font-semibold mb-3">
                     Events
                   </p>
 
-                  <h3 className="text-3xl font-bold text-primary mb-5 leading-tight">
+                  <h3 className="text-xl md:text-3xl font-bold text-primary mb-5 leading-tight">
                     {eventError
                       ? eventError
                       : event?.title || "Loading Event..."}
@@ -161,11 +161,11 @@ export default function BlogSection() {
                   <Link
                     key={article.id}
                     href='/news-articles'
-                    className="grid grid-cols-1 h-42.5 md:grid-cols-[40%_60%] rounded-3xl border border-gray-200 bg-white overflow-hidden hover:shadow-xl transition-all duration-500 group"
+                    className="grid grid-cols-1 md:h-42.5 md:grid-cols-[40%_60%] rounded-3xl border border-gray-200 bg-white overflow-hidden hover:shadow-xl transition-all duration-500 group"
                   >
 
                     {/* Image */}
-                    <div className="relative h-60 md:h-full overflow-hidden">
+                    <div className="relative h-40 md:h-full overflow-hidden">
                       <Image
                         src={article.image}
                         alt={article.title}
@@ -176,13 +176,13 @@ export default function BlogSection() {
                     </div>
 
                     {/* Content */}
-                    <div className="p-6 flex flex-col justify-center">
+                    <div className="p-4 md:p-6 flex flex-col justify-center">
 
                       <p className="text-secondary uppercase tracking-[3px] font-semibold mb-3">
                         News & Article
                       </p>
 
-                      <h3 className="text-2xl font-bold text-primary leading-tight transition duration-300 group-hover:text-secondary line-clamp-2">
+                      <h3 className="text-xl font-bold text-primary leading-tight transition duration-300 group-hover:text-secondary line-clamp-2">
                         {article.title}
                       </h3>
 
@@ -217,7 +217,7 @@ export default function BlogSection() {
         </div>
       </div>
 
-      <div className="absolute -bottom-1  h-[150vh] w-full opacity-30 pointer-events-none">
+      <div className="absolute -bottom-1 h-[305vh] md:h-[150vh] w-full opacity-30 pointer-events-none">
         <Image
           src={bg.src}
           alt="background-texture"

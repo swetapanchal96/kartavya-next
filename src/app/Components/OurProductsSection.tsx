@@ -36,7 +36,7 @@ export default function OurProductsSection({
 
   return (
     // <section className="py-20 bg-linear-to-br from-blue/50 via-secondary/35  to-primary/50 overflow-hidden relative">
-    <section className="py-20 bg-[#0a2a1a] overflow-hidden relative">
+    <section className="py-15 md:py-20 bg-[#0a2a1a] overflow-hidden relative">
       {/* <div className="absolute inset-0 bg-primary/10 pointer-events-none"></div> */}
 
       {/* Background Blur */}
@@ -47,14 +47,14 @@ export default function OurProductsSection({
 
         {/* Heading */}
         <div className="text-center mb-6">
-          <p className="flex text-lg items-center justify-center gap-3 uppercase tracking-[5px] text-white font-semibold mb-4">
+          <p className="flex text-md md:text-lg items-center justify-center gap-3 uppercase tracking-[5px] text-white font-semibold mb-4">
             <FaLeaf />
             Our Product
           </p>
 
-          <AnimatedHeading className="text-4xl md:text-5xl lg:text-6xl font-bold text-white">
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white">
             Highlights Product
-          </AnimatedHeading>
+          </h2>
         </div>
 
         {/* Filter Tabs */}
@@ -120,7 +120,7 @@ export default function OurProductsSection({
                   <Link
                     href={`/variety?slug=${product.slug}&type=${product.type === "vegetable"
                       ? 1
-                      : product.type === "foot_crops"
+                      : product.type === "fruit_crops"
                         ? 3
                         : 2
                       }`}

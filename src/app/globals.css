@@ -70,6 +70,8 @@
     border-radius: 20px;
 }
 
+
+
 .custom-description ul {
     margin-top: 10px;
     display: flex;
@@ -86,6 +88,9 @@
     font-size: 18px;
     line-height: 1.9;
     color: #666;
+
+    display: flex;
+    align-items: flex-start;
 }
 
 /* OUTER CIRCLE */
@@ -94,7 +99,7 @@
 
     position: absolute;
     left: 0;
-    top: 11px;
+    top: 5px;
 
     width: 24px;
     height: 24px;
@@ -112,7 +117,7 @@
     position: absolute;
 
     left: 7px;
-    top: 18px;
+    top: 12px;
 
     width: 10px;
     height: 10px;

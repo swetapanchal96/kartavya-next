@@ -62,7 +62,7 @@ export default function HomeClient() {
     }, []);
 
     return (
-        <div>
+        <div className="overflow-hidden">
 
             <HeroSection />
 

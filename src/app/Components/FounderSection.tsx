@@ -45,8 +45,8 @@ export default function FounderSection() {
                         className="py-16 lg:py-20"
                     >
                         <motion.div variants={fadeInUp} className="flex items-center gap-3 mb-3">
-                            <span className="text-secondary text-xl"><FaLeaf /></span>
-                            <span className="text-lg font-bold uppercase tracking-[4px] text-gray-400">
+                            <span className="text-secondary text-md md:text-xl"><FaLeaf /></span>
+                            <span className="text-md md:text-lg font-bold uppercase tracking-[4px] text-gray-400">
                                 Our Founder & CEO
                             </span>
                         </motion.div>
@@ -55,12 +55,12 @@ export default function FounderSection() {
                             variants={fadeInUp}
                             onMouseEnter={() => setIsHovering(true)}
                             onMouseLeave={() => setIsHovering(false)}
-                            className="text-5xl md:text-[60px] font-extrabold leading-[1.1] mb-4 cursor-default"
+                            className="text-4xl md:text-[60px] font-extrabold leading-[1.1] mb-4 cursor-default"
                         >
                             Harshad Paneliya
                         </motion.h2>
 
-                        <div className="space-y-3 text-[17px] leading-relaxed text-gray-300 max-w-xl">
+                        <div className="space-y-3 text-md md:text-[17px] leading-relaxed text-gray-300 max-w-xl">
                             <motion.p variants={fadeInUp}>
                                 Harshad Paneliya, the Visionary Founder and CEO of Kartavya Seeds, is an
                                 accomplished agriculturist and an expert plant breeder. With a robust academic
@@ -74,7 +74,7 @@ export default function FounderSection() {
 
                             <motion.div variants={fadeInUp} className="">
                                 <div className="border-l-4 border-yellow pl-6 py-2">
-                                    <p className="text-white font-semibold text-lg italic leading-snug">
+                                    <p className="text-white font-semibold text-md md:text-lg italic leading-snug">
                                         "Harshad Paneliya leads with a vision of sustainable agriculture,
                                         ensuring 'Farmer's Growth Is Our Duty'. Every seed sown brings prosperity
                                         and progress to the farming community."

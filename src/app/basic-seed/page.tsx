@@ -1,4 +1,3 @@
-import AnimatedHeading from "../Components/AnimatedHeading";
 import Breadcrumb from "../Components/Breadcrumb";
 import header from "@/app/assets/BASICSEEDSBANNER.webp";
 import img1 from '@/app/assets/1.jpg';
@@ -22,7 +21,7 @@ export default function IncrementBasicSeedPage() {
             />
 
             {/* Increment of Basic Seed Section */}
-            <section className="relative overflow-hidden bg-white py-20">
+            <section className="relative overflow-hidden bg-white py-15 md:py-20">
                 {/* Soft Background */}
                 <div className="absolute left-0 top-0 h-60 w-60 rounded-full bg-primary/5 blur-3xl"></div>
                 <div className="absolute bottom-0 right-0 h-60 w-60 rounded-full bg-secondary/10 blur-3xl"></div>
@@ -34,9 +33,9 @@ export default function IncrementBasicSeedPage() {
                             Professional Seed Services
                         </span>
 
-                        <AnimatedHeading className="mt-4 text-4xl lg:text-6xl font-bold text-dark-grey md:text-5xl">
+                        <h2 className="mt-4 text-4xl lg:text-6xl font-bold text-dark-grey md:text-5xl">
                             Increment of Basic Seed
-                        </AnimatedHeading>
+                        </h2>
 
                         <div className="mx-auto mt-5 h-0.5 w-20 bg-secondary"></div>
                     </div> */}
@@ -47,23 +46,23 @@ export default function IncrementBasicSeedPage() {
                             {/* Left Content */}
                             <div>
                                 <div className=" max-w-4xl text-start">
-                                    <span className="text-lg font-semibold uppercase tracking-[4px] text-primary">
+                                    <span className="text-md md:text-lg font-semibold uppercase tracking-[4px] text-primary">
                                         Professional Seed Services
                                     </span>
 
-                                    <AnimatedHeading className="mt-2 text-4xl lg:text-6xl font-bold text-dark-grey md:text-5xl">
+                                    <h2 className="mt-2 text-3xl lg:text-6xl font-bold text-dark-grey md:text-5xl">
                                         Increment of Basic Seed
-                                    </AnimatedHeading>
+                                    </h2>
 
                                     
                                 </div>
-                                <p className="text-lg mt-3 text-[#666]">
+                                <p className="text-md md:text-lg mt-3 text-[#666]">
                                     Our Basic Seeds Increament service will provide you
                                     with all the professionalism, commitment and safety in
                                     your materials.
                                 </p>
 
-                                <p className="mt-4 text-lg  text-[#666]">
+                                <p className="mt-4 text-md md:text-lg  text-[#666]">
                                     We Know that the genetic safety of your products is
                                     important to you. You can leave your lines in our
                                     hands, Our team will work to meet that requirement.
@@ -75,7 +74,7 @@ export default function IncrementBasicSeedPage() {
                                     <Image
                                         src={aboutImg}
                                         alt="Advanced Seed Research"
-                                        className="w-full h-100 object-cover"
+                                        className="w-full h-60 md:h-100 object-cover"
                                     />
                                 </div>
                                 {/* Curved decorative element behind image to match homepage style */}
@@ -131,7 +130,7 @@ export default function IncrementBasicSeedPage() {
             </section>
 
             {/* Seed Infrastructure Gallery */}
-            <section className="relative overflow-hidden bg-[#f8faf5] py-20">
+            <section className="relative overflow-hidden bg-[#f8faf5] py-15 md:py-20">
                 {/* Soft Background */}
                 <div className="absolute left-0 top-0 h-60 w-60 rounded-full bg-primary/5 blur-3xl"></div>
                 <div className="absolute bottom-0 right-0 h-60 w-60 rounded-full bg-secondary/10 blur-3xl"></div>
@@ -139,11 +138,11 @@ export default function IncrementBasicSeedPage() {
                 <div className="container relative z-10 mx-auto px-4 md:px-12">
                     {/* Heading */}
                     <div className="mx-auto max-w-4xl text-center">
-                        <span className="text-lg font-semibold uppercase tracking-[4px] text-primary">
+                        <span className="text-md md:text-lg font-semibold uppercase tracking-[4px] text-primary">
                             Infrastructure & Field Operations
                         </span>
 
-                        <h2 className="mt-2 text-4xl font-bold text-dark-grey md:text-5xl lg:text-6xl">
+                        <h2 className="mt-2 text-3xl font-bold text-dark-grey md:text-5xl lg:text-6xl">
                             Controlled & Secure Seed Handling
                         </h2>
 

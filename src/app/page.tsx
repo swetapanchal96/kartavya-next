@@ -14,7 +14,7 @@ import HomeClient from "./HomeClient";
 
 export default function Home() {
   return (
-    <div>
+    <div className="overflow-hidden">
       {/* <HeroSection />
       <AboutUs />
       <ExperienceSection />

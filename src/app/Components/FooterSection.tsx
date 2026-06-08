@@ -52,11 +52,11 @@ export default function Footer() {
             {/* Address */}
             <div className="flex items-center gap-4 max-w-sm">
               <div className="bg-yellow hover:bg-secondary p-4 rounded-full text-primary text-xl shrink-0 transition-all duration-500 ease-in-out">
-                <IoLocationSharp className="h-8 w-8" />
+                <IoLocationSharp className="h-6 w-6 md:h-8 md:w-8" />
               </div>
               <div>
-                <h4 className="font-bold text-[22px] leading-tight">Address</h4>
-                <p className="text-md text-gray-200">
+                <h4 className="font-bold text-xl md:text-[22px] leading-tight">Address</h4>
+                <p className="text-sm text-gray-200">
                   C/904, Signature - II, Opp. Relief Hotel, Sarkhej - Sanand Road,
                   Ahmedabad - 382 210. Gujarat, INDIA.
                 </p>
@@ -66,11 +66,11 @@ export default function Footer() {
             {/* Contact */}
             <div className="flex items-center group gap-4">
               <div className="bg-yellow group-hover:bg-secondary  p-4 rounded-full text-primary text-xl shrink-0 transition-all duration-500 ease-in-out">
-                <FaPhoneAlt className="h-7 w-7" />
+                <FaPhoneAlt className="h-6 w-6 md:h-7 md:w-7" />
               </div>
               <div>
-                <h4 className="font-bold text-[22px] leading-tight">Contact</h4>
-                <p className="text-md text-gray-200 hover:text-yellow">
+                <h4 className="font-bold text-xl md:text-[22px] leading-tight">Contact</h4>
+                <p className="text-sm text-gray-200 hover:text-yellow">
                   <Link href="tel:+917046777222">+91 7046 777 222 </Link>
                 </p>
               </div>
@@ -79,11 +79,11 @@ export default function Footer() {
             {/* Email */}
             <div className="flex items-center group gap-4">
               <div className="bg-yellow group-hover:bg-secondary p-4 rounded-full text-primary text-xl shrink-0 transition-all duration-500 ease-in-out">
-                <FaEnvelope className="w-7 h-7" />
+                <FaEnvelope className="h-6 w-6 md:w-7 md:h-7" />
               </div>
               <div>
-                <h4 className="font-bold text-[22px] leading-tight">E-Mail</h4>
-                <p className="text-md text-gray-200 hover:text-yellow">
+                <h4 className="font-bold text-xl md:text-[22px] leading-tight">E-Mail</h4>
+                <p className="text-sm text-gray-200 hover:text-yellow">
                   <Link href="mailto:info@kartavyaseeds.com">
                     {" "}
                     info@kartavyaseeds.com
@@ -94,13 +94,13 @@ export default function Footer() {
           </div>
 
           {/* MIDDLE SECTION */}
-          <div className="grid grid-cols-1 lg:grid-cols-[1.5fr_0.8fr] gap-16 py-8 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-[1.5fr_0.8fr] gap-8 md:gap-16 py-8 items-start">
 
             {/* Quick Links */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12">
               <div>
 
-                <h3 className="mb-3 text-[24px] font-bold text-white">
+                <h3 className="mb-3 text-xl md:text-[24px] font-bold text-white">
                   Quick Links
                 </h3>
 
@@ -115,7 +115,7 @@ export default function Footer() {
                     <Link
                       key={index}
                       href={item.link}
-                      className="group flex items-center gap-3 text-lg text-white/80 transition-all duration-300 hover:text-yellow"
+                      className="group flex items-center gap-3 text-md md:text-lg text-white/80 transition-all duration-300 hover:text-yellow"
                     >
                       <span className="h-2 w-2 rounded-full bg-yellow transition-all duration-300 group-hover:scale-150"></span>
 
@@ -129,7 +129,7 @@ export default function Footer() {
               {/* Our Products */}
               <div>
 
-                <h3 className="mb-3 text-[24px] font-bold text-white">
+                <h3 className="mb-3 text-xl md:text-[24px] font-bold text-white">
                   Our Products
                 </h3>
 
@@ -137,7 +137,7 @@ export default function Footer() {
 
                   <Link
                     href="/product?slug=vegetables"
-                    className="group flex items-center gap-3 text-lg text-white/80 transition-all duration-300 hover:text-yellow"
+                    className="group flex items-center gap-3 text-md md:text-lg text-white/80 transition-all duration-300 hover:text-yellow"
                   >
                     <span className="h-2 w-2 rounded-full bg-yellow transition-all duration-300 group-hover:scale-150"></span>
 
@@ -169,7 +169,7 @@ export default function Footer() {
 
             {/* Social Media */}
             <div>
-              <h3 className="mb-3 text-[24px] font-bold text-white">
+              <h3 className="mb-3 text-xl md:text-[24px] font-bold text-white">
                 Social Media
               </h3>
 
@@ -184,7 +184,7 @@ export default function Footer() {
                       href={item.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group flex h-14 w-14 items-center justify-center rounded-full bg-yellow text-primary transition-all duration-300 hover:-translate-y-1 hover:scale-110 hover:bg-secondary"
+                      className="group flex h-10 w-10 md:h-14 md:w-14 items-center justify-center rounded-full bg-yellow text-primary transition-all duration-300 hover:-translate-y-1 hover:scale-110 hover:bg-secondary"
                     >
                       <Icon size={22} />
                     </Link>

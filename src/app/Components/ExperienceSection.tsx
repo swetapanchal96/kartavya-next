@@ -18,9 +18,9 @@ export default function ExperienceSection() {
                 >
                     <div className="flex flex-col items-center justify-center text-center md:flex-row md:gap-4">
 
-                        <AnimatedHeading className="text-5xl font-black leading-none text-primary md:text-7xl">
+                        <h2 className="text-5xl font-black leading-none text-primary md:text-7xl">
                             20+
-                        </AnimatedHeading>
+                        </h2>
 
                         <h2 className="text-2xl font-semibold uppercase tracking-[6px] text-primary md:text-4xl">
                             Years of Experience

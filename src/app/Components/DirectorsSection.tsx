@@ -9,11 +9,11 @@ import AnimatedHeading from "./AnimatedHeading";
 
 export default function DirectorsSection() {
     return (
-        <section className="bg-[#f7f7f7] py-20">
-            <div className="w-full">
+        <section className="bg-[#f7f7f7] py-15 md:py-20">
+            <div className="w-full overflow-hidden!">
 
                 {/* Director 1 */}
-                <div className="grid grid-cols-1 pb-12 lg:grid-cols-5 gap-16 items-center">
+                <div className="grid grid-cols-1 pb-12 lg:grid-cols-5 gap-8 md:gap-16 items-center">
                     {/* Left Side Image - 40% */}
                     <div className="lg:col-span-2 w-full flex justify-start">
                         <div className="group relative w-full h-105 rounded-md overflow-hidden cursor-pointer">
@@ -35,35 +35,35 @@ export default function DirectorsSection() {
                     </div>
  
                     {/* Right Side Content - 60% */}
-                    <div className="lg:col-span-3 pr-10">
-                        <p className="flex items-center gap-4 text-lg uppercase tracking-[4px] text-secondary font-semibold mb-4">
+                    <div className="lg:col-span-3 px-5 lg:px-0 lg:pr-10">
+                        <p className="flex items-center gap-4 text-md md:text-lg uppercase tracking-[4px] text-secondary font-semibold mb-2 md:mb-4">
                            <FaLeaf /> Our Director
                         </p>
 
-                        <AnimatedHeading className="text-4xl md:text-5xl font-bold text-primary mb-5">
+                        <h2 className="text-4xl md:text-5xl font-bold text-primary mb-2 md:mb-5">
                             Bhavesh Savaliya
-                        </AnimatedHeading>
+                        </h2>
 
-                        <p className="text-light-grey text-lg leading-8">
+                        <p className="text-light-grey text-md md:text-lg leading-6 md:leading-8">
                             Bhavesh Savaliya, a B.E. Chemical Graduate, brings a unique blend of technical expertise and innovative vision to Kartavya Seeds. With his strong background, Bhavesh Savaliya plays a vital role in steering the company towards cutting-edge advancements in seed development and agricultural solutions. As a dedicated leader, he focuses on empowering farmers with high-quality seeds that ensure superior yield and better sustainability. His commitment to innovation and farmer welfare is at the core of Kartavya Seeds mission to drive agricultural growth and success.
                         </p>
                     </div>
                 </div>
 
                 {/* Director 2 */}
-                <div className="grid grid-cols-1 lg:grid-cols-5 gap-16 items-center">
+                <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 md:gap-16 items-center">
 
                     {/* Left Side Content - 60% */}
-                    <div className="lg:col-span-3 order-2 lg:order-1 pl-10">
-                        <p className="flex text-lg items-center gap-4 uppercase tracking-[4px] text-secondary font-semibold mb-4">
+                    <div className="lg:col-span-3 order-2 lg:order-1 px-5 lg:px-0 lg:pl-10">
+                        <p className="flex text-md md:text-lg items-center gap-4 uppercase tracking-[4px] text-secondary font-semibold mb-2 md:mb-4">
                            <FaLeaf /> Our Director
                         </p>
 
-                        <AnimatedHeading className="text-4xl md:text-5xl font-bold text-primary mb-5">
+                        <h2 className="text-3xl md:text-5xl font-bold text-primary mb-2 md:mb-5">
                             Nitesh Savaliya
-                        </AnimatedHeading>
+                        </h2>
 
-                        <p className="text-light-grey text-lg leading-8">
+                        <p className="text-light-grey text-md md:text-lg leading-6 md:leading-8">
                             Nitesh Savaliya, as Director of Kartavya Seeds, brings strategic vision and leadership to the company's operations. With a deep understanding of agriculture and a passion for farmer-centric solutions, he focuses on fostering innovation and delivering exceptional seed quality. His dedication ensures Kartavya Seeds continues to thrive as a trusted partner for farmers nationwide.
                         </p>
                     </div>

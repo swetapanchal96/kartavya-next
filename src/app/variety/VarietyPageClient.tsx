@@ -290,6 +290,7 @@ type SubVegetableType = {
 type ProductType = {
   id: number;
   title: string;
+  headerimage?: string;
   image: string;
   veg_slug?: string;
   field_slug?: string;
@@ -308,6 +309,7 @@ export default function VarietyPage() {
   const [varieties, setVarieties] = useState<SubVegetableType[]>([]);
   const [productTitle, setProductTitle] = useState("Varieties");
   const [loading, setLoading] = useState(false);
+  const [headerImage, setHeaderImage] = useState(header.src);
 
   const getVarieties = async () => {
     try {
@@ -338,6 +340,9 @@ export default function VarietyPage() {
 
         if (currentProduct) {
           setProductTitle(currentProduct.title);
+          setHeaderImage(
+            currentProduct.headerimage || header.src
+          );
 
           if (type === 1) {
             setVarieties(currentProduct.sub_vegetables || []);
@@ -379,22 +384,22 @@ export default function VarietyPage() {
   }, [slug, type]);
 
   const toTitleCase = (text?: string) =>
-  text
-    ?.toLowerCase()
-    .split(" ")
-    .map(
-      (word) =>
-        word.charAt(0).toUpperCase() +
-        word.slice(1)
-    )
-    .join(" ");
+    text
+      ?.toLowerCase()
+      .split(" ")
+      .map(
+        (word) =>
+          word.charAt(0).toUpperCase() +
+          word.slice(1)
+      )
+      .join(" ");
 
   return (
     <>
       <Breadcrumb
         title={`${productTitle} Varieties`}
         // subtitle="Growing Trust Since Years"
-        backgroundImage={header.src}
+        backgroundImage={headerImage}
         breadcrumbs={[
           { label: "Home", href: "/" },
           {
@@ -447,14 +452,14 @@ export default function VarietyPage() {
                             <img
                               src={variety.master_image}
                               alt={varietyName || "Variety"}
-                              className="h-full w-full object-cover transition duration-700 group-hover:scale-110"
+                              className="h-full w-full object-contain transition duration-700 group-hover:scale-110"
                             />
                           </div>
                         </div>
 
                         <div className="mt-4">
                           <h3 className="text-xl font-black  tracking-[1px] text-dark-grey transition duration-300 group-hover:text-secondary">
-                            {toTitleCase(varietyName)}
+                            {varietyName}
                           </h3>
 
                           <div className="mx-auto mt-1 h-0.75 w-16 rounded-full bg-secondary transition-all duration-500 group-hover:w-28" />
@@ -471,7 +476,7 @@ export default function VarietyPage() {
             </div>
 
             {/* RIGHT SIDEBAR */}
-            <div className="flex flex-col items-start gap-4">
+            <div className="flex flex-col mt-5 md:mt-0 md:items-start gap-4">
               <div className="rounded-[35px] border border-[#e5e5e5] bg-white p-6 shadow-[0_10px_40px_rgba(0,0,0,0.04)]">
                 <div className="mb-4 flex items-center gap-4">
                   <div>

@@ -4,7 +4,6 @@ import Breadcrumb from "@/app/Components/Breadcrumb";
 import header from '@/app/assets/Aboutus_banner.webp';
 import Image from 'next/image';
 import aboutImg from '@/app/assets/About-us.jpeg';
-import AnimatedHeading from "../Components/AnimatedHeading";
 import { IoTrophy } from "react-icons/io5";
 import { MdVisibility } from "react-icons/md";
 import { GiSprout, GiCheckMark } from "react-icons/gi";
@@ -27,7 +26,7 @@ export default function AboutPage() {
                 ]}
             />
             {/* about */}
-            <section className="py-20 bg-white overflow-hidden">
+            <section className="py-15 md:py-20 bg-white overflow-hidden">
                 <div className="container mx-auto px-4 md:px-12">
                     {/* Top Section: Corporate Identity */}
                     <div className="grid lg:grid-cols-2 gap-16 items-center mb-12">
@@ -36,7 +35,7 @@ export default function AboutPage() {
                                 <Image
                                     src={aboutImg}
                                     alt="Advanced Seed Research"
-                                    className="w-full h-137.5 object-cover"
+                                    className="w-full h-60 md:h-137.5 object-cover"
                                 />
                             </div>
                             {/* Curved decorative element behind image to match homepage style */}
@@ -54,21 +53,21 @@ export default function AboutPage() {
 
                         <div className="space-y-8">
                             <div className="space-y-4">
-                                <h4 className="text-secondary font-bold text-lg flex items-center gap-2">
+                                <h4 className="text-secondary font-bold text-md md:text-lg flex items-center gap-2">
                                     <span className="w-8 h-0.5 bg-secondary"></span>
                                     WELCOME TO KARTAVYA SEEDS
                                 </h4>
-                                <AnimatedHeading className="text-4xl md:text-5xl font-extrabold text-primary leading-tight">
+                                <h2 className="text-3xl md:text-5xl font-extrabold text-primary leading-tight">
                                     Trusted Partner in <span className="text-secondary">Genetically Enhanced</span> Agriculture
-                                </AnimatedHeading>
+                                </h2>
                             </div>
 
-                            <div className="text-gray-600 space-y-6 leading-relaxed text-lg">
+                            <div className="text-gray-600 space-y-6 leading-relaxed text-md md:text-lg">
                                 <p>
                                     <span className="font-bold text-primary">Kartavya Seeds</span> is committed to supply genetically enhanced high quality seeds to farmers. We are an <span className="text-secondary font-semibold underline underline-offset-4">ISO 9001:2015 certified Company</span>.
                                 </p>
                                 <p>
-                                    Our Focus On Research and Development has won us recognition from Government Of India’s Department of Scientific and Industrial Research (DSIR). Our seeds are ingrained with qualities to rich, flavorful, nutritious crop.
+                                    Our focus on Research and Development has won us recognition from Government of India’s Department of Scientific and Industrial Research (DSIR). Our seeds are ingrained with qualities to produce rich, flavourful and nutritious crops with superior drought tolerance and disease resistance capabilities.
                                 </p>
                                 <p>
                                     While the farmers harvest prosperous crops, they are able to achieve it with <span className="italic text-primary">High resource efficiency</span>.
@@ -82,10 +81,10 @@ export default function AboutPage() {
                     <div className="space-y-7">
 
                         {/* ================= VEGETABLE CROPS ================= */}
-                        <div className="relative overflow-hidden rounded-[45px] bg-linear-to-r from-[#f8f6f1] to-[#eef5db] p-10 ">
+                        <div className="relative overflow-hidden rounded-[45px] bg-linear-to-r from-[#f8f6f1] to-[#eef5db] p-6 md:p-10 ">
 
                             {/* Large Background Text */}
-                            <h2 className="absolute left-6 top-1/2 -translate-y-1/2 text-[70px] font-black uppercase leading-none text-primary/5 md:text-[130px]">
+                            <h2 className="absolute left-6 top-1/2 -translate-y-1/2 text-[50px] font-black uppercase leading-none text-primary/5 md:text-[130px]">
                                 VEGETABLE
                             </h2>
 
@@ -97,12 +96,12 @@ export default function AboutPage() {
                                         Crop Category
                                     </span> */}
 
-                                    <h5 className="mt-3 text-4xl md:text-5xl font-black text-primary uppercase leading-none">
+                                    <h5 className="mt-3 text-3xl md:text-5xl font-black text-primary uppercase leading-none">
                                         Vegetable <span className="text-secondary">Crops</span>
                                     </h5>
                                 </div>
 
-                                <div className="h-[2px] w-full max-w-xs bg-linear-to-r from-secondary to-transparent"></div>
+                                <div className="h-0.5 w-full max-w-xs bg-linear-to-r from-secondary to-transparent"></div>
                             </div>
 
                             {/* Slider */}
@@ -127,10 +126,10 @@ export default function AboutPage() {
                         </div>
 
                         {/* ================= FIELD CROPS ================= */}
-                        <div className="relative overflow-hidden rounded-[45px] bg-primary p-10 ">
+                        <div className="relative overflow-hidden rounded-[45px] bg-primary p-6 md:p-10 ">
 
                             {/* Large Background Text */}
-                            <h2 className="absolute right-6 top-1/2 -translate-y-1/2 text-[70px] font-black uppercase leading-none text-white/5 md:text-[130px]">
+                            <h2 className="absolute right-6 top-1/2 -translate-y-1/2 text-[50px] font-black uppercase leading-none text-white/5 md:text-[130px]">
                                 FIELD
                             </h2>
 
@@ -142,7 +141,7 @@ export default function AboutPage() {
                                         Crop Category
                                     </span> */}
 
-                                    <h5 className="mt-3 text-4xl md:text-5xl font-black text-white uppercase leading-none">
+                                    <h5 className="mt-3 text-3xl md:text-5xl font-black text-white uppercase leading-none">
                                         Field <span className="text-secondary">Crops</span>
                                     </h5>
                                 </div>
@@ -204,7 +203,7 @@ export default function AboutPage() {
                 </div>
             </section>
             {/* vision & mission */}
-            <section className="relative overflow-hidden bg-[#f8f6f1] py-20">
+            <section className="relative overflow-hidden bg-[#f8f6f1] py-15 md:py-20">
 
                 {/* Background Glow */}
                 <div className="absolute left-0 top-0 h-96 w-[24rem] rounded-full bg-secondary/5 blur-3xl"></div>
@@ -212,16 +211,16 @@ export default function AboutPage() {
 
                 <div className="container relative z-10 mx-auto px-4 md:px-10">
 
-                    <div className="grid gap-16 lg:grid-cols-2">
+                    <div className="grid gap-8 md:gap-16 lg:grid-cols-2">
 
                         {/* ================= VISION ================= */}
                         <div className="relative">
 
                             {/* Top */}
-                            <div className="mb-10 flex items-center gap-5">
+                            <div className="mb-6 md:mb-10 flex items-center gap-5">
 
                                 {/* Icon */}
-                                <div className="flex h-20 w-20 items-center justify-center rounded-full border border-secondary/20 bg-white shadow-lg shadow-secondary/10">
+                                <div className="flex h-15 w-15 md:h-20 md:w-20 items-center justify-center rounded-full border border-secondary/20 bg-white shadow-lg shadow-secondary/10">
 
                                     <MdOutlineTrackChanges className="text-4xl text-secondary" />
                                 </div>
@@ -232,21 +231,21 @@ export default function AboutPage() {
                                         Our Vision
                                     </span> */}
 
-                                    <h2 className=" text-5xl font-black leading-none text-primary">
+                                    <h2 className="text-3xl md:text-5xl font-black leading-none text-primary">
                                         Vision
                                     </h2>
                                 </div>
                             </div>
 
                             {/* Content */}
-                            <div className="relative overflow-hidden rounded-4xl border-2  border-primary/50 bg-white/70 p-10 backdrop-blur-xl">
+                            <div className="relative overflow-hidden rounded-4xl border-2  border-primary/50 bg-white/70 p-6 md:p-10 backdrop-blur-xl">
 
                                 {/* Accent Glow */}
                                 <div className="absolute right-0 top-0 h-40 w-40 rounded-full bg-secondary/10 blur-3xl"></div>
 
                                 <div className="relative space-y-7">
 
-                                    <p className="text-2xl font-light leading-[1.9] text-primary">
+                                    <p className="text-lg md:text-2xl font-light  md:leading-[1.9] text-primary">
                                         At Kartavya Seeds, our vision is to establish
                                         ourselves as a trusted and progressive leader in
                                         the agricultural seed industry by delivering
@@ -256,14 +255,11 @@ export default function AboutPage() {
 
                                     <div className="h-px w-full bg-primary/10"></div>
 
-                                    <p className="text-lg leading-loose text-primary/70">
-                                        We are committed to driving agricultural
-                                        advancement through continuous research and
-                                        development, innovation, scientific excellence to
-                                        enhance crop performance and farm productivity.
+                                    <p className="text-md md:text-lg leading-6 md:leading-loose text-primary/70">
+                                        We are committed to driving agricultural advancement through continuous research and development, innovation, and scientific excellence to enhance crop performance and farm productivity.
                                     </p>
 
-                                    <p className="text-lg leading-loose text-primary/70">
+                                    <p className="text-md md:text-lg leading-6 md:leading-loose text-primary/70">
                                         By fostering strong, transparent, long-term
                                         partnerships with farmers, channel partners and
                                         stakeholders, we aim to create lasting value,
@@ -279,10 +275,10 @@ export default function AboutPage() {
                         <div className="relative">
 
                             {/* Top */}
-                            <div className="mb-10 flex items-center gap-5">
+                            <div className="mb-5 md:mb-10 flex items-center gap-5">
 
                                 {/* Icon */}
-                                <div className="flex h-20 w-20 items-center justify-center rounded-full border border-secondary/20 bg-primary shadow-lg shadow-black/10">
+                                <div className="flex h-15 w-15 md:h-20 md:w-20 items-center justify-center rounded-full border border-secondary/20 bg-primary shadow-lg shadow-black/10">
 
                                     <GiSprout className="text-4xl text-secondary" />
                                 </div>
@@ -293,7 +289,7 @@ export default function AboutPage() {
                                         Our Mission
                                     </span> */}
 
-                                    <h2 className=" text-5xl font-black leading-none text-primary">
+                                    <h2 className="text-3xl md:text-5xl font-black leading-none text-primary">
                                         Mission
                                     </h2>
                                 </div>
@@ -317,22 +313,22 @@ export default function AboutPage() {
                                 ].map((item, index) => (
                                     <div
                                         key={index}
-                                        className="group relative overflow-hidden rounded-[26px] border-2 border-primary/50 bg-white/70 p-6 backdrop-blur-xl transition-all duration-500 hover:-translate-y-1 hover:border-secondary/30 hover:shadow-xl hover:shadow-secondary/5"
+                                        className="group relative overflow-hidden rounded-[26px] border-2 border-primary/50 bg-white/70 p-4 md:p-6 backdrop-blur-xl transition-all duration-500 hover:-translate-y-1 hover:border-secondary/30 hover:shadow-xl hover:shadow-secondary/5"
                                     >
 
                                         {/* Glow */}
                                         <div className="absolute right-0 top-0 h-24 w-24 rounded-full bg-secondary/5 blur-2xl transition-all duration-500 group-hover:bg-secondary/10"></div>
 
-                                        <div className="relative flex items-start gap-5">
+                                        <div className="relative flex items-start gap-3 md:gap-5">
 
                                             {/* Custom Pointer */}
-                                            <div className="relative mt-1 flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-secondary/20 bg-secondary/10 transition-all duration-500 group-hover:rotate-12 group-hover:bg-secondary">
+                                            <div className="relative mt-1 flex h-8 w-8 md:h-11 md:w-11 shrink-0 items-center justify-center rounded-full border border-secondary/20 bg-secondary/10 transition-all duration-500 group-hover:rotate-12 group-hover:bg-secondary">
 
-                                                <GiCheckMark className="text-lg text-secondary transition-all duration-500 group-hover:text-primary" />
+                                                <GiCheckMark className="text-md md:text-lg text-secondary transition-all duration-500 group-hover:text-primary" />
                                             </div>
 
                                             {/* Text */}
-                                            <p className="text-lg  text-primary/75 transition-all duration-500 group-hover:text-primary">
+                                            <p className="text-md md:text-lg  text-primary/75 transition-all duration-500 group-hover:text-primary">
                                                 {item}
                                             </p>
                                         </div>
@@ -346,7 +342,7 @@ export default function AboutPage() {
             </section>
             {/* core value */}
             {/* ================= CORE VALUES ================= */}
-            <section className="relative overflow-hidden bg-[radial-gradient(circle_at_top,#ffffff_0%,#f5f7ef_45%,#eef2e3_100%)] py-20">
+            <section className="relative overflow-hidden bg-[radial-gradient(circle_at_top,#ffffff_0%,#f5f7ef_45%,#eef2e3_100%)] py-15 md:py-20">
 
                 {/* Background Glow */}
                 <div className="absolute left-0 top-0 h-120 w-120 rounded-full bg-secondary/5 blur-3xl"></div>
@@ -364,16 +360,16 @@ export default function AboutPage() {
                             Core Values
                         </span>
 
-                        <AnimatedHeading className="mt-2 text-5xl font-black uppercase text-primary md:text-6xl">
+                        <h2 className="mt-2 text-3xl font-black uppercase text-primary md:text-6xl">
                             The Values That
                             <span className="mt-2 block text-secondary">
                                 Drive Our Growth
                             </span>
-                        </AnimatedHeading>
+                        </h2>
                     </div>
 
                     {/* ================= CIRCULAR VALUES ================= */}
-                    <div className="relative mx-auto flex h-165 max-w-6xl items-center justify-center">
+                    <div className="relative mx-auto hidden lg:flex h-165 max-w-6xl items-center justify-center">
 
                         {/* ================= CONNECTING SVG LINES ================= */}
                         <svg
@@ -504,7 +500,7 @@ export default function AboutPage() {
                                 </h3>
 
                                 <p className="mt-3 text-[17px] text-primary/70">
-                                    Developing and supplying seeds that are suitable for specific regional or local environmental and cultural farming conditions. 
+                                    Developing and supplying seeds that are suitable for specific regional or local environmental and cultural farming conditions.
                                 </p>
                             </div>
                         </div>
@@ -547,6 +543,60 @@ export default function AboutPage() {
                                     Building trust through openness, fairness and responsibility.
                                 </p>
                             </div>
+                        </div>
+
+                    </div>
+
+                    {/* Mobile Layout */}
+                    <div className="lg:hidden mt-10">
+
+                        <div className="mx-auto mb-10 flex h-32 w-32 items-center justify-center rounded-full border border-secondary/20 bg-white shadow-xl">
+                            <Image
+                                src={logo}
+                                alt="Kartavya Seeds"
+                                width={70}
+                                height={70}
+                                className="object-contain"
+                            />
+                        </div>
+
+                        <div className="space-y-5">
+
+                            {[
+                                {
+                                    title: "Quality Excellence",
+                                    desc: "Consistent, reliable, and superior seed quality.",
+                                },
+                                {
+                                    title: "Innovation & Research",
+                                    desc: "The company emphasizes constant innovation, utilizing advanced R&D to create premium-quality seeds for diverse crops.",
+                                },
+                                {
+                                    title: "Sustainability",
+                                    desc: "Developing and supplying seeds that are suitable for specific regional or local environmental and cultural farming conditions.",
+                                },
+                                {
+                                    title: "Partnership & Collaboration",
+                                    desc: "Fostering global business success together.",
+                                },
+                                {
+                                    title: "Integrity & Transparency",
+                                    desc: "Building trust through openness, fairness and responsibility.",
+                                },
+                            ].map((item, index) => (
+                                <div
+                                    key={index}
+                                    className="rounded-3xl border border-primary/10 bg-white p-6 shadow-lg"
+                                >
+                                    <h3 className="text-2xl font-black text-primary">
+                                        {item.title}
+                                    </h3>
+
+                                    <p className="mt-3 text-base leading-7 text-primary/70">
+                                        {item.desc}
+                                    </p>
+                                </div>
+                            ))}
                         </div>
 
                     </div>

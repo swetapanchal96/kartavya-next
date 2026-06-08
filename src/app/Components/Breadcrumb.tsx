@@ -48,7 +48,7 @@ export default function Breadcrumb({
       {/* Content */}
       <div className="relative z-10">
         <div className="container mx-auto px-4">
-          <div className="flex min-h-90 flex-col items-center justify-center py-20 text-center md:min-h-107.5">
+          <div className="flex min-h-50 flex-col items-center justify-center py-15 md:py-20 text-center  md:min-h-107.5">
             {/* Subtitle */}
             {/* {subtitle && (
               <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-5 py-2 backdrop-blur-md">
@@ -60,7 +60,7 @@ export default function Breadcrumb({
             )} */}
 
             {/* Title */}
-            <h1 className="max-w-4xl text-4xl font-bold leading-tight text-white md:text-6xl">
+            <h1 className="max-w-4xl text-3xl font-bold leading-tight text-white md:text-6xl">
               {title}
             </h1>
 

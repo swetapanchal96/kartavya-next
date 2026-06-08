@@ -19,19 +19,19 @@ export default function WhyChooseUs() {
 
       {/* 1. TOP AREA (Based on Image 2) */}
       <div className="relative z-20 flex flex-col items-center text-center px-4 mb-10">
-        <span className="flex items-center gap-2 rounded-full border border-secondary/30 px-4 py-1 text-lg font-bold uppercase tracking-widest text-secondary shadow-sm">
+        <span className="flex items-center gap-2 rounded-full border border-secondary/30 px-4 py-1 text-md md:text-lg font-bold uppercase tracking-widest text-secondary shadow-sm">
           <span className="text-sm"><FaLeaf /></span> Why Choose Us
         </span>
 
-        <AnimatedHeading className="mt-6 max-w-3xl text-4xl font-extrabold text-primary md:text-5xl leading-tight">
+        <h2 className="mt-6 max-w-3xl text-2xl font-extrabold text-primary md:text-5xl leading-tight">
           Pioneering Innovations in the <br /> Global Agriculture
-        </AnimatedHeading>
+        </h2>
 
       </div>
 
       {/* 2. MAIN CONTENT AREA (Based on Image 1) */}
       <div className="container relative z-20 mx-auto px-4 md:px-12">
-        <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-3">
+        <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-3 lg:gap-10">
 
           {/* Left Side Points */}
           <div className="flex flex-col gap-5">
@@ -63,7 +63,7 @@ export default function WhyChooseUs() {
 
           {/* Center Image (Microscope/Lab) */}
           <div className="relative flex justify-center py-10 lg:py-0!">
-            <div className="absolute -bottom-60 h-120 w-full max-w-100">
+            <div className="relative h-70 w-70 sm:h-87.5 sm:w-87.5 lg:h-125 lg:w-full lg:max-w-100">
               <Image
                 src={whyChoose.src}
                 alt="R&D Lab"

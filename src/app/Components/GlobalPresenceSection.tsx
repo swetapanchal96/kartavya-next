@@ -53,20 +53,20 @@ const countries = [
 
 export default function GlobalPresenceSection() {
   return (
-    <section className="relative pt-20 bg-white overflow-hidden">
-      <div className="container mx-auto relative z-10">
+    <section className="relative pt-15 md:pt-20 bg-white overflow-hidden">
+      <div className="container mx-auto relative z-10 px-6 md:px-12">
         {/* Section Heading */}
-        <div className="text-center mb-12">
-          <p className="flex items-center text-lg justify-center gap-3 uppercase tracking-[5px] text-secondary font-semibold mb-4">
+        <div className="text-center mb-8 md:mb-12">
+          <p className="flex items-center text-md md:text-lg justify-center gap-3 uppercase tracking-[5px] text-secondary font-semibold mb-4">
             <FaLeaf />
             Global Presence
           </p>
 
-          <AnimatedHeading className="text-4xl md:text-5xl lg:text-5xl font-bold text-primary leading-tight max-w-5xl mx-auto">
+          <h2 className="text-3xl md:text-5xl lg:text-5xl font-bold text-primary leading-tight max-w-5xl mx-auto">
             Expanding Across The World
-          </AnimatedHeading>
+          </h2>
 
-          <p className="text-primary/70 text-lg max-w-3xl mx-auto mt-4 leading-8">
+          <p className="text-primary/70 text-md md:text-lg max-w-3xl mx-auto mt-4  md:leading-8">
             Kartavya Seeds proudly serves farmers across multiple countries,
             delivering premium seed quality, sustainable agriculture solutions,
             and trusted farming partnerships worldwide.
@@ -110,7 +110,7 @@ export default function GlobalPresenceSection() {
           {/* Right World Map */}
           <div className="lg:col-span-9">
             <div className="relative overflow-hidden">
-              <div className="relative w-full h-[550px]">
+              <div className="relative w-full h-50 md:h-137.5">
                 <Image
                   src={worldMap}
                   alt="Global Presence Map"

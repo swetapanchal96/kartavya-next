@@ -1,6 +1,5 @@
 "use client"
 import { motion, Variants } from "framer-motion";
-import AnimatedHeading from "../Components/AnimatedHeading";
 import Breadcrumb from "../Components/Breadcrumb";
 import header from "@/app/assets/R&D_banner.webp";
 import farmer from '@/app/assets/kartavya-icons/Farmer-livelihood&sustainability.svg'
@@ -59,13 +58,13 @@ export default function ResearchDevelopmentPage() {
                             </span>
 
                             
-                            <AnimatedHeading className="mx-auto max-w-5xl text-4xl font-black  text-dark-grey md:text-5xl lg:text-6xl">
+                            <h2 className="mx-auto max-w-5xl text-4xl font-black  text-dark-grey md:text-5xl lg:text-6xl">
                                 Advancing Agriculture Through{" "}
                                 <span className="relative inline-block text-primary">
                                     Research & Development
 
                                 </span>
-                            </AnimatedHeading>
+                            </h2>
 
                             
                             <div className="mx-auto mt-4 max-w-4xl">
@@ -101,7 +100,7 @@ export default function ResearchDevelopmentPage() {
                 </div>
             </section> */}
 
-            <section className="w-full bg-[#f8f8f8] py-15">
+            <section className="w-full bg-[#f8f8f8] py-15 pb-0 md:pb-15">
                 <div className="mx-auto container px-6 lg:px-10">
                     <div className="grid items-center gap-10 lg:grid-cols-[50%_50%]">
 
@@ -114,10 +113,10 @@ export default function ResearchDevelopmentPage() {
                             variants={fadeUp}
                             custom={0.2}
                         >
-                            <div className="relative h-120 w-full overflow-hidden rounded-xl shadow-xl">
+                            {/* <div className="relative h-60 md:h-120 w-full overflow-hidden rounded-xl ">
                                 {!playVideo ? (
                                     <>
-                                        {/* Thumbnail Image */}
+
                                         <Image
                                             src={about.src}
                                             alt="About Video"
@@ -126,7 +125,7 @@ export default function ResearchDevelopmentPage() {
                                             priority
                                         />
 
-                                        {/* Play Button */}
+
                                         <motion.button
                                             onClick={() => setPlayVideo(true)}
                                             whileHover={{ scale: 1.08 }}
@@ -137,17 +136,36 @@ export default function ResearchDevelopmentPage() {
                                         </motion.button>
                                     </>
                                 ) : (
-                                    <iframe
-                                        className="h-full w-full"
-                                        src="https://www.youtube.com/embed/YOUR_VIDEO_ID?autoplay=1"
-                                        title="About Video"
-                                        allow="autoplay; encrypted-media"
-                                        allowFullScreen
-                                    />
+                                    <video
+                                        className="h-full w-full object-contain"
+                                        controls
+                                        autoPlay
+                                        playsInline
+                                    >
+                                        <source
+                                            src="/pdf/kartavya-seed.mp4"
+                                            type="video/mp4"
+                                        />
+                                    </video>
                                 )}
-                            </div>
-                            <div className="absolute -bottom-8 -right-8 bg-white p-2 rounded-3xl shadow-xl border border-gray-100 flex items-center gap-4 max-w-xs z-20">
-                                <div className="w-30 h-30  rounded-2xl flex items-center justify-center text-white text-2xl">
+                            </div> */}
+                            <div className="relative h-60 md:h-120 w-full overflow-hidden rounded-xl ">
+                            <video
+                                className="h-full w-full object-contain"
+                                controls
+                                autoPlay
+                                muted
+                                playsInline
+                            >
+                                <source
+                                    src="/pdf/kartavya-seed.mp4"
+                                    type="video/mp4"
+                                />
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                            <div className="absolute -bottom-8 -right-2 md:-right-8 bg-white p-2 rounded-3xl shadow-xl border border-gray-100 flex items-center gap-4 max-w-xs z-20">
+                                <div className="w-25 h-25 md:w-30 md:h-30 rounded-2xl flex items-center justify-center text-white text-2xl">
                                     <Image
                                         src={dsir.src}
                                         alt="dsir"
@@ -172,35 +190,32 @@ export default function ResearchDevelopmentPage() {
                             <motion.p
                                 custom={0.2}
                                 variants={fadeUp}
-                                className="mb-3 flex items-center gap-2 text-lg font-semibold uppercase tracking-[4px] text-secondary"
+                                className="mb-3 flex items-center gap-2 text-md md:text-lg font-semibold uppercase tracking-[4px] text-secondary"
                             >
-                                <span className="text-lg">
+                                <span className="text-md md:text-lg">
                                     <FaLeaf />
                                 </span>
                                 Research & Development
                             </motion.p>
 
                             <motion.div custom={0.4} variants={fadeUp}>
-                                <AnimatedHeading className="max-w-xl text-3xl font-bold text-primary md:text-[46px]">
+                                <h2 className="max-w-xl text-2xl font-bold text-primary md:text-[46px]">
                                     Recognized by DSIR(Govt of India) for Research & Development Excellence
-                                </AnimatedHeading>
+                                </h2>
                             </motion.div>
 
                             <motion.p
                                 custom={0.6}
                                 variants={fadeUp}
-                                className="mt-3 text-[16px] leading-7 text-[#555]"
+                                className="mt-3 text-[16px] leading-6 md:leading-7 text-[#555]"
                             >
-                                Our Focus On Research and Development has won us
-                                recognition from Government Of India’s Department of
-                                Scientific and Industrial Research (DSIR) of the
-                                Ministry of Science and Technology.
+                                Our focus on Research and Development has won us recognition from Government of India’s Department of Scientific and Industrial Research (DSIR) of the Ministry of Science and Technology.
                             </motion.p>
 
                             <motion.p
                                 custom={0.8}
                                 variants={fadeUp}
-                                className="mt-3 text-[16px] leading-7 text-[#555]"
+                                className="mt-3 text-[16px] leading-6 md:leading-7 text-[#555]"
                             >
                                 We operate a <strong>24-acre Main Research and Development Station</strong>
                                 {" "}along with <strong>3 Regional Research Facilities</strong>
@@ -210,7 +225,7 @@ export default function ResearchDevelopmentPage() {
                             <motion.p
                                 custom={1}
                                 variants={fadeUp}
-                                className="mt-3 text-[16px] leading-7 text-[#555]"
+                                className="mt-3 text-[16px] leading-6 md:leading-7 text-[#555]"
                             >
                                 All dedicated to continuous innovation and genetic
                                 advancement. Our advanced R&D programs focus on
@@ -248,19 +263,19 @@ export default function ResearchDevelopmentPage() {
                 <div className="container mx-auto px-4 md:px-12">
                     {/* Heading */}
                     <div className="text-center">
-                        <span className="text-lg font-semibold uppercase tracking-[4px] text-primary">
+                        <span className="text-md md:text-lg font-semibold uppercase tracking-[4px] text-primary">
                             Seed Innovation
                         </span>
 
-                        <AnimatedHeading className="mt-2 text-4xl font-bold text-dark-grey md:text-5xl lg:text-6xl">
+                        <h2 className="mt-2 text-3xl font-bold text-dark-grey md:text-5xl lg:text-6xl">
                             Why we need new hybrid???
-                        </AnimatedHeading>
+                        </h2>
 
                         <div className="mx-auto mt-2 h-1 w-24 bg-secondary"></div>
                     </div>
 
                     {/* Features */}
-                    <div className="mt-20 grid grid-cols-2 gap-y-14 md:grid-cols-3 lg:grid-cols-6">
+                    <div className="mt-10 md:mt-20 grid grid-cols-2 gap-y-7 md:gap-y-14 md:grid-cols-3 lg:grid-cols-6">
                         {/* Item */}
                         <div className="group text-center">
                             <div className="mx-auto flex h-36 w-36 items-center justify-center rounded-full border-4 border-primary/40 bg-white transition duration-500 group-hover:-translate-y-2 group-hover:border-primary">
@@ -273,7 +288,7 @@ export default function ResearchDevelopmentPage() {
                                     /></span>
                             </div>
 
-                            <h3 className="mx-auto mt-8 max-w-40 text-2xl font-medium leading-snug text-primary">
+                            <h3 className="mx-auto mt-4 md:mt-8 max-w-40 text-lg md:text-2xl font-medium leading-snug text-primary">
                                 Higher Yield
                             </h3>
                         </div>
@@ -291,7 +306,7 @@ export default function ResearchDevelopmentPage() {
                                 </span>
                             </div>
 
-                            <h3 className="mx-auto mt-8 max-w-40 text-2xl font-medium leading-snug text-primary">
+                            <h3 className="mx-auto mt-4 md:mt-8 max-w-40 text-lg md:text-2xl font-medium leading-snug text-primary">
                                 Shorter Cropping cycle
                             </h3>
                         </div>
@@ -309,7 +324,7 @@ export default function ResearchDevelopmentPage() {
                                 </span>
                             </div>
 
-                            <h3 className="mx-auto mt-8 max-w-55 text-2xl font-medium leading-snug text-primary">
+                            <h3 className="mx-auto mt-4 md:mt-8 max-w-55 text-lg md:text-2xl font-medium leading-snug text-primary">
                                 Environmental and Insect-pest resistance
                             </h3>
                         </div>
@@ -327,7 +342,7 @@ export default function ResearchDevelopmentPage() {
                                 </span>
                             </div>
 
-                            <h3 className="mx-auto mt-8 max-w-40 text-2xl font-medium leading-snug text-primary">
+                            <h3 className="mx-auto mt-4 md:mt-8 max-w-40 text-lg md:text-2xl font-medium leading-snug text-primary">
                                 Improved Quality
                             </h3>
                         </div>
@@ -345,7 +360,7 @@ export default function ResearchDevelopmentPage() {
                                 </span>
                             </div>
 
-                            <h3 className="mx-auto mt-8 max-w-55 text-2xl font-medium leading-snug text-primary">
+                            <h3 className="mx-auto mt-4 md:mt-8 max-w-55 text-lg md:text-2xl font-medium leading-snug text-primary">
                                 Farmer Livelihood & Sustainability
                             </h3>
                         </div>
@@ -363,7 +378,7 @@ export default function ResearchDevelopmentPage() {
                                 </span>
                             </div>
 
-                            <h3 className="mx-auto mt-8 max-w-45 text-2xl font-medium leading-snug text-primary">
+                            <h3 className="mx-auto mt-4 md:mt-8 max-w-45 text-lg md:text-2xl font-medium leading-snug text-primary">
                                 Food Sustainability
                             </h3>
                         </div>
@@ -385,13 +400,13 @@ export default function ResearchDevelopmentPage() {
                 <div className="container relative z-10 mx-auto px-4 md:px-10">
                     {/* Heading */}
                     <div className="mx-auto max-w-4xl text-center">
-                        <span className="inline-block text-lg font-semibold uppercase tracking-[5px] text-primary">
+                        <span className="inline-block text-md md:text-lg font-semibold uppercase tracking-[5px] text-primary">
                             Research Excellence
                         </span>
 
-                        <AnimatedHeading className="mt-3 text-4xl font-black leading-tight text-dark-grey md:text-5xl">
+                        <h2 className="mt-1 md:mt-3 text-3xl font-black leading-tight text-dark-grey md:text-5xl">
                             Innovation from the Ground Up
-                        </AnimatedHeading>
+                        </h2>
 
                         <p className="mx-auto mt-2 max-w-3xl text-base  text-[#666] md:text-lg">
                             Our R&D Station combines science, technology, and agricultural
@@ -581,7 +596,7 @@ export default function ResearchDevelopmentPage() {
     }
     `}</style>
             </section>
-            {/* ================= R&D FLOW SECTION ================= */}
+
             {/* ================= R&D FLOW SECTION ================= */}
             <section className="relative overflow-hidden bg-primary py-20">
 
@@ -598,7 +613,7 @@ export default function ResearchDevelopmentPage() {
     <div className="absolute bottom-0 right-0 h-[28rem] w-[28rem] rounded-full bg-black/20 blur-3xl"></div> */}
 
                 {/* Background Texture */}
-                <div className="pointer-events-none absolute -bottom-1 h-[190vh] w-full opacity-20">
+                <div className="pointer-events-none absolute -bottom-1 h-[450vh] md:h-[190vh] w-full opacity-20">
                     <Image
                         src={bg.src}
                         alt="background-texture"
@@ -611,13 +626,13 @@ export default function ResearchDevelopmentPage() {
 
                     {/* ================= HEADING ================= */}
                     <div className="mx-auto max-w-5xl text-center">
-                        <span className="inline-block rounded-full border border-white/10 bg-white/5 px-5 py-2 text-lg font-semibold uppercase tracking-[4px] text-secondary backdrop-blur-xl">
+                        <span className="inline-block rounded-full border border-white/10 bg-white/5 px-5 py-2 text-md md:text-lg font-semibold uppercase tracking-[4px] text-secondary backdrop-blur-xl">
                             Seed Development Process
                         </span>
 
-                        <AnimatedHeading className="mt-3 text-4xl font-black  text-[#fff8f5] md:text-6xl">
+                        <h2 className="mt-3 text-3xl font-black  text-[#fff8f5] md:text-6xl">
                             Our R&D Flow : From Concept to Commercialization
-                        </AnimatedHeading>
+                        </h2>
 
                         {/* <p className="mx-auto mt-2 max-w-3xl text-base  text-[#f5e9e5]/80 md:text-lg">
                             A structured and research-driven workflow transforming seed
@@ -722,7 +737,7 @@ export default function ResearchDevelopmentPage() {
                             </div>
 
                             {/* STEP 6 ACTIVE */}
-                            <div className="group relative text-center">
+                            <div className="group relative text-center order-3 lg:order-1">
 
                                 {/* Down Connector */}
                                 <div className="absolute -bottom-24 left-1/2 hidden h-22 w-0.75 -translate-x-1/2 overflow-hidden rounded-full bg-secondary/20 shadow-[0_0_20px_rgba(181,214,58,0.15)] lg:block">
@@ -750,7 +765,7 @@ export default function ResearchDevelopmentPage() {
                             </div>
 
                             {/* STEP 5 */}
-                            <div className="group relative text-center">
+                            <div className="group relative text-center order-2 lg:order-2">
 
                                 <div className="relative mx-auto flex h-22 w-22 items-center justify-center rounded-full border border-white/10 bg-[#3a2621] shadow-[0_0_60px_rgba(0,0,0,0.25)] transition-all duration-500 group-hover:-translate-y-2 group-hover:scale-[1.03]">
 
@@ -773,8 +788,8 @@ export default function ResearchDevelopmentPage() {
                             </div>
 
                             {/* STEP 4 ACTIVE */}
-                            <div className="group relative text-center">
-                                
+                            <div className="group relative text-center order-1 lg:order-3">
+
 
                                 <div className="relative mx-auto flex h-28 w-28 items-center justify-center rounded-full border border-secondary/40 bg-[#2d3b1f] shadow-[0_0_80px_rgba(181,214,58,0.25)] transition-all duration-500 group-hover:-translate-y-2 group-hover:scale-[1.03]">
 
@@ -807,7 +822,7 @@ export default function ResearchDevelopmentPage() {
 
                             {/* STEP 7 */}
                             <div className="group relative text-center">
-                                
+
 
                                 <div className="relative mx-auto flex h-22 w-22 items-center justify-center rounded-full border border-white/10 bg-[#3a2621] shadow-[0_0_60px_rgba(0,0,0,0.25)] transition-all duration-500 group-hover:-translate-y-2 group-hover:scale-[1.03]">
 
@@ -853,6 +868,8 @@ export default function ResearchDevelopmentPage() {
                             </div>
                         </div>
                     </div>
+
+
                 </div>
 
                 {/* ================= ANIMATIONS ================= */}

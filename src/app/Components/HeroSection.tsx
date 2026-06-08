@@ -76,7 +76,7 @@ export default function HeroSection() {
   }, [mouseX, mouseY]);
 
   return (
-    <section className="relative h-[90vh] mt-22.5 w-full overflow-hidden bg-dark-grey">
+    <section className="relative h-[250px] md:h-[90vh] mt-22.5 w-full overflow-hidden bg-dark-grey">
       
       {/* 1. THE CUSTOM CURSOR ELEMENT */}
       <motion.div
@@ -136,19 +136,19 @@ export default function HeroSection() {
                       initial={{ scaleX: 0, originX: 0 }}
                       animate={{ scaleX: 1 }}
                       transition={{ delay: 0.8, duration: 1, ease: "circOut" }}
-                      className="h-2 w-24 mb-8"
+                      className="h-2 w-12 md:w-24 mb-4 md:mb-8"
                       style={{ backgroundColor: "#FFF212" }}
                     />
 
                     <div className="overflow-hidden mb-4">
                       {/* 2. ADDED HOVER TRIGGERS & CURSOR-NONE */}
                       <motion.h1
-                        onMouseEnter={() => setIsHoveringTitle(true)}
-                        onMouseLeave={() => setIsHoveringTitle(false)}
-                        className="text-6xl md:text-[70px] font-black text-white leading-[0.9] tracking-tighter cursor-none select-none"
-                        initial={{ y: "110%" }}
-                        animate={{ y: 0 }}
-                        transition={{ delay: 0.2, duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+                        // onMouseEnter={() => setIsHoveringTitle(true)}
+                        // onMouseLeave={() => setIsHoveringTitle(false)}
+                        className="text-2xl md:text-[70px] font-black text-white leading-[0.9] tracking-tighter cursor-none select-none"
+                        // initial={{ y: "110%" }}
+                        // animate={{ y: 0 }}
+                        // transition={{ delay: 0.2, duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
                       >
                         {slide.title.toUpperCase()}
                       </motion.h1>
@@ -158,7 +158,7 @@ export default function HeroSection() {
                       initial={{ opacity: 0, y: 30 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 1, duration: 1 }}
-                      className="text-2xl md:text-3xl text-white/80 font-medium max-w-xl"
+                      className="text-md md:text-3xl text-white/80 font-medium max-w-xl"
                     >
                       {slide.subtitle}
                     </motion.p>

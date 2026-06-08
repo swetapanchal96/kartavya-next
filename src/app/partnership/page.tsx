@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import Breadcrumb from "@/app/Components/Breadcrumb";
-import header from "@/app/assets/page-header-bg.jpg";
+import header from "@/app/assets/Partnership-banner.webp";
 
 import {
   FaCheckCircle,
@@ -14,7 +14,6 @@ import {
   FaSeedling,
   FaUserTie,
 } from "react-icons/fa";
-import AnimatedHeading from "../Components/AnimatedHeading";
 import axios from "axios";
 import { apiUrl } from "@/config";
 
@@ -146,7 +145,7 @@ export default function PartnershipPage() {
         ]}
       />
 
-      <section className="relative overflow-hidden bg-[#f8f8f8] py-20">
+      <section className="relative overflow-hidden bg-[#f8f8f8] py-15 md:py-20">
         {/* Background Blur */}
         <div className="absolute left-0 top-0 h-96 w-96 rounded-full bg-secondary/10 blur-3xl" />
         <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-blue/10 blur-3xl" />
@@ -154,22 +153,22 @@ export default function PartnershipPage() {
         <div className="container relative z-10 mx-auto px-4 md:px-12">
           {/* Heading */}
           <div className="mx-auto mb-10 max-w-4xl text-center">
-            <span className="mb-2 inline-block text-lg font-semibold uppercase tracking-[6px] text-primary">
+            <span className="mb-2 inline-block text-md md:text-lg font-semibold uppercase tracking-[6px] text-primary">
               Grow With Us
             </span>
 
-            <AnimatedHeading className="text-4xl font-black uppercase  text-primary sm:text-5xl md:text-6xl">
+            <h2 className="text-3xl font-black uppercase  text-primary sm:text-5xl md:text-6xl">
               Become Our
               <span className="block text-secondary">
                 Trusted Partner
               </span>
-            </AnimatedHeading>
+            </h2>
           </div>
 
           {/* Main Layout */}
           <div className="grid overflow-hidden rounded-[40px] bg-white shadow-[0_25px_80px_rgba(0,0,0,0.06)] xl:grid-cols-[42%_58%]">
             {/* LEFT SIDE */}
-            <div className="relative overflow-hidden bg-primary p-10 lg:p-14">
+            <div className="relative overflow-hidden bg-primary p-6 lg:p-14">
               {/* Decorative */}
               <div className="absolute -left-20 -top-20 h-72 w-72 rounded-full border-40 border-secondary/10" />
 
@@ -184,7 +183,7 @@ export default function PartnershipPage() {
                 </div>
 
                 {/* Heading */}
-                <h3 className="text-4xl font-black uppercase  text-white md:text-5xl">
+                <h3 className="text-3xl font-black uppercase  text-white md:text-5xl">
                   Let’s Grow
                   <span className="block text-secondary">
                     Together
@@ -192,7 +191,7 @@ export default function PartnershipPage() {
                 </h3>
 
                 {/* Description */}
-                <p className="mt-4 text-lg  text-white/70">
+                <p className="mt-4 text-md md:text-lg  text-white/70">
                   Partner with Kartavya Seeds and become part of a trusted
                   agricultural network focused on innovation, quality and
                   sustainable farming growth.
@@ -214,7 +213,7 @@ export default function PartnershipPage() {
                         <FaCheckCircle />
                       </div>
 
-                      <p className="text-lg text-white/80">
+                      <p className="text-md md:text-lg text-white/80">
                         {item}
                       </p>
                     </div>
@@ -240,15 +239,65 @@ export default function PartnershipPage() {
                   </div>
                 </div> */}
 
-                {/* Export Inquiry */}
-                <div className="mt-5 rounded-[30px] border border-white/10 bg-white/5 p-6 backdrop-blur-md">
+                <div className="mt-5 rounded-2xl md:rounded-[30px] border border-white/10 bg-white/5 p-3 md:p-6 backdrop-blur-md">
                   <div className="space-y-5">
 
                     {/* Phone */}
-                    <div className="flex items-start gap-5">
+                    <div className="flex items-start gap-3 md:gap-5">
 
-                      <div className="flex h-14 w-14 items-center justify-center rounded-full bg-secondary text-dark-grey">
-                        <FaPhoneAlt className="text-xl" />
+                      <div className="flex w-10 h-10 md:h-14 md:w-14 items-center justify-center rounded-full bg-secondary text-dark-grey">
+                        <FaPhoneAlt className="text-md md:text-xl" />
+                      </div>
+
+                      <div>
+                        {/* <span className="text-sm uppercase tracking-[3px] text-white/50">
+                          Export Inquiry
+                        </span> */}
+
+                        <a
+                          href="tel:+917046777222"
+                          className="mt-2 block text-lg md:text-xl font-black text-white hover:text-secondary"
+                        >
+                         +91 7046 777 222
+                        </a>
+                      </div>
+
+                    </div>
+
+                    {/* Email */}
+                    <div className="flex items-start gap-3 md:gap-5">
+
+                      <div className="flex w-10 h-10 md:h-14 md:w-14 items-center justify-center rounded-full bg-secondary text-dark-grey">
+                        <FaEnvelope className="text-md md:text-xl" />
+                      </div>
+
+                      <div>
+                        {/* <span className="text-sm uppercase tracking-[3px] text-white/50">
+                          Export Inquiry
+                        </span> */}
+
+                        <a
+                          href="mailto:info@kartavyaseeds.com"
+                          className="mt-2 block text-lg font-bold text-white hover:text-secondary break-all"
+                        >
+                          info@kartavyaseeds.com
+                        </a>
+                      </div>
+
+                    </div>
+
+                  </div>
+                </div>
+
+                {/* Export Inquiry */}
+                <div className="mt-5 rounded-2xl md:rounded-[30px] border border-white/10 bg-white/5 p-3 md:p-6 backdrop-blur-md">
+                  <div className="space-y-5">
+
+                    {/* Phone */}
+                    <div className="flex items-center md:items-start gap-3 md:gap-5">
+
+                      <div className="flex w-10 h-10 md:h-14 md:w-14 items-center justify-center rounded-full bg-secondary text-dark-grey">
+                        <FaPhoneAlt className="text-md md:text-xl" />
                       </div>
 
                       <div>
@@ -258,7 +307,7 @@ export default function PartnershipPage() {
 
                         <a
                           href="tel:+917990189941"
-                          className="mt-2 block text-xl font-black text-white hover:text-secondary"
+                          className="mt-0 md:mt-2 block text-lg md:text-xl font-black text-white hover:text-secondary"
                         >
                           +91 79901 89941
                         </a>
@@ -267,9 +316,9 @@ export default function PartnershipPage() {
                     </div>
 
                     {/* Email */}
-                    <div className="flex items-start gap-5">
+                    <div className="flex items-center md:items-start gap-3 md:gap-5">
 
-                      <div className="flex h-14 w-14 items-center justify-center rounded-full bg-secondary text-dark-grey">
+                      <div className="flex w-10 h-10 md:h-14 md:w-14 items-center justify-center rounded-full bg-secondary text-dark-grey">
                         <FaEnvelope className="text-xl" />
                       </div>
 
@@ -280,7 +329,7 @@ export default function PartnershipPage() {
 
                         <a
                           href="mailto:export@kartavyaseeds.com"
-                          className="mt-2 block text-lg font-bold text-white hover:text-secondary break-all"
+                          className="mt-0 md:mt-2 block text-lg font-bold text-white hover:text-secondary break-all"
                         >
                           export@kartavyaseeds.com
                         </a>

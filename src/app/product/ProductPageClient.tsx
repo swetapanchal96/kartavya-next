@@ -411,7 +411,7 @@ export default function ProductPage() {
                                                     <img
                                                         src={product.image}
                                                         alt={product.title}
-                                                        className="h-full w-full object-cover transition duration-700 group-hover:scale-110"
+                                                        className="h-full w-full object-contain transition duration-700 group-hover:scale-110"
                                                     />
                                                 </div>
                                             </div>
@@ -436,7 +436,7 @@ export default function ProductPage() {
                         </div>
 
                         {/* RIGHT SIDEBAR */}
-                        <div className="flex flex-col items-start gap-4">
+                        <div className="flex flex-col items-center mt-5 md:mt-0 md:items-start gap-4">
                             {/* Categories */}
                             <div className="rounded-[35px] border border-[#e5e5e5] bg-white p-6 shadow-[0_10px_40px_rgba(0,0,0,0.04)]">
                                 <div className="mb-4 flex items-center gap-4">

@@ -18,34 +18,34 @@ import map from '@/app/assets/Indian-map.webp'
 import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
-import bg1 from '@/app/assets/Bitter-Gourd/Bi-1.png'
-import bg2 from '@/app/assets/Bitter-Gourd/Bi-2.png'
-import bg3 from '@/app/assets/Bitter-Gourd/Bi-3.png'
-import bg4 from '@/app/assets/Bitter-Gourd/Bi-4.png'
-import cu1 from '@/app/assets/Cucumber/Cu-1.png'
-import cu2 from '@/app/assets/Cucumber/Cu-2.png'
-import cu3 from '@/app/assets/Cucumber/Cu-3.png'
-import cu4 from '@/app/assets/Cucumber/Cu-4.png'
-import hp1 from '@/app/assets/Hot-Pepper/Picture1.png'
-import hp2 from '@/app/assets/Hot-Pepper/Picture2.png'
-import hp3 from '@/app/assets/Hot-Pepper/Picture3.png'
-import hp4 from '@/app/assets/Hot-Pepper/Picture4.png'
+import bg1 from '@/app/assets/Bitter-Gourd/Bi-1.webp'
+import bg2 from '@/app/assets/Bitter-Gourd/Bi-2.webp'
+import bg3 from '@/app/assets/Bitter-Gourd/Bi-3.webp'
+import bg4 from '@/app/assets/Bitter-Gourd/Bi-4.webp'
+import cu1 from '@/app/assets/Cucumber/Cu-1.webp'
+import cu2 from '@/app/assets/Cucumber/Cu-2.webp'
+import cu3 from '@/app/assets/Cucumber/Cu-3.webp'
+import cu4 from '@/app/assets/Cucumber/Cu-4.webp'
+import hp1 from '@/app/assets/Hot-Pepper/Picture1.webp'
+import hp2 from '@/app/assets/Hot-Pepper/Picture2.webp'
+import hp3 from '@/app/assets/Hot-Pepper/Picture3.webp'
+import hp4 from '@/app/assets/Hot-Pepper/Picture4.webp'
 import m1 from '@/app/assets/Melon/M-1.jpg'
 import m2 from '@/app/assets/Melon/M-2.jpg'
 import m3 from '@/app/assets/Melon/M-3.png'
 import m4 from '@/app/assets/Melon/M-4.jpg'
 import sp1 from '@/app/assets/Sweet-Paper/1.jpg'
-import sp2 from '@/app/assets/Sweet-Paper/2.png'
-import sp3 from '@/app/assets/Sweet-Paper/sw-pe.jpeg'
-import sp4 from '@/app/assets/Sweet-Paper/4.png'
+import sp2 from '@/app/assets/Sweet-Paper/2.webp'
+import sp3 from '@/app/assets/Sweet-Paper/sw-pe.webp'
+import sp4 from '@/app/assets/Sweet-Paper/4.webp'
 import tomato1 from '@/app/assets/Tomato/T-1.jpg'
-import tomato2 from '@/app/assets/Tomato/T-2.jpeg'
-import tomato3 from '@/app/assets/Tomato/T-3.png'
+import tomato2 from '@/app/assets/Tomato/T-2.webp'
+import tomato3 from '@/app/assets/Tomato/T-3.webp'
 import tomato4 from '@/app/assets/Tomato/T-4.jpg'
-import wm1 from '@/app/assets/Water-Melon/Wa-1.jpeg'
-import wm2 from '@/app/assets/Water-Melon/Wa-2.png'
-import wm3 from '@/app/assets/Water-Melon/Wa-3.jpeg'
-import wm4 from '@/app/assets/Water-Melon/Wa-4.jpeg'
+import wm1 from '@/app/assets/Water-Melon/Wa-1.webp'
+import wm2 from '@/app/assets/Water-Melon/Wa-2.webp'
+import wm3 from '@/app/assets/Water-Melon/Wa-3.webp'
+import wm4 from '@/app/assets/Water-Melon/Wa-4.webp'
 
 
 // data
@@ -172,7 +172,7 @@ export default function IncrementBasicSeedPage() {
             />
 
             {/* Why Choose India Section */}
-            <section className="relative overflow-hidden bg-[#f8faf5] py-20 ">
+            <section className="relative overflow-hidden bg-[#f8faf5] py-15 md:py-20 ">
                 {/* Background Effects */}
                 <div className="absolute -left-30 -top-30 h-80 w-80 rounded-full bg-primary/5 blur-3xl"></div>
 
@@ -181,11 +181,11 @@ export default function IncrementBasicSeedPage() {
                 <div className="container relative z-10 mx-auto px-4 md:px-12">
                     {/* Center Heading */}
                     <div className="mx-auto max-w-5xl text-center">
-                        <span className="text-lg font-semibold uppercase tracking-[4px] text-primary">
+                        <span className="text-md md:text-lg font-semibold uppercase tracking-[4px] text-primary">
                             Global Production Advantage
                         </span>
 
-                        <h2 className="mt-2 text-4xl font-bold  text-dark-grey md:text-5xl lg:text-6xl">
+                        <h2 className="mt-2 text-3xl font-bold  text-dark-grey md:text-5xl lg:text-6xl">
                             Why Choose India For Seed Production?
                         </h2>
 
@@ -193,19 +193,19 @@ export default function IncrementBasicSeedPage() {
                     </div>
 
                     {/* Main Layout */}
-                    <div className="relative mt-16">
-                        <div className="grid items-center gap-10 lg:grid-cols-12">
+                    <div className="relative mt-8 md:mt-16">
+                        <div className="grid items-center gap-5 md:gap-10 lg:grid-cols-12">
 
                             {/* Left Points */}
                             <div className="space-y-10 lg:col-span-3">
                                 {[
                                     "Second Largest Producer In World",
-                                    "Easily Availability Of Skill Human Resources",
+                                    "Easy Availability of Skilled Human Resources",
                                     "Seed Production In Multiple Seasons",
                                 ].map((item, index) => (
                                     <div
                                         key={index}
-                                        className="group flex items-start gap-5"
+                                        className="group flex items-start gap-5 mb-2 md:mb-8"
                                     >
                                         {/* Creative Bullet */}
                                         <div className="relative mt-1 flex h-10 w-10 shrink-0 items-center justify-center">
@@ -220,7 +220,7 @@ export default function IncrementBasicSeedPage() {
 
                                         {/* Text */}
                                         <div>
-                                            <h3 className="text-xl font-bold leading-[1.6] text-dark-grey transition duration-300 group-hover:text-primary">
+                                            <h3 className="text-md md:text-xl font-bold leading-[1.6] text-dark-grey transition duration-300 group-hover:text-primary">
                                                 {item}
                                             </h3>
 
@@ -231,7 +231,7 @@ export default function IncrementBasicSeedPage() {
                             </div>
 
                             {/* Center Map */}
-                            <div className="relative flex justify-center lg:col-span-6">
+                            <div className="relative flex flex-col justify-center lg:col-span-6">
                                 {/* Glow */}
                                 <div className="absolute h-125 w-125 rounded-full bg-primary/5 blur-3xl"></div>
 
@@ -253,6 +253,15 @@ export default function IncrementBasicSeedPage() {
                                     {/* Decorative Ring */}
                                     {/* <div className="absolute inset-0 rounded-full border border-primary/10"></div> */}
                                 </div>
+                                <div className="mt-6 text-center">
+                                    <h4 className="text-xl md:text-2xl font-bold text-primary">
+                                        Our Work in Agro-climatic Zones
+                                    </h4>
+
+                                    <p className=" text-lg md:text-xl font-semibold text-secondary">
+                                        Gujarat, Maharashtra & Karnataka
+                                    </p>
+                                </div>
                             </div>
 
                             {/* Right Points */}
@@ -264,7 +273,7 @@ export default function IncrementBasicSeedPage() {
                                 ].map((item, index) => (
                                     <div
                                         key={index}
-                                        className="group flex items-start gap-5"
+                                        className="group flex items-start mb-2 md:mb-8 gap-5"
                                     >
                                         {/* Creative Bullet */}
                                         <div className="relative mt-1 flex h-10 w-10 shrink-0 items-center justify-center">
@@ -279,7 +288,7 @@ export default function IncrementBasicSeedPage() {
 
                                         {/* Text */}
                                         <div>
-                                            <h3 className="text-xl font-bold leading-[1.6] text-dark-grey transition duration-300 group-hover:text-primary">
+                                            <h3 className="text-md md:text-xl font-bold leading-[1.6] text-dark-grey transition duration-300 group-hover:text-primary">
                                                 {item}
                                             </h3>
 
@@ -293,7 +302,7 @@ export default function IncrementBasicSeedPage() {
                 </div>
             </section>
             {/* Our Strength Section */}
-            <section className="relative overflow-hidden bg-white py-20">
+            <section className="relative overflow-hidden bg-white py-15 md:py-20">
                 {/* Background Blur */}
                 <div className="absolute -left-25 top-0 h-75 w-75 rounded-full bg-primary/5 blur-3xl"></div>
                 <div className="absolute -bottom-25 right-0 h-75 w-75 rounded-full bg-secondary/10 blur-3xl"></div>
@@ -301,12 +310,12 @@ export default function IncrementBasicSeedPage() {
                 <div className="container relative z-10 mx-auto px-4 md:px-12">
                     {/* Heading */}
                     <div className="mx-auto max-w-5xl text-center">
-                        <span className="text-lg font-semibold uppercase tracking-[4px] text-primary">
+                        <span className="text-md md:text-lg font-semibold uppercase tracking-[4px] text-primary">
                             Production Excellence
                         </span>
 
-                        <h2 className="mt-2 text-4xl font-bold leading-tight text-dark-grey md:text-6xl">
-                            Our Strength in Seeds Production
+                        <h2 className="mt-2 text-3xl font-bold leading-tight text-dark-grey md:text-6xl">
+                            Our Strengths in Seed Production
                         </h2>
 
                         <div className="mx-auto mt-5 h-0.5 w-20 bg-secondary"></div>
@@ -322,7 +331,7 @@ export default function IncrementBasicSeedPage() {
                                     A
                                 </span> */}
 
-                                <h3 className=" text-xl  text-dark-grey">
+                                <h3 className="text-lg md:text-xl  text-dark-grey">
                                     Strategic production zones across agro-climatic
                                     regions.
                                 </h3>
@@ -334,8 +343,8 @@ export default function IncrementBasicSeedPage() {
                                     C
                                 </span> */}
 
-                                <h3 className=" text-xl   text-dark-grey">
-                                    Quality & Reliable production with traceability.
+                                <h3 className="text-lg md:text-xl   text-dark-grey">
+                                    High quality & reliable production with traceability.
                                 </h3>
                             </div>
                         </div>
@@ -395,7 +404,7 @@ export default function IncrementBasicSeedPage() {
                                     B
                                 </span> */}
 
-                                <h3 className=" text-xl  text-dark-grey">
+                                <h3 className="text-lg md:text-xl  text-dark-grey">
                                     Experienced contract growers and Technical team.
                                 </h3>
                             </div>
@@ -406,9 +415,8 @@ export default function IncrementBasicSeedPage() {
                                     D
                                 </span> */}
 
-                                <h3 className=" text-xl text-dark-grey">
-                                    Demand-Driven Production for Timely Supply per
-                                    Required Quantities
+                                <h3 className="text-lg md:text-xl text-dark-grey">
+                                    Demand-driven production for timely supply in required quantities.
                                 </h3>
                             </div>
                         </div>
@@ -417,17 +425,17 @@ export default function IncrementBasicSeedPage() {
             </section>
 
             {/* Infrastructure & Facilities Section */}
-            <section className="relative overflow-hidden bg-primary py-20 lg:py-24">
+            <section className="relative overflow-hidden bg-primary py-15 md:py-20">
 
                 <div className="container relative z-10 mx-auto px-4 md:px-12">
                     {/* Heading */}
                     <div className="mx-auto max-w-5xl text-center">
-                        <span className="text-lg flex gap-3 items-center justify-center font-semibold uppercase tracking-[4px] text-secondary">
+                        <span className="text-sm md:text-lg flex gap-3 items-center justify-center font-semibold uppercase tracking-[4px] text-secondary">
                             <FaLeaf />
                             Advanced Infrastructure
                         </span>
 
-                        <h2 className="mt-2 text-4xl font-bold leading-tight text-white md:text-5xl lg:text-6xl">
+                        <h2 className="mt-2 text-3xl font-bold leading-tight text-white md:text-5xl lg:text-6xl">
                             Infrastructure & Facilities
                         </h2>
 
@@ -511,7 +519,7 @@ export default function IncrementBasicSeedPage() {
                         </Swiper>
                     </div>
                 </div>
-                <div className="absolute -bottom-1  h-[110vh] w-full opacity-20 pointer-events-none">
+                <div className="absolute -bottom-1 h-[115vh] md:h-[110vh] w-full opacity-20 pointer-events-none">
                     <Image
                         src={bg.src}
                         alt="background-texture"
@@ -522,7 +530,7 @@ export default function IncrementBasicSeedPage() {
             </section>
 
             {/* Quality Control Protocol Section */}
-            <section className="relative overflow-hidden bg-[#f8faf5] py-20 ">
+            <section className="relative overflow-hidden bg-[#f8faf5] py-15 md:py-20 ">
                 {/* Soft Background Effects */}
                 <div className="absolute left-0 top-0 h-72 w-72 rounded-full bg-primary/5 blur-3xl"></div>
 
@@ -531,11 +539,11 @@ export default function IncrementBasicSeedPage() {
                 <div className="container relative z-10 mx-auto px-4 md:px-12">
                     {/* Heading */}
                     <div className="mx-auto max-w-5xl text-center">
-                        <span className="text-lg font-semibold uppercase tracking-[4px] text-primary">
+                        <span className="text-md md:text-lg font-semibold uppercase tracking-[4px] text-primary">
                             Quality Assurance
                         </span>
 
-                        <h2 className="mt-2 text-4xl font-bold  text-dark-grey md:text-5xl">
+                        <h2 className="mt-2 text-3xl font-bold  text-dark-grey md:text-5xl">
                             Our Comprehensive Quality Control Protocol
                         </h2>
 
@@ -562,12 +570,12 @@ export default function IncrementBasicSeedPage() {
                                         01
                                     </span> */}
 
-                                    <h3 className=" text-3xl font-bold">
+                                    <h3 className="text-2xl md:text-3xl font-bold">
                                         Seed Sampling
                                     </h3>
 
-                                    <p className="mt-2 max-w-3xl text-lg text-white/80">
-                                        The seed lots arrived at processing plant are subjected to comprehensive sampling lots a from every bag so to create a representative sample.
+                                    <p className="mt-2 max-w-3xl text-md md:text-lg text-white/80">
+                                        The seed lots arriving at the processing plant are subjected to comprehensive sampling. Seeds are drawn from every bag to create a truly representative sample.
                                     </p>
                                 </div>
                             </div>
@@ -578,12 +586,12 @@ export default function IncrementBasicSeedPage() {
                                     02
                                 </span> */}
 
-                                <h3 className=" text-3xl font-bold text-dark-grey">
+                                <h3 className="text-2xl md:text-3xl font-bold text-dark-grey">
                                     Physical Purity Test
                                 </h3>
 
-                                <p className="mt-2 text-lg text-[#666]">
-                                    A meticulous analysis to confirm freedom from inert matter, weed seeds, and other crop seeds.
+                                <p className="mt-2 text-md md:text-lg text-[#666]">
+                                    A meticulous analysis is performed to confirm freedom from inert matter, weed seeds, and other crop seeds.
                                 </p>
                             </div>
 
@@ -593,12 +601,12 @@ export default function IncrementBasicSeedPage() {
                                     03
                                 </span> */}
 
-                                <h3 className=" text-3xl font-bold text-dark-grey">
+                                <h3 className="text-2xl md:text-3xl font-bold text-dark-grey">
                                     Moisture Test
                                 </h3>
 
-                                <p className="mt-2 text-lg text-[#666]">
-                                    Precisely measuring moisture content to ensure optimal seed viability, vigor, and storage life.
+                                <p className="mt-2 text-md md:text-lg text-[#666]">
+                                    This test precisely measures moisture content to ensure optimal seed viability, vigor, and storage life.
                                 </p>
                             </div>
 
@@ -614,12 +622,12 @@ export default function IncrementBasicSeedPage() {
                                         04
                                     </span> */}
 
-                                    <h3 className=" text-3xl font-bold">
+                                    <h3 className="text-2xl md:text-3xl font-bold">
                                         Germination Test
                                     </h3>
 
-                                    <p className="mt-2 max-w-3xl text-lg text-white/80">
-                                        Standardized tests to guarantee a germination rate that ensures strong, uniform crop establishment.
+                                    <p className="mt-2 max-w-3xl text-md md:text-lg text-white/80">
+                                        Standardized tests are conducted to guarantee a germination rate that ensures strong, uniform crop establishment.
                                     </p>
                                 </div>
                             </div>
@@ -636,12 +644,12 @@ export default function IncrementBasicSeedPage() {
                                         05
                                     </span> */}
 
-                                    <h3 className=" text-3xl font-bold">
+                                    <h3 className="text-2xl md:text-3xl font-bold">
                                         Genetic Purity Test
                                     </h3>
 
-                                    <p className="mt-2 max-w-3xl text-lg text-white/80">
-                                        We use <strong> Grow Out Tests (GOT) and DNA fingerprinting </strong> to ensure that the seed is true-to-type, preventing contamination and protecting genetic integrity.
+                                    <p className="mt-2 max-w-3xl text-md md:text-lg text-white/80">
+                                        We use Grow Out Tests (GOT) and DNA fingerprinting to ensure that the seed is true-to-type, preventing contamination and protecting genetic integrity.
                                     </p>
                                 </div>
                             </div>
@@ -652,12 +660,12 @@ export default function IncrementBasicSeedPage() {
                                     04
                                 </span> */}
 
-                                <h3 className=" text-3xl font-bold text-dark-grey">
+                                <h3 className="text-2xl md:text-3xl font-bold text-dark-grey">
                                     Seed Health Test
                                 </h3>
 
-                                <p className="mt-2 text-lg text-[#666]">
-                                    Pro active screening for seed-borne pathogens to ensure a healthy start for the crop.
+                                <p className="mt-2 text-md md:text-lg text-[#666]">
+                                    Proactive screening for seed-borne pathogens is performed to ensure a healthy start for the crop.
                                 </p>
                             </div>
                         </div>
@@ -666,7 +674,7 @@ export default function IncrementBasicSeedPage() {
             </section>
 
             {/* Seed Production Process Section */}
-            <section className="relative overflow-hidden bg-white py-20 ">
+            <section className="relative overflow-hidden bg-white py-15 md:py-20 ">
                 {/* Soft Background */}
                 <div className="absolute -left-30 -top-30 h-80 w-80 rounded-full bg-primary/5 blur-3xl"></div>
 
@@ -675,11 +683,11 @@ export default function IncrementBasicSeedPage() {
                 <div className="container relative z-10 mx-auto px-4 md:px-12">
                     {/* Heading */}
                     <div className="max-w-5xl">
-                        <span className="text-lg font-semibold uppercase tracking-[4px] text-primary">
+                        <span className="text-md md:text-lg font-semibold uppercase tracking-[4px] text-primary">
                             Production Workflow
                         </span>
 
-                        <h2 className="mt-2 text-4xl font-bold  text-dark-grey md:text-5xl lg:text-6xl">
+                        <h2 className="mt-2 text-3xl font-bold  text-dark-grey md:text-5xl lg:text-6xl">
                             Summary Of Seed Production Process
                         </h2>
 
@@ -693,19 +701,19 @@ export default function IncrementBasicSeedPage() {
 
                         <div className="space-y-8">
                             {/* Item */}
-                            <div className="group grid gap-8 lg:grid-cols-12">
+                            <div className="group grid gap-4 md:gap-8 lg:grid-cols-12">
                                 {/* Number */}
                                 <div className="relative lg:col-span-2">
-                                    <div className="relative z-10 flex h-16 w-16 items-center justify-center rounded-full border border-primary/20 bg-white text-2xl font-bold text-primary transition duration-300 group-hover:scale-110">
+                                    <div className="relative z-10 flex h-12 w-12 md:h-16 md:w-16 text-xl md:text-2xl items-center justify-center rounded-full border border-primary/20 bg-white  font-bold text-primary transition duration-300 group-hover:scale-110">
                                         01
                                     </div>
                                 </div>
 
                                 {/* Content */}
                                 <div className="lg:col-span-10">
-                                    <div className="grid items-start gap-8 border-b border-[#ececec] pb-6 lg:grid-cols-12">
+                                    <div className="grid items-start gap-4 md:gap-8 border-b border-[#ececec] pb-6 lg:grid-cols-12">
                                         <div className="lg:col-span-4">
-                                            <h3 className="text-3xl font-bold text-dark-grey">
+                                            <h3 className="text-2xl md:text-3xl font-bold text-dark-grey">
                                                 Production Planning
                                             </h3>
                                         </div>
@@ -743,17 +751,17 @@ export default function IncrementBasicSeedPage() {
                             </div>
 
                             {/* Item */}
-                            <div className="group grid gap-8 lg:grid-cols-12">
+                            <div className="group grid gap-4 md:gap-8 lg:grid-cols-12">
                                 <div className="relative lg:col-span-2">
-                                    <div className="relative z-10 flex h-16 w-16 items-center justify-center rounded-full border border-secondary/20 bg-white text-2xl font-bold text-secondary transition duration-300 group-hover:scale-110">
+                                    <div className="relative z-10 flex h-12 w-12 md:h-16 md:w-16 text-xl md:text-2xl items-center justify-center rounded-full border border-secondary/20 bg-white  font-bold text-secondary transition duration-300 group-hover:scale-110">
                                         02
                                     </div>
                                 </div>
 
                                 <div className="lg:col-span-10">
-                                    <div className="grid items-start gap-8 border-b border-[#ececec] pb-6 lg:grid-cols-12">
+                                    <div className="grid items-start gap-4 md:gap-8 border-b border-[#ececec] pb-6 lg:grid-cols-12">
                                         <div className="lg:col-span-4">
-                                            <h3 className="text-3xl font-bold text-dark-grey">
+                                            <h3 className="text-2xl md:text-3xl font-bold text-dark-grey">
                                                 Field Selection
                                             </h3>
                                         </div>
@@ -791,17 +799,17 @@ export default function IncrementBasicSeedPage() {
                             </div>
 
                             {/* Item */}
-                            <div className="group grid gap-8 lg:grid-cols-12">
+                            <div className="group grid gap-4 md:gap-8 lg:grid-cols-12">
                                 <div className="relative lg:col-span-2">
-                                    <div className="relative z-10 flex h-16 w-16 items-center justify-center rounded-full border border-primary/20 bg-white text-2xl font-bold text-primary transition duration-300 group-hover:scale-110">
+                                    <div className="relative z-10 flex h-12 w-12 md:h-16 md:w-16 text-xl md:text-2xl items-center justify-center rounded-full border border-primary/20 bg-white font-bold text-primary transition duration-300 group-hover:scale-110">
                                         03
                                     </div>
                                 </div>
 
                                 <div className="lg:col-span-10">
-                                    <div className="grid items-start gap-8 border-b border-[#ececec] pb-6 lg:grid-cols-12">
+                                    <div className="grid items-start gap-4 md:gap-8 border-b border-[#ececec] pb-6 lg:grid-cols-12">
                                         <div className="lg:col-span-4">
-                                            <h3 className="text-3xl font-bold text-dark-grey">
+                                            <h3 className="text-2xl md:text-3xl font-bold text-dark-grey">
                                                 Foundation Seed Release
                                             </h3>
                                         </div>
@@ -839,17 +847,17 @@ export default function IncrementBasicSeedPage() {
                             </div>
 
                             {/* Item */}
-                            <div className="group grid gap-8 lg:grid-cols-12">
+                            <div className="group grid gap-4 md:gap-8 lg:grid-cols-12">
                                 <div className="relative lg:col-span-2">
-                                    <div className="relative z-10 flex h-16 w-16 items-center justify-center rounded-full border border-secondary/20 bg-white text-2xl font-bold text-secondary transition duration-300 group-hover:scale-110">
+                                    <div className="relative z-10 flex h-12 w-12 md:h-16 md:w-16 text-xl md:text-2xl items-center justify-center rounded-full border border-secondary/20 bg-white font-bold text-secondary transition duration-300 group-hover:scale-110">
                                         04
                                     </div>
                                 </div>
 
                                 <div className="lg:col-span-10">
-                                    <div className="grid items-start gap-8 border-b border-[#ececec] pb-6 lg:grid-cols-12">
+                                    <div className="grid items-start gap-4 md:gap-8 border-b border-[#ececec] pb-6 lg:grid-cols-12">
                                         <div className="lg:col-span-4">
-                                            <h3 className="text-3xl font-bold text-dark-grey">
+                                            <h3 className="text-2xl md:text-3xl font-bold text-dark-grey">
                                                 Cultivation
                                             </h3>
                                         </div>
@@ -889,17 +897,17 @@ export default function IncrementBasicSeedPage() {
                             </div>
 
                             {/* Item */}
-                            <div className="group grid gap-8 lg:grid-cols-12">
+                            <div className="group grid gap-4 md:gap-8 lg:grid-cols-12">
                                 <div className="relative lg:col-span-2">
-                                    <div className="relative z-10 flex h-16 w-16 items-center justify-center rounded-full border border-primary/20 bg-white text-2xl font-bold text-primary transition duration-300 group-hover:scale-110">
+                                    <div className="relative z-10 flex h-12 w-12 md:h-16 md:w-16 text-xl md:text-2xl items-center justify-center rounded-full border border-primary/20 bg-white font-bold text-primary transition duration-300 group-hover:scale-110">
                                         05
                                     </div>
                                 </div>
 
                                 <div className="lg:col-span-10">
-                                    <div className="grid items-start gap-8 border-b border-[#ececec] pb-6 lg:grid-cols-12">
+                                    <div className="grid items-start gap-4 md:gap-8 border-b border-[#ececec] pb-6 lg:grid-cols-12">
                                         <div className="lg:col-span-4">
-                                            <h3 className="text-3xl font-bold text-dark-grey">
+                                            <h3 className="text-2xl md:text-3xl font-bold text-dark-grey">
                                                 Quality Management
                                             </h3>
                                         </div>
@@ -937,17 +945,17 @@ export default function IncrementBasicSeedPage() {
                             </div>
 
                             {/* Item */}
-                            <div className="group grid gap-8 lg:grid-cols-12">
+                            <div className="group grid gap-4 md:gap-8 lg:grid-cols-12">
                                 <div className="relative lg:col-span-2">
-                                    <div className="relative z-10 flex h-16 w-16 items-center justify-center rounded-full border border-secondary/20 bg-white text-2xl font-bold text-secondary transition duration-300 group-hover:scale-110">
+                                    <div className="relative z-10 flex h-12 w-12 md:h-16 md:w-16 text-xl md:text-2xl items-center justify-center rounded-full border border-secondary/20 bg-white font-bold text-secondary transition duration-300 group-hover:scale-110">
                                         06
                                     </div>
                                 </div>
 
                                 <div className="lg:col-span-10">
-                                    <div className="grid items-start gap-8 border-b border-[#ececec] pb-6 lg:grid-cols-12">
+                                    <div className="grid items-start gap-4 md:gap-8 border-b border-[#ececec] pb-6 lg:grid-cols-12">
                                         <div className="lg:col-span-4">
-                                            <h3 className="text-3xl font-bold text-dark-grey">
+                                            <h3 className="text-2xl md:text-3xl font-bold text-dark-grey">
                                                 Harvest
                                             </h3>
                                         </div>
@@ -985,17 +993,17 @@ export default function IncrementBasicSeedPage() {
                             </div>
 
                             {/* Item */}
-                            <div className="group grid gap-8 lg:grid-cols-12">
+                            <div className="group grid gap-4 md:gap-8 lg:grid-cols-12">
                                 <div className="relative lg:col-span-2">
-                                    <div className="relative z-10 flex h-16 w-16 items-center justify-center rounded-full border border-primary/20 bg-white text-2xl font-bold text-primary transition duration-300 group-hover:scale-110">
+                                    <div className="relative z-10 flex h-12 w-12 md:h-16 md:w-16 text-xl md:text-2xl items-center justify-center rounded-full border border-primary/20 bg-white font-bold text-primary transition duration-300 group-hover:scale-110">
                                         07
                                     </div>
                                 </div>
 
                                 <div className="lg:col-span-10">
-                                    <div className="grid items-start gap-8  lg:grid-cols-12">
+                                    <div className="grid items-start gap-4 md:gap-8  lg:grid-cols-12">
                                         <div className="lg:col-span-4">
-                                            <h3 className="text-3xl font-bold text-dark-grey">
+                                            <h3 className="text-2xl md:text-3xl font-bold text-dark-grey">
                                                 Dispatch
                                             </h3>
                                         </div>
@@ -1037,25 +1045,25 @@ export default function IncrementBasicSeedPage() {
             </section>
 
             {/* Our Core Crops Section */}
-            <section className="relative overflow-hidden bg-primary py-20">
+            <section className="relative overflow-hidden bg-primary py-15 md:py-20">
                 {/* Texture */}
                 <div className="absolute inset-0 opacity-[0.05]">
                     <div className="h-full w-full "></div>
                 </div>
 
                 {/* Blur Effects */}
-                <div className="absolute left-[-120px] top-[-120px] h-[320px] w-[320px] rounded-full bg-white/5 blur-3xl"></div>
+                <div className="absolute -left-30 -top-30 h-80 w-80 rounded-full bg-white/5 blur-3xl"></div>
 
-                <div className="absolute bottom-[-120px] right-[-120px] h-[320px] w-[320px] rounded-full bg-secondary/10 blur-3xl"></div>
+                <div className="absolute -bottom-30 -right-30 h-80 w-80 rounded-full bg-secondary/10 blur-3xl"></div>
 
                 <div className="container relative z-10 mx-auto px-4 md:px-12">
                     {/* Heading */}
                     <div className="mx-auto max-w-5xl text-center">
-                        <span className="text-lg font-semibold uppercase tracking-[4px] text-secondary">
+                        <span className="text-md md:text-lg font-semibold uppercase tracking-[4px] text-secondary">
                             Our Core Crops
                         </span>
 
-                        <h2 className="mt-2 text-4xl font-bold text-white md:text-5xl lg:text-6xl">
+                        <h2 className="mt-2 text-3xl font-bold text-white md:text-5xl lg:text-6xl">
                             Production Expertise
                         </h2>
 
@@ -1100,7 +1108,7 @@ export default function IncrementBasicSeedPage() {
                                     />
 
                                     {/* Overlay */}
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+                                    <div className="absolute inset-0 bg-linear-to-t from-black/70 via-transparent to-transparent"></div>
 
                                     {/* Crop Name */}
                                     {/* <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-center">
@@ -1119,7 +1127,7 @@ export default function IncrementBasicSeedPage() {
                         ))}
                     </div>
                 </div>
-                <div className="absolute -bottom-1  h-[103vh] w-full opacity-20 pointer-events-none">
+                <div className="absolute -bottom-1 h-[305vh] md:h-[103vh] w-full opacity-20 pointer-events-none">
                     <Image
                         src={bg.src}
                         alt="background-texture"
@@ -1129,14 +1137,21 @@ export default function IncrementBasicSeedPage() {
                 </div>
             </section>
 
-            <section className="relative overflow-hidden bg-[#f8f6f1] py-20">
+            {/* Our service for client section */}
+            <section className="relative overflow-hidden bg-[#f8f6f1] py-15 md:py-20">
 
                 <div className="container mx-auto px-6 md:px-12">
-
-
-
                     {/* Main Box */}
+
+
                     <div className="relative overflow-hidden rounded-[40px] border border-primary/10 bg-white shadow-[0_20px_60px_rgba(0,0,0,0.08)]">
+
+                        {/* Mobile Top Strip */}
+                        <div className="flex h-16 items-center justify-center bg-primary lg:hidden">
+                            <span className="text-lg font-black tracking-[4px] text-white/20">
+                                KARTAVYA SEEDS
+                            </span>
+                        </div>
 
                         {/* Decorative Left Side */}
                         <div className="absolute left-0 top-0 hidden h-full w-[18%] bg-primary lg:block">
@@ -1152,12 +1167,12 @@ export default function IncrementBasicSeedPage() {
                         </div>
 
                         {/* Content */}
-                        <div className="relative z-10 lg:pl-[20%] p-10 md:p-16">
-                            <span className="text-lg font-semibold uppercase tracking-[4px] text-secondary">
+                        <div className="relative z-10 lg:pl-[20%] p-6 md:p-16">
+                            <span className="text-md md:text-lg font-semibold uppercase tracking-[4px] text-secondary">
                                 Our Services For Clients
                             </span>
                             {/* Heading */}
-                            <h2 className="mb-7 text-4xl md:text-5xl font-black text-primary">
+                            <h2 className="mb-7 text-3xl md:text-5xl font-black text-primary">
                                 Our Organization Provides
                             </h2>
 
@@ -1187,7 +1202,7 @@ export default function IncrementBasicSeedPage() {
                                         </div>
 
                                         {/* Text */}
-                                        <h3 className="text-xl font-semibold  text-primary">
+                                        <h3 className="text-md md:text-xl font-semibold  text-primary">
                                             {item}
                                         </h3>
 

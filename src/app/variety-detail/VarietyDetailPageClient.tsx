@@ -1132,7 +1132,7 @@ type ProductType = {
     id: number;
     title: string;
     image: string;
-
+    headerimage?: string;
     // Vegetable / field crop parent slug
     veg_slug?: string;
     field_slug?: string;
@@ -1153,6 +1153,7 @@ export default function VarietyDetailPage() {
     const [detail, setDetail] = useState<SubProductType | null>(null);
     const [parentProduct, setParentProduct] = useState<ProductType | null>(null);
     const [loading, setLoading] = useState(false);
+    const [headerImage, setHeaderImage] = useState(header.src);
 
     const getVarietyDetail = async () => {
         try {
@@ -1195,6 +1196,10 @@ export default function VarietyDetailPage() {
                     if (match) {
                         foundDetail = match;
                         foundParent = product;
+
+                        setHeaderImage(
+                            product.headerimage || header.src
+                        );
                     }
                 });
 
@@ -1203,6 +1208,7 @@ export default function VarietyDetailPage() {
             } else {
                 setDetail(null);
                 setParentProduct(null);
+                setHeaderImage(header.src);
             }
         } catch (error) {
             console.log("Variety Detail API Error:", error);
@@ -1246,15 +1252,15 @@ export default function VarietyDetailPage() {
     ];
 
     const toTitleCase = (text?: string) =>
-  text
-    ?.toLowerCase()
-    .split(" ")
-    .map(
-      (word) =>
-        word.charAt(0).toUpperCase() +
-        word.slice(1)
-    )
-    .join(" ");
+        text
+            ?.toLowerCase()
+            .split(" ")
+            .map(
+                (word) =>
+                    word.charAt(0).toUpperCase() +
+                    word.slice(1)
+            )
+            .join(" ");
 
     return (
         <>
@@ -1265,7 +1271,7 @@ export default function VarietyDetailPage() {
                 //         ? `Premium ${parentProduct.title} Variety`
                 //         : "Premium Variety"
                 // }
-                backgroundImage={header.src}
+                backgroundImage={headerImage}
                 breadcrumbs={[
                     { label: "Home", href: "/" },
                     {
@@ -1292,7 +1298,7 @@ export default function VarietyDetailPage() {
                 ]}
             />
 
-            <section className="relative overflow-hidden bg-[#f8f8f8] py-20">
+            <section className="relative overflow-hidden bg-[#f8f8f8] py-15 md:py-20">
                 {/* Background Blur */}
                 <div className="absolute left-0 top-0 h-96 w-96 rounded-full bg-secondary/10 blur-3xl" />
                 <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-blue/10 blur-3xl" />
@@ -1339,12 +1345,12 @@ export default function VarietyDetailPage() {
                                                                     <div className="absolute inset-0 rounded-full blur-2xl transition duration-500"></div>
 
                                                                     {/* Rounded Image */}
-                                                                    <div className="relative h-90 w-90 overflow-hidden rounded-full   bg-white transition duration-500 group-hover:-translate-y-2 ">
+                                                                    <div className="relative h-70 w-70 md:h-90 md:w-90 overflow-hidden rounded-full   bg-white transition duration-500 group-hover:-translate-y-2 ">
 
                                                                         <img
                                                                             src={item.image}
                                                                             alt={detailName || "Variety Detail"}
-                                                                            className="h-full w-full object-cover transition duration-700 group-hover:scale-110"
+                                                                            className="h-full w-full object-contain transition duration-700 group-hover:scale-110"
                                                                         />
 
                                                                     </div>
@@ -1376,12 +1382,12 @@ export default function VarietyDetailPage() {
                                                     </span>
                                                 </div> */}
 
-                                                <h3 className="mb-4 text-4xl font-black  text-dark-grey">
+                                                <h3 className="mb-4 text-3xl md:text-4xl font-black  text-dark-grey">
                                                     {toTitleCase(detailName)}
                                                 </h3>
 
                                                 <div
-                                                    className="custom-description max-w-5xl text-lg leading-loose text-[#666]"
+                                                    className="custom-description max-w-5xl text-md md:text-lg leading-loose text-[#666]"
                                                     dangerouslySetInnerHTML={{
                                                         __html: detail?.description || "No description available.",
                                                     }}
@@ -1431,7 +1437,7 @@ export default function VarietyDetailPage() {
                                     </div>
 
                                     {/* SECOND SECTION */}
-                                    <div className="mt-16 grid gap-8 xl:grid-cols-[70%_30%]">
+                                    <div className="mt-16 block xl:grid gap-8 xl:grid-cols-[70%_30%]">
 
                                         {/* RELATED PRODUCTS */}
                                         <div className="rounded-[35px] border border-[#e5e5e5] bg-white p-7 shadow-[0_10px_40px_rgba(0,0,0,0.04)]">
@@ -1500,7 +1506,7 @@ export default function VarietyDetailPage() {
                                                                     <img
                                                                         src={product.image}
                                                                         alt={product.title}
-                                                                        className="h-full w-full object-cover transition duration-700 group-hover:scale-110"
+                                                                        className="h-full w-full object-contain transition duration-700 group-hover:scale-110"
                                                                     />
 
                                                                 </div>

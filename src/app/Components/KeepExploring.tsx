@@ -11,7 +11,7 @@ export default function KeepExploring() {
 
                         {/* Heading */}
                         <div className="text-center">
-                            <h2 className="text-4xl md:text-5xl font-bold text-primary">
+                            <h2 className="text-3xl md:text-5xl font-bold text-primary">
                                 Keep Exploring
                             </h2>
                         </div>
