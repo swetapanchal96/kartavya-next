@@ -1581,6 +1581,9 @@ export default function VarietyDetailPage() {
                     </div>
                 </div>
             </section>
+
+
+            
         </>
     );
 }

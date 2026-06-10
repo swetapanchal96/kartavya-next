@@ -27,5 +27,7 @@ export default function Home() {
       <BlogSection /> */}
       <HomeClient />
     </div>
+
+    
   );
 }

@@ -247,5 +247,8 @@ export default function Header() {
         <div className="h-0.5 w-full" style={{ backgroundColor: "#B4D342", opacity: 0.3 }} />
       </div>
     </header>
+
+
+
   );
 }

@@ -125,5 +125,8 @@ export default function GlobalPresenceSection() {
         </div>
       </div>
     </section>
+
+
+
   );
 }

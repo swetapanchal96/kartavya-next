@@ -106,5 +106,8 @@ export default function FounderSection() {
                 </div>
             </div>
         </section>
+
+
+
     );
 }

@@ -90,5 +90,8 @@ export default function DirectorsSection() {
 
             </div>
         </section>
+
+
+
     );
 }

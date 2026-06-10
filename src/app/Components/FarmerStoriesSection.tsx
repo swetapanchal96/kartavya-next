@@ -215,5 +215,8 @@ export default function FarmerStoriesSection({
                     />
                   </div>
         </section>
+
+
+
     );
 }

@@ -594,6 +594,9 @@ export default function PartnershipPage() {
           </div>
         </div>
       </section>
+
+
+      
     </>
   );
 }
