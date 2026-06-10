@@ -27,7 +27,7 @@ export default function AboutVideoSection() {
     return (
         <section className="w-full bg-[#f8f8f8] py-15">
             <div className="mx-auto container px-6 lg:px-10">
-                <div className="grid items-center gap-10 lg:grid-cols-[50%_50%]">
+                <div className="grid items-center gap-8 md:gap-10 lg:gap-12 md:grid-cols-1 xl:grid-cols-[50%_50%]">
 
                     {/* left SIDE - Video/Image */}
                     <motion.div
@@ -74,9 +74,9 @@ export default function AboutVideoSection() {
                                 </video>
                             )}
                         </div> */}
-                        <div className="relative h-60 md:h-120 w-full overflow-hidden rounded-xl ">
+                        <div className="relative  w-full overflow-hidden rounded-xl ">
                             <video
-                                className="h-full w-full object-contain"
+                                className="h-auto w-full rounded-xl"
                                 controls
                                 autoPlay
                                 muted
@@ -93,7 +93,7 @@ export default function AboutVideoSection() {
 
                     {/* right SIDE - Content */}
                     <motion.div
-                        className="p-0 md:p-4"
+                        className="p-0 md:px-4 lg:px-6"
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true, amount: 0.3 }}
@@ -110,7 +110,7 @@ export default function AboutVideoSection() {
                         </motion.p>
 
                         <motion.div custom={0.4} variants={fadeUp}>
-                            <h2 className="max-w-xl text-2xl font-bold text-primary md:text-[46px]">
+                            <h2 className="text-2xl font-bold text-primary md:text-[46px]">
                                 Recognized by DSIR(Govt of India) for Research & Development Excellence
                             </h2>
                         </motion.div>

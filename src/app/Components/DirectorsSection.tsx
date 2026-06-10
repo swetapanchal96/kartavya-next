@@ -21,7 +21,6 @@ export default function DirectorsSection() {
                             <Image
                                 src={team1}
                                 alt="Bhavesh Savaliya"
-                                fill
                                 className="object-cover object-top transition-all duration-700 ease-in-out group-hover:scale-110"
                             />
 

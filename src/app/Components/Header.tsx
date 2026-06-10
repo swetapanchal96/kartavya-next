@@ -86,7 +86,7 @@ export default function Header() {
           </Link>
 
           {/* Navigation */}
-          <nav className="ml-auto hidden lg:flex items-center">
+          <nav className="ml-auto hidden xl:flex items-center">
             {navLinks.map((link) => (
               <div
                 key={link.label}
@@ -146,7 +146,7 @@ export default function Header() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileMenu(!mobileMenu)}
-            className="lg:hidden ml-auto text-white z-50"
+            className="xl:hidden ml-auto text-white z-50"
           >
             {mobileMenu ? <IoClose size={34} /> : <HiMenuAlt3 size={34} />}
           </button>
@@ -155,7 +155,7 @@ export default function Header() {
         {/* Mobile Menu */}
         <div
           className={`
-            lg:hidden overflow-hidden transition-all duration-300
+            xl:hidden overflow-hidden transition-all duration-300
             ${mobileMenu
               ? "max-h-[700px] opacity-100"
               : "max-h-0 opacity-0"

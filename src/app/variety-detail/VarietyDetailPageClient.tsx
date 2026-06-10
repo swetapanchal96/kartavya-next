@@ -1480,6 +1480,10 @@ export default function VarietyDetailPage() {
                                                             slidesPerView: 2,
                                                             spaceBetween: 20,
                                                         },
+                                                        1024: {
+                                                            slidesPerView: 3,
+                                                            spaceBetween: 20,
+                                                        },
                                                         1200: {
                                                             slidesPerView: 3,
                                                             spaceBetween: 20,
@@ -1531,7 +1535,7 @@ export default function VarietyDetailPage() {
                                         {/* CATALOGUE */}
                                         <div>
 
-                                            <div className="relative overflow-hidden rounded-[35px]  p-7 text-white ">
+                                            <div className="relative overflow-hidden rounded-[35px] bg-white w-98 xl:w-auto p-7 mt-5 xl:mt-0 text-white ">
 
                                                 <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full border-30 border-white/5" />
 

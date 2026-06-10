@@ -352,7 +352,7 @@ export default function IncrementBasicSeedPage() {
                         {/* Center Visual */}
                         <div className="relative flex justify-center lg:col-span-4">
                             {/* Outer Circle */}
-                            <div className="relative flex h-85 w-85 items-center justify-center rounded-full border-2 border-primary/50 bg-[#f8faf5]">
+                            <div className="relative flex h-85 w-85 lg:h-65 lg:w-65 xl:h-85 xl:w-85 items-center justify-center rounded-full border-2 border-primary/50 bg-[#f8faf5]">
                                 {/* Rotating Ring */}
                                 <div className="absolute inset-5 rounded-full border-2 border-dashed border-primary/50 animate-[spin_20s_linear_infinite]"></div>
 
