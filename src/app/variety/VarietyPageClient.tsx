@@ -309,6 +309,8 @@ export default function VarietyPage() {
   const [varieties, setVarieties] = useState<SubVegetableType[]>([]);
   const [productTitle, setProductTitle] = useState("Varieties");
   const [loading, setLoading] = useState(false);
+  const [catalogueLink, setCatalogueLink] = useState("");
+  const [catalogueFile, setCatalogueFile] = useState("");
   const [headerImage, setHeaderImage] = useState(header.src);
 
   const getVarieties = async () => {
@@ -393,6 +395,42 @@ export default function VarietyPage() {
           word.slice(1)
       )
       .join(" ");
+
+    useEffect(() => {
+        const getCatalogueLink = async () => {
+            try {
+                const res = await axios.post(
+                    `${apiUrl}/catalogue/link`
+                );
+
+                if (res.data?.status) {
+                    setCatalogueLink(res.data.data.catalogue_link);
+                }
+            } catch (error) {
+                console.log("Catalogue API Error:", error);
+            }
+        };
+
+        getCatalogueLink();
+    }, [slug])
+
+    useEffect(() => {
+        const getCatalogueFile = async () => {
+            try {
+                const res = await axios.post(
+                    "https://admin.kartavyaseeds.com/api/catalogue/file"
+                );
+
+                if (res.data?.status) {
+                    setCatalogueFile(res.data.data.file_url);
+                }
+            } catch (error) {
+                console.log("Catalogue File API Error:", error);
+            }
+        };
+
+        getCatalogueFile();
+    }, [slug])
 
   return (
     <>
@@ -518,13 +556,16 @@ export default function VarietyPage() {
                 </h3>
 
                 <div className="mt-5 flex flex-col justify-start items-start gap-4">
-                  <Link href="https://heyzine.com/flip-book/08f0c37450.html" target="_blank"
-                    className="flex items-center w-65 cursor-pointer justify-start gap-3 rounded-xl bg-secondary px-5 py-3 text-md text-white font-bold uppercase transition duration-300 hover:bg-primary whitespace-nowrap">
+                  <Link href={catalogueLink} target="_blank"
+                    className={`flex items-center w-65 justify-start gap-3 rounded-xl bg-secondary px-5 py-3 text-md text-white font-bold uppercase transition duration-300 hover:bg-primary whitespace-nowrap ${!catalogueLink ? "pointer-events-none opacity-50" : ""}`}>
                     <FaEye className="text-md" />
                     <span>View Catalogue</span>
                   </Link>
 
-                  <Link href='/pdf/Final-Catalogue.pdf' target="_blank" className="flex items-center cursor-pointer justify-start gap-3 rounded-xl bg-secondary px-5 py-3 text-md text-white font-bold uppercase transition duration-300 hover:bg-primary whitespace-nowrap">
+                  <Link 
+                  href={catalogueFile}
+                  target="_blank" 
+                  className={`flex items-center cursor-pointer justify-start gap-3 rounded-xl bg-secondary px-5 py-3 text-md text-white font-bold uppercase transition duration-300 hover:bg-primary whitespace-nowrap ${!catalogueFile ? "pointer-events-none opacity-50" : ""}`}>
                     <FaDownload className="text-sm" />
                     <span>Download Catalogue</span>
                   </Link>

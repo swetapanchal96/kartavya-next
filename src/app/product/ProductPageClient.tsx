@@ -262,7 +262,8 @@ import fruitHeader from "@/app/assets/Fruits-Crop.webp";
 import {
     FaDownload,
     FaEye,
-    FaChevronRight} from "react-icons/fa";
+    FaChevronRight
+} from "react-icons/fa";
 import { apiUrl } from "@/config";
 
 const categories = [
@@ -301,6 +302,8 @@ export default function ProductPage() {
     const [products, setProducts] = useState<ProductType[]>([]);
     const [pageTitle, setPageTitle] = useState("Vegetable Crops");
     const [loading, setLoading] = useState(false);
+    const [catalogueLink, setCatalogueLink] = useState("");
+    const [catalogueFile, setCatalogueFile] = useState("");
 
     const activeCategory = categories.find((item) => item.slug === slug);
 
@@ -349,18 +352,54 @@ export default function ProductPage() {
     useEffect(() => {
         getProducts();
     }, [slug]);
-    console.log(products, "products=====")
+    // console.log(products, "products=====")
 
     const toTitleCase = (text: string) =>
-  text
-    ?.toLowerCase()
-    .split(" ")
-    .map(
-      (word) =>
-        word.charAt(0).toUpperCase() +
-        word.slice(1)
-    )
-    .join(" ");
+        text
+            ?.toLowerCase()
+            .split(" ")
+            .map(
+                (word) =>
+                    word.charAt(0).toUpperCase() +
+                    word.slice(1)
+            )
+            .join(" ");
+
+    useEffect(() => {
+        const getCatalogueLink = async () => {
+            try {
+                const res = await axios.post(
+                    `${apiUrl}/catalogue/link`
+                );
+
+                if (res.data?.status) {
+                    setCatalogueLink(res.data.data.catalogue_link);
+                }
+            } catch (error) {
+                console.log("Catalogue API Error:", error);
+            }
+        };
+
+        getCatalogueLink();
+    }, [slug])
+
+    useEffect(() => {
+        const getCatalogueFile = async () => {
+            try {
+                const res = await axios.post(
+                    "https://admin.kartavyaseeds.com/api/catalogue/file"
+                );
+
+                if (res.data?.status) {
+                    setCatalogueFile(res.data.data.file_url);
+                }
+            } catch (error) {
+                console.log("Catalogue File API Error:", error);
+            }
+        };
+
+        getCatalogueFile();
+    }, [slug])
 
     return (
         <>
@@ -419,7 +458,7 @@ export default function ProductPage() {
                                             {/* Product Name */}
                                             <div className="mt-4">
                                                 <h3 className="text-xl font-black  tracking-[1px] text-dark-grey transition duration-300 group-hover:text-secondary">
-                                                   {toTitleCase(product.title)}
+                                                    {toTitleCase(product.title)}
                                                 </h3>
 
                                                 {/* Bottom Line */}
@@ -482,13 +521,20 @@ export default function ProductPage() {
                                 </h3>
 
                                 <div className="mt-5 flex flex-col justify-start items-start gap-4">
-                                    <Link href="https://heyzine.com/flip-book/08f0c37450.html" target="_blank"
-                                        className="flex items-center w-65 cursor-pointer justify-start gap-3 rounded-xl bg-secondary px-5 py-3 text-md text-white font-bold uppercase transition duration-300 hover:bg-primary whitespace-nowrap">
+                                    <Link
+                                        href={catalogueLink}
+                                        target="_blank"
+                                        className={`flex items-center w-65 justify-start gap-3 rounded-xl bg-secondary px-5 py-3 text-md text-white font-bold uppercase transition duration-300 hover:bg-primary whitespace-nowrap ${!catalogueLink ? "pointer-events-none opacity-50" : ""
+                                            }`}>
                                         <FaEye className="text-md" />
                                         <span>View Catalogue</span>
                                     </Link>
 
-                                    <Link href='/pdf/Final-Catalogue.pdf' target="_blank" className="flex items-center cursor-pointer justify-start gap-3 rounded-xl bg-secondary px-5 py-3 text-md text-white font-bold uppercase transition duration-300 hover:bg-primary whitespace-nowrap"
+                                    <Link
+                                        href={catalogueFile}
+                                        target="_blank"
+                                        className={`flex items-center cursor-pointer justify-start gap-3 rounded-xl bg-secondary px-5 py-3 text-md text-white font-bold uppercase transition duration-300 hover:bg-primary whitespace-nowrap ${!catalogueFile ? "pointer-events-none opacity-50" : ""
+                                            }`}
                                     >
                                         <FaDownload className="text-md" />
                                         <span>Download Catalogue</span>
@@ -501,7 +547,7 @@ export default function ProductPage() {
             </section>
 
 
-            
+
         </>
     );
 }

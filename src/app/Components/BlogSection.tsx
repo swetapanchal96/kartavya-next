@@ -112,7 +112,6 @@ export default function BlogSection() {
                   <Image
                     src={event?.masterimage}
                     alt={event?.title || "Event Image"}
-
                     fill
                     className="object-cover transition-all duration-700 group-hover:scale-105"
                   />
